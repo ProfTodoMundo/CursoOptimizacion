@@ -1,0 +1,183 @@
+\begin{thebibliography}{10}
+
+\bibitem{andersen_presolving_1995}
+Erling Andersen and Knud Andersen.
+\newblock Presolving in linear programming.
+\newblock {\em Math. Program.}, 71:221--245, December 1995.
+
+\bibitem{arsham_foundation_2014}
+Dr.~Hossein Arsham.
+\newblock Foundation of {Linear} {Programming}:.
+\newblock {\em International Journal of Strategic Decision Sciences}, 3:40--60,
+  September 2014.
+
+\bibitem{arsham_foundation_2014-1}
+Dr.~Hossein Arsham.
+\newblock Foundation of {Linear} {Programming}:.
+\newblock {\em International Journal of Strategic Decision Sciences}, 3:40--60,
+  September 2014.
+
+\bibitem{awad_linear_nodate}
+Feras Awad.
+\newblock Linear {Programming} {Lecture} {Notes} for {Math} 373.
+
+\bibitem{best_linear_1985}
+Michael Best and Klaus Ritter.
+\newblock {\em Linear {Programming} {Active} {Set} {Analysis} and {Computer}
+  {Programs}}.
+\newblock January 1985.
+
+\bibitem{camarena_math_nodate}
+Omar~Antolín Camarena.
+\newblock Math 340: {Linear} {Programming}.
+
+\bibitem{chenlin_overview_2022}
+Zhang Chenlin.
+\newblock {\em {OVERVIEW} {LINEAR} {PROGRAMMING} {AND} {ITS} {APPLICATION}}.
+\newblock August 2022.
+
+\bibitem{chiarandini_linear_nodate}
+Marco Chiarandini.
+\newblock Linear and {Integer} {Programming} {Lecture} {Notes}.
+
+\bibitem{dantzig_reminiscences_nodate}
+George~B Dantzig.
+\newblock Reminiscences about the {Origins} of {Linear} {Programming}.
+
+\bibitem{dantzig_linear_2002}
+George~B. Dantzig.
+\newblock Linear {Programming}.
+\newblock {\em Operations Research}, 50(1):42--47, February 2002.
+
+\bibitem{dantzig_linear_1997}
+George~B. Dantzig and Mukund~Narain Thapa.
+\newblock {\em Linear programming}.
+\newblock Springer series in operations research. Springer, New York, 1997.
+
+\bibitem{dantzig_linear_nodate}
+George~Bernard Dantzig.
+\newblock Linear {Programming} and {Extensions}.
+
+\bibitem{itam_programacion_lineal_2012}
+{Departamento de Matemáticas, ITAM}.
+\newblock Programación lineal (temario mat-24410).
+\newblock Technical report, Instituto Tecnológico Autónomo de México, 2012.
+\newblock Temario de curso de Programación Lineal, MAT-24410.
+
+\bibitem{itam_temario_programacion_lineal_2022}
+{Departamento de Matemáticas, ITAM}.
+\newblock Temario de programación lineal (mat 24410) -- primavera 2022.
+\newblock Technical report, Instituto Tecnológico Autónomo de México, 2022.
+\newblock Temario oficial de curso de Programación Lineal.
+
+\bibitem{donovan_linear_nodate}
+Therese Donovan.
+\newblock Linear {Programming} in {R}.
+
+\bibitem{fergusin_linear_nodate}
+Thomas~S Fergusin and M~Casquilho.
+\newblock Linear {Programming}, a concise introduction.
+
+\bibitem{fletcher_review_2001}
+Richard Fletcher.
+\newblock A review of linear programming and its application to the assessment
+  tools for teaching and learning ({asTTle}) projects.
+\newblock January 2001.
+
+\bibitem{goldfarb_linear_1989}
+Donald Goldfarb and Michael Todd.
+\newblock {\em Linear programming}, volume~1.
+\newblock October 1989.
+\newblock Journal Abbreviation: Optimization Pages: 170 Publication Title:
+  Optimization.
+
+\bibitem{graver_foundations_1975}
+Jack~E. Graver.
+\newblock On the foundations of linear and integer linear programming {I}.
+\newblock {\em Mathematical Programming}, 9(1):207--226, December 1975.
+
+\bibitem{griffin_linear_nodate}
+Christopher Griffin.
+\newblock Linear programming: {Penn} {State} {Math} 484 {Lecture} {Notes}.
+
+\bibitem{gupta_lecture_nodate}
+Anupam Gupta and Ryan O{'}Donnell.
+\newblock Lecture notes for {CMU}'s course on linear programming and
+  semidefinite programming.
+
+\bibitem{jana_linear_2023}
+Mr~Jana.
+\newblock {\em Linear {Programing} {Problem} ({LPP})}.
+\newblock October 2023.
+
+\bibitem{kunwar_introduction_2022}
+Rajendra Kunwar and Hari Sapkota.
+\newblock An {Introduction} to {Linear} {Programming} {Problems} with {Some}
+  {Real}-{Life} {Applications}.
+\newblock {\em European Journal of Mathematics and Statistics}, 3:21--27, April
+  2022.
+
+\bibitem{mahto_linear_2015}
+Dalgobind Mahto.
+\newblock Linear {Programming} ({Graphical} {Method}).
+\newblock March 2015.
+
+\bibitem{miller_introduction_2007}
+Steven Miller.
+\newblock An introduction to linear programming.
+\newblock May 2007.
+
+\bibitem{nace_lecture_nodate}
+Dritan Nace.
+\newblock Lecture {Notes} in {Linear} {Programming} modeling.
+
+\bibitem{nguyen_linear_2003}
+Phong Nguyen.
+\newblock {\em Linear Programming}.
+\newblock May 2003.
+
+\bibitem{ong_145_nodate}
+Desmond~C. Ong.
+\newblock {\em 14.5 {Using} {R} to solve {Linear} {Optimization} {\textbar}
+  {Statistics} and {Analytics} for the {Social} and {Computing} {Sciences}}.
+
+\bibitem{roy_formulation_nodate}
+Benjamin~Van Roy and Kahn Mason.
+\newblock Formulation and {Analysis} of {Linear} {Programs}.
+
+\bibitem{schulze_linear_2000}
+Mark Schulze.
+\newblock Linear {Programming} for {Optimization}.
+\newblock September 2000.
+
+\bibitem{strang_linear_nodate}
+Gilbert Strang.
+\newblock Linear {Algebra} and {Its} {Applications}.
+
+\bibitem{tiwari_study_2022}
+Preeti Tiwari and Dr~Agrawal.
+\newblock {\em A study of linear programming technique}.
+\newblock January 2022.
+
+\bibitem{uacm_optimizacionI_2012}
+{Universidad Autónoma de la Ciudad de México, Academia de Matemáticas}.
+\newblock Programa de estudios: Optimización {I}.
+\newblock Technical report, Universidad Autónoma de la Ciudad de México,
+  2012.
+\newblock Programa oficial de la asignatura Optimización I (Licenciatura en
+  Modelación Matemática).
+
+\bibitem{vargas_wachtel_programacion_lineal_2020}
+Edith Vargas-García and Andreas Wachtel.
+\newblock Notas de programación lineal: Fundamentos, método simplex, dualidad
+  y puntos interiores.
+\newblock Notas de curso / technical report, Instituto Tecnológico Autónomo
+  de México, Departamento de Matemáticas, 2020.
+\newblock Accedido: 2026-01-28.
+
+\bibitem{ye_linear_nodate}
+Yinyu Ye.
+\newblock Linear {Programming} {Standard} {Equality} {Form} and {Solution}
+  {Properties}.
+
+\end{thebibliography}

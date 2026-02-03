@@ -1,0 +1,86 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: NotasCursoOptimizacion.aux
+The style file: plain.bst
+Database file #1: LinearProgramming.bib
+Warning--empty journal in awad_linear_nodate
+Warning--empty year in awad_linear_nodate
+Warning--empty publisher in best_linear_1985
+Warning--empty journal in camarena_math_nodate
+Warning--empty year in camarena_math_nodate
+Warning--empty publisher in chenlin_overview_2022
+Warning--empty journal in chiarandini_linear_nodate
+Warning--empty year in chiarandini_linear_nodate
+Warning--empty journal in dantzig_reminiscences_nodate
+Warning--empty year in dantzig_reminiscences_nodate
+Warning--empty journal in dantzig_linear_nodate
+Warning--empty year in dantzig_linear_nodate
+Warning--empty journal in donovan_linear_nodate
+Warning--empty year in donovan_linear_nodate
+Warning--empty journal in fergusin_linear_nodate
+Warning--empty year in fergusin_linear_nodate
+Warning--empty journal in fletcher_review_2001
+Warning--empty publisher in goldfarb_linear_1989
+Warning--empty journal in griffin_linear_nodate
+Warning--empty year in griffin_linear_nodate
+Warning--empty journal in gupta_lecture_nodate
+Warning--empty year in gupta_lecture_nodate
+Warning--empty publisher in jana_linear_2023
+Warning--empty booktitle in mahto_linear_2015
+Warning--empty publisher in mahto_linear_2015
+Warning--empty journal in miller_introduction_2007
+Warning--empty journal in nace_lecture_nodate
+Warning--empty year in nace_lecture_nodate
+Warning--empty publisher in nguyen_linear_2003
+Warning--empty publisher in ong_145_nodate
+Warning--empty year in ong_145_nodate
+Warning--empty journal in roy_formulation_nodate
+Warning--empty year in roy_formulation_nodate
+Warning--empty journal in schulze_linear_2000
+Warning--empty journal in strang_linear_nodate
+Warning--empty year in strang_linear_nodate
+Warning--empty publisher in tiwari_study_2022
+Warning--empty journal in ye_linear_nodate
+Warning--empty year in ye_linear_nodate
+You've used 35 entries,
+            2118 wiz_defined-function locations,
+            640 strings with 8154 characters,
+and the built_in function-call counts, 8123 in all, are:
+= -- 755
+> -- 305
+< -- 1
++ -- 129
+- -- 90
+* -- 478
+:= -- 1448
+add.period$ -- 97
+call.type$ -- 35
+change.case$ -- 146
+chr.to.int$ -- 0
+cite$ -- 74
+duplicate$ -- 368
+empty$ -- 685
+format.name$ -- 90
+if$ -- 1613
+int.to.chr$ -- 0
+int.to.str$ -- 35
+missing$ -- 39
+newline$ -- 169
+num.names$ -- 70
+pop$ -- 230
+preamble$ -- 1
+purify$ -- 115
+quote$ -- 0
+skip$ -- 224
+stack$ -- 0
+substring$ -- 305
+swap$ -- 15
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 124
+warning$ -- 39
+while$ -- 82
+width$ -- 37
+write$ -- 323
+(There were 39 warnings)

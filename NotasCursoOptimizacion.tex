@@ -1,0 +1,175 @@
+%===========================================
+\documentclass[12pt,twoside]{article}
+%===========================================
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[a4paper]{geometry}
+%\geometry{top=1.5cm, bottom=1.0cm, left=1.25cm, right=1.25cm}
+\geometry{
+			a4paper,
+			top=1.5cm, 
+			bottom=1.0cm, 
+			left=1.5cm, 
+			right=1.25cm,
+			headheight=14pt,
+			includehead,
+			includefoot}
+
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{graphicx,graphics}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{subfig}
+\usepackage[figuresright]{rotating}
+\usepackage{enumerate}
+\usepackage{anysize} 
+\usepackage{url}
+\usepackage{imakeidx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{chngcntr}
+\usepackage{enumitem}
+% --- Contador global para ítems ---
+\newcounter{globalitem}
+\setcounter{globalitem}{0}
+
+% --- Entorno que continúa la numeración automáticamente ---
+\newenvironment{globalenum}{
+  \begin{enumerate}[label=\arabic*., leftmargin=*, itemsep=2pt, topsep=2pt]
+    % arranca en el último valor usado
+    \setcounter{enumi}{\value{globalitem}}
+}{
+    % guarda dónde nos quedamos
+    \setcounter{globalitem}{\value{enumi}}
+  \end{enumerate}
+}
+
+%===========================================
+\newtheorem{Criterio}{Criterio}
+\newtheorem{Sup}{Supuesto}
+\newtheorem{Note}{Nota}
+\newtheorem{Ejem}{Ejemplo}
+\newtheorem{Prop}{Proposici\'on}
+\newtheorem{Def}{Definici\'on}
+\newtheorem{Teo}{Teorema}
+\newtheorem{Algthm}{Algoritmo}
+\newtheorem{Sol}{Soluci\'on}
+\newtheorem{Ejer}{Ejercicio}
+\newtheorem{Quest}{Pregunta}
+\counterwithout{Ejer}{section}
+\newtheorem{Obs}{Observaci\'on}
+\newcommand{\rea}{\mathbb{R}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Esp}{\mathbb{E}}
+\newcommand{\Var}{\mathbb{V}}
+\newtheorem{Propty}{Propiedades}
+\newtheorem{lem}{Lema}
+%===========================================
+\pagestyle{fancy}
+\fancyhf{} % limpia encabezados y pies previos
+
+%--- Encabezado ---
+
+\fancyhead[L]{\small Probabilidad}
+%\fancyhead[C]{\small \textit{\nouppercase{\leftmark}}} % muestra sección/subsección actual
+\fancyhead[R]{\small \textit{\nouppercase{\leftmark}}}
+
+%--- Pie de página ---
+\fancyfoot[L]{\footnotesize Universidad Aut\'onoma de la Ciudad de M\'exico}
+\fancyfoot[L]{\footnotesize \textit{\nouppercase{\rightmark}}}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\footnotesize Carlos E Mart\'inez-Rodr\'iguez}
+
+% Línea separadora en encabezado y pie
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Para que las subsecciones aparezcan en el encabezado dinámico
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+
+%===========================================
+\title{Notas de Optimizaci\'on}
+\author{Carlos E Mart\'inez-Rodr\'iguez\\
+  \small Academia de Matem\'aticas\\
+  \small Plantel Casa Libertad\\
+  \texttt{carlos.martinez@uacm.edu.mx}
+}
+\date{2026}
+%===========================================
+\begin{document}
+%===========================================
+%==================== PORTADA ====================
+\begin{titlepage}
+  \thispagestyle{empty} % sin encabezado/ pie
+  \begin{center}
+    % (Opcional) Logo arriba
+    %\vspace*{-1cm}
+    %\includegraphics[width=3cm]{logo_uacm.png}\par\vspace{1cm}
+    \vspace*{2.5cm}
+
+    {\Large \textbf{Universidad Aut\'onoma de la Ciudad de M\'exico}\par}
+    \vspace{2.5cm}
+
+    {\huge \textbf{Notas de Optimizaci\'on}\par}
+    \vspace{0.8cm}
+    {\Large \textit{Apuntes y ejercicios seleccionados}\par}
+
+    \vspace{3.5cm}
+    {\large
+      Carlos E Mart\'inez-Rodr\'iguez\\
+      Academia de Matem\'aticas\\
+      Plantel Casa Libertad\\
+      \texttt{carlos.martinez@uacm.edu.mx}
+    \par}
+
+    \vspace{4cm}
+    \rule{0.6\textwidth}{0.6pt}\par
+    \vspace{0.5cm}
+    {\large 2026}\par
+  \end{center}
+\end{titlepage}
+%================================================
+% --- Índice limpio (sin repetir título) ---
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+\thispagestyle{empty}
+\null
+\newpage
+\setcounter{page}{1}
+\newpage
+
+
+
+%===========================================
+% Inclusión de capítulos individuales
+%===========================================
+
+\input{Cap1_Introduccion}
+\newpage
+
+%\input{NotasProbabilidad}
+%\newpage
+
+%\input{NotasVariablesAleatorias}
+%\newpage
+
+%\input{NotasInferencia}
+%\newpage
+\newpage
+%===========================================
+\bibliographystyle{plain} % o abbrv, unsrt, apalike según prefieras
+%\bibliographystyle{apalike} % o abbrv, unsrt, apalike según prefieras
+\nocite{*}
+\bibliography{LinearProgramming}
+%===========================================
+
+
+
+\end{document}
