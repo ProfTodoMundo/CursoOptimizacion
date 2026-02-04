@@ -1,2 +1,5 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{\numberline {1}Contenido del curso}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Metodolog\'ia del curso}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Evaluaci\'on del curso}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Cient\'ificos prominentes}{1}{subsection.1.3}%
