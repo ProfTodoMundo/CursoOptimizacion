@@ -5,7 +5,37 @@
 %===========================================
 
 \begin{Def}[Valores y vectores propios]
+Sea $A$ una matrix de $n\times n$, $v$ vector de dimensi\'on $n$ y $\lambda$ escalar. Se dice que $v$ es un vector propio de $A$ y $\lambda$ es vector propio de $A$ si se cumple
+\begin{eqnarray*}
+Av=\lambda v
+\end{eqnarray*}
+\end{Def}
 
+\begin{Note}
+De la igualdad anterior se tiene $Av-\lambda v=\left(A-I\lambda\right)v=0$, ecuaci\'on que siempre tiene como  soluci\'on $v=0$, para cualquier $\lambda$. Si $\left(A-I\lambda\right)$ es invertible, la \'unica soluci\'on es $v=0$. Para tener soluciones no triviales, se requiere que $\lambda$ sea tal que  $\left(A-I\lambda\right)$ no sea invertible, entonces
+\begin{eqnarray*}
+det\left(A-I\lambda\right)=0
+\end{eqnarray*}
+\end{Note}
+
+\begin{Teo}
+Sea $A$ matriz de $n\times n$, $\lambda$ es un valor propio de $A$ si y s\'olo si
+\begin{eqnarray*}
+p\left(\lambda\right)=det\left(A-I\lambda\right)=0
+\end{eqnarray*}
+\end{Teo}
+
+\begin{Def}
+La ecuaci\'ion $p\left(\lambda\right)=0$ se denomina polinomio caracter\'istico de $A$.
+\end{Def}
+
+
+\begin{Teo}
+Sea $A$ una matriz de $n\times n$, y sean $\lambda_{1},\lambda_{2},\dots,\lambda_{m}$ valores caracter\'isticos de $A$ con vectores propios $v_{1},v_{2},\dots,v_{m}$. Entonces los vectores propios correspondientes a valores propios distintos son linealmente independientes.
+\end{Teo}
+
+\begin{Def}
+Sea $\lambda$ valor propio de $A$, la multiplicidad geom\'etrica de $\lambda$ es la dimensi\'on del espacio propio correspondiente a $\lambda$.
 \end{Def}
 
 
@@ -16,7 +46,10 @@
 
 
 \begin{Def}Semejantes
-
+Sean $A$ y $B$ matrices de $n\times n$ son semejantes si existe una matriz invertible $C$ de $n\times n$ tal que
+\begin{eqnarray}
+B=C^{-1}AC.
+\end{eqnarray}
 \end{Def}
 
 
@@ -25,29 +58,58 @@
 
 \end{Teo}
 
-\begin{Def}Diagonalizacion
-
+\begin{Def}[Diagonalizacion]
+Una matriz $A$ de $n\times n$ es diagonalizable si existe una matriz diagonal $D$ tal que $A$ es semejante a $D$.
 \end{Def}
 
 
 \begin{Teo}Diagonalizacion
-
-
+Una matriz $A$ de $n\times n$ es diagonalizable si y s\'olo si tiene $n$ valores propios linealmente independientes, en este caso la matriz diagonal $D$ tiene como elementos en la diagona los $n$ valores propios de $A$. Entonces $D=C^{-1}AC$.
 \end{Teo}
 
-\begin{Teo}Diagonalizacion ortogonal
-
-
+\begin{Teo}
+Sea $A$ matriz sim\'etrica real de $n\times n$ , entonces $A$ tiene $n$ vectores propios reales ortonormales.
 \end{Teo}
+
+\begin{Def}
+Se dice que $A$ matriz de $n\times n$ es diagonalizable ortogonalmente si existe una matriz ortogonal $Q$ tal que $Q^{t}AQ=D$, donde $D=diag\left(\lambda_{1},\lambda{2},\dots,\lambda_{n}\right)$ son los valores propios de $A$.
+\end{Def}
+
+\begin{Teo}
+Sea $A$ matriz real de $n\times n$, entonces $A$ es diagonalizable ortogonalmente si y s\'olo si $A$ es sim\'etrica.
+\end{Teo}
+
 
 \begin{Def} Formas Cuadr\'aticas
+\begin{itemize}
+\item[i) ] Una ecuaci\'on cuadr\'atica en dos variables sin t\'erminos lineales es una ecuaci\'on de la forma $ax^{2}+bxy+cy^{2}=d$, donde $|a|+|b|+|c|\neq0$.
 
-
+\item[ii) ] Una forma cuadr\'atica en dos variables es una expresi\'on de la forma $F\left(x,y\right)=ax^{2}+bxy+cy^{2}$, donde $|a|+|b|+|c|\neq0$.
+\end{itemize}
 \end{Def}
 
 
 \begin{Def} Sobre formas cuadr\'aticas
+Sea $A$ matriz sim\'etrica, entonces se define la forma cuadr\'atica $F\left(x,y\right)=Av\cdot v$.
+\end{Def}
 
+\begin{Ejem}
+Si $F\left(x,y\right)=ax^{2}+bxy+cy^{2}$ es forma cuadr\'atica, sea $A=\left(\begin{array}{cc}
+a & b/2\\
+b/2 & a\\
+\end{array}
+\right)$
+entonces $Av\cdot v=d$.
+\end{Ejem}
+
+\begin{Def}
+Sea $v=\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}\\
+\end{array}
+\right)$ y sea $A$ matriz sim\'etrica de $n\times n$. Entonces una forma cuadr\'atica en $x_{1},x_{2},\dots,x_{n}$ es una expresi\'on de la forma $F\left(x_{1},x_{2},\dots,x_{n}\right)=Av\cdots v$.
 \end{Def}
 
 
