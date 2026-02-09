@@ -54,7 +54,11 @@ B=C^{-1}AC.
 
 
 \begin{Teo}
-
+Sea $A\in\mathbb{R}^{n\times n}$ matriz sim\'etrica
+\begin{itemize}
+\item[i) ] Los valores propios de $A$ son reales.
+\item[ii) ] Los vectores propios asociados a valores propios distintos son ortogonales.
+\end{itemize}
 
 \end{Teo}
 
@@ -62,6 +66,12 @@ B=C^{-1}AC.
 Una matriz $A$ de $n\times n$ es diagonalizable si existe una matriz diagonal $D$ tal que $A$ es semejante a $D$.
 \end{Def}
 
+
+\begin{Prop}
+Sea $A\in\mathbb{R}^{n\times n}$, $A$ es diagonalizable si y s\'olo si existe una matriz $P\in\mathbb{R}^{n\times n}$ no singular, tal que $D=P^{-1}\cdot A \cdot P$ donde $D\in\mathbb{R}^{n\times n}$ es una matriz diagonal.
+
+
+\end{Prop}
 
 \begin{Teo}Diagonalizacion
 Una matriz $A$ de $n\times n$ es diagonalizable si y s\'olo si tiene $n$ valores propios linealmente independientes, en este caso la matriz diagonal $D$ tiene como elementos en la diagona los $n$ valores propios de $A$. Entonces $D=C^{-1}AC$.
@@ -78,6 +88,11 @@ Se dice que $A$ matriz de $n\times n$ es diagonalizable ortogonalmente si existe
 \begin{Teo}
 Sea $A$ matriz real de $n\times n$, entonces $A$ es diagonalizable ortogonalmente si y s\'olo si $A$ es sim\'etrica.
 \end{Teo}
+
+
+\begin{Def}
+Sea $A\in\mathbb{R}^{n\times n}$, se denomina \textbf{menor de orden $k$ de la matriz $A$} al determinante que se obtiene de eliminar $\left(n-k\right)$ filas y las mismas $\left(n-k\right)$ columnas.
+\end{Def}
 
 
 \begin{Def} Formas Cuadr\'aticas
@@ -102,61 +117,142 @@ b/2 & a\\
 entonces $Av\cdot v=d$.
 \end{Ejem}
 
+
 \begin{Def}
-Sea $v=\left(\begin{array}{c}
-x_{1}\\
-x_{2}\\
-\vdots\\
-x_{n}\\
-\end{array}
-\right)$ y sea $A$ matriz sim\'etrica de $n\times n$. Entonces una forma cuadr\'atica en $x_{1},x_{2},\dots,x_{n}$ es una expresi\'on de la forma $F\left(x_{1},x_{2},\dots,x_{n}\right)=Av\cdots v$.
+Una forma cuadr\'atica $\varphi\left(x\right)$ es una aplicaci\'on $\varphi:\mathbb{R}^{n}\rightarrow\mathbb{R}$ tal que
+\begin{eqnarray*}
+\varphi\left(x\right)=\varphi\left(x_{1},x_{2},\dots,x_{n}\right)=\sum_{i}a_{ii}x_{i}^{2}+2\sum_{i\leq j}a_{ij}x_{i}x_{j}.
+\end{eqnarray*}
+La matriz asociada a la forma cuadr\'atica $\varphi\left(x\right)$ es una matriz $n\times n$ y sim\'etricade la forma: $\varphi\left(x\right)=x^{t}Ax$.
 \end{Def}
 
+\begin{Note}
+La matriz $A$ asociada a una forma cuadr\'atica es $n\times n$ y sim\'etrica, por tanto diagonalizable ortogonalmente, es decir, existe una matriz $Q\in \mathbb{R}^{n\times n}$ ortogonal tal que $D=Q^{t}AQ$, donde $D\in\mathbb{R}^{n\times n}$ es una matriz diagonal, donde los elementos de la diagonal son los valores propios $\lambda_{i}$ de $A$, y la columnas de $Q$ son los vectores propios de $A$.
 
-\begin{Teo}Matrices positivas definidas I
+De donde
+\begin{eqnarray*}
+&&D=Q^{t}AQ,\textrm{ por tanto }A=QDQ^{t}, \textrm{ entonces la forma cuadr\'atica queda de la forma }\\
+&&\varphi\left(x\right)=x^{t}Ax=x^{t}QDQ^{t}x=\left(x^{t}Q\right)D\left(Q^{t}x\right)=\left(Q^{t}x\right)^{t}D\left(Q^{t}x\right),\textrm{ haciendo  }\tilde{x}=Q^{t}x\\
+&&\varphi\left(x\right)=\tilde{\varphi}\left(\tilde{x}\right)=\tilde{x}^{t}D\tilde{x}=\sum_{i=1}^{n}\lambda_{i}\tilde{x}^{2}.
+\end{eqnarray*}
+Se dice que $\tilde{\varphi}\left(\tilde{x}\right)$ es la forma can\'onica o forma diagonal de la forma cuadr\'atica $\varphi\left(x\right)$.
+\end{Note}
 
+\begin{Teo}
+Sea $A\in\mathbb{R}^{n\times n}$ sim\'etrica y real; sean $A_{i},1\leq1\leq n$ los menores principales de orden $i$ de la matriz $n$, entonces
+\begin{itemize}
+\item[i) ] $A$ es definida positiva si y s\'olo s\'i todos los menores principales son positivos.
+
+\item[ii) ] $A$ es definida negativa s\'i y s\'olo s\'i los menores principales de orden impar son negativos y los de orden par son positivos.
+
+\item[iii) ] Si $A$ es semidefinida positiva o negativa, entonces $det(A)=0$.
+\item[iv) ] Si $A_{1}>0$, $A_{2}>0,\dots$,$A_{n}>0$ y $det(A)=0$, entonces $A$ es semidefinida positiva.
+\item[v) ] Si $A_{1}<0$, $A_{2}>0,A_{3}<0,\dots$, y $det(A)=0$, entonces $A$ es semidefinida negativa.
+\item[vi) ] $A$ es semidefinida positiva s\'i y s\'olo s\'i todos los menores de la matriz $A$ son mayores o iguales a cero.
+\item[vii) ] $A$ es semidefinida negaiva s\'i y s\'olo s\'i  los menores de la matriz $A$ de orden impar son menores o iguales a cero y los de orden par son mayores o iguales a cero.
+\item[viii) ] Si no se cumplen estas condiciones, la matriz $A$ es indefinida.
+
+
+\end{itemize}
 
 \end{Teo}
 
 
-\begin{Teo}Matrices positivas definidas II
+\begin{Def} [Segmento]
+Sean $x,y\in\mathbb{R}^{n}$, se llama \textbf{segmento} de extremos $x$ e $y$ al conjunto de puntos $z\in\mathbb{R}^{n}$ tales que $z=ax+\left(1-\alpha\right)y$ con $0\leq\alpha\leq1$.
+\end{Def}
 
-
-\end{Teo}
-
-\begin{Def} Segmento
-
+\begin{Def} [Convexo]
+Un conjunto $S\subseteq\mathbb{R}^{n}$ es \textbf{convexo} si $\forall x,y\in S$ y $\forall\alpha\in\left[0,1\right]$ se cumple que $\alpha x+\left(1-\alpha\right)y\in S$.
 \end{Def}
 
 
+\begin{Def} [Funciones convexas] Sea $f:D\rightarrow\mathbb{R}$, con $D\subset \mathbb{R}^{n}$ conjunto convexo no vac\'io.
+\begin{itemize}
 
-\begin{Def} Convexo
+\item[a) ] $f$ es convexa en $D$ s\'i y s\'olo s\'i $f\left(\alpha x +\left(1-\alpha\right)y\right)\leq\alpha f\left(x\right)+\left(1-\alpha\right)f\left(x\right)$ $\forall x,y\in D$, $\forall \alpha\in\left[0,1\right]$.
 
-\end{Def}
+\item[b)] $f$ es estrictamente convexa en $D$ s\'i y s\'olo s\'i $f\left(\alpha x +\left(1-\alpha\right)y\right)<\alpha f\left(x\right)+\left(1-\alpha\right)f\left(x\right)$ $\forall x,y\in D$, $\forall \alpha\in\left(0,1\right)$.
+
+\item[c) ] $f$ es c\'oncava s\'i y s\'olo s\'i $f\left(\alpha x +\left(1-\alpha\right)y\right)\geq\alpha f\left(x\right)+\left(1-\alpha\right)f\left(x\right)$, $\forall x,y\in D$, $\forall \alpha\in\left[0,1\right]$.
+
+\item[d) ] $f$ es c\'oncava s\'i y s\'olo s\'i $f\left(\alpha x +\left(1-\alpha\right)y\right)>\alpha f\left(x\right)+\left(1-\alpha\right)f\left(x\right)$, $\forall x,y\in D$, $\forall \alpha\in\left(0,1\right)$.
 
 
-\begin{Def} Funciones convexas
+
+\end{itemize}
 
 \end{Def}
 
 \begin{Teo} Sobre funciones convexas
+Sea $f:D\rightarrow\mathbb{R}$, con $D\subset \mathbb{R}^{n}$ conjunto convexo no vac\'io.
+\begin{itemize}
+\item[i) ] $f$ es convexa en $D$ s\'i y s\'olo s\'i la matriz $Hf\left(x\right)$ es semidefinida o definida positiva $\forall x\in D$.
 
+\item[ii) ] $f$ es c\'oncava en $D$ s\'i y s\'olo s\'i la matriz $Hf\left(x\right)$ es semidefinida o definida negativa $\forall x\in D$.
+
+\item[iii) ] Si la matriz $Hf\left(x\right)$ es definida positiva $\forall x\in D$, entonces $f$ es estr\'ictamente convexa en $D$
+
+\item[iii) ] Si la matriz $Hf\left(x\right)$ es definidanegativa $\forall x\in D$, entonces $f$ es estr\'ictamente c\'oncava en $D$
+\end{itemize}
+
+La matrix $Hf\left(x\right)$ se denomina matriz Hessiana de la funci\'on $f$:
+\begin{eqnarray*}
+Hf\left(x\right)=Hf\left(x_1,x_{2},\dots,x_{n}\right)=\left(\begin{array}{ccc}
+f^{(2)}_{x_1 x_1} & \cdots &f^{(2)}_{x_1 x_n}\\ 
+\vdots &\ddots & \vdots\\
+f^{(2)}_{x_n x_1} & \cdots &f^{(2)}_{x_n x_n}\\ 
+\end{array}\right)
+\end{eqnarray*}
 
 \end{Teo}
 
 
-\begin{Def} Funciones cuasiconvexas
 
-\end{Def}
+\begin{Propty} [Funciones convexas]
+\begin{itemize}
+\item[i) ] Sea $f : D \to \mathbb{R}$, $D \subset \mathbb{R}^n$.  
+Si $f$ es c\'oncava (convexa) en $D$, entonces es continua en el interior de $D$.
 
+\item[ii) ] Sea $f : D \to \mathbb{R}$, $D \subset \mathbb{R}^n$ conjunto convexo no vac\'io.
+\begin{itemize}
+\item[a) ] Si $f$ es estrictamente convexa (estrictamente c\'oncava) en $D$, entonces $f$ es convexa (c\'oncava) en $D$.
 
-\begin{Propty} Sobre funciones convexas
+\item[b) ] $f$ es convexa (estrictamente convexa) en $D$ si y s\'olo si $-f$ es c\'oncava (estrictamente c\'oncava) en $D$.
 
+\item[c) ] Si $f$ es convexa (c\'oncava) en $D$ y $\alpha \ge 0$, entonces $\alpha f$ es convexa (c\'oncava) en $D$.
 
-\end{Propty}
+\item[d) ] Si $f(x) > 0$ y c\'oncava en $D$, entonces
+$g(x) = \frac{1}{f(x)}$ es convexa en $D$.
+\end{itemize}
 
-\begin{Propty} Sobre funciones cuasiconvexas
+\item[iii) ] Sean $f_i : D \to \mathbb{R}$ $(1 \leq i \leq k)$, $D \subset \mathbb{R}^n$ conjunto convexo no vac\'io, funciones convexas (c\'oncavas) en $D$.
+\begin{itemize}
+\item[a) ] La suma de dichas funciones es una funci\'on convexa (c\'oncava) en $D$.
 
+\item[b) ] Si $\alpha_1, \ldots, \alpha_k$ son escalares no negativos, entonces $\sum_{i=1}^k \alpha_i f_i$ es una funci\'on convexa (c\'oncava) en $D$.
+\end{itemize}
+
+\item[iv) ] Sea $f : D \to \mathbb{R}$, $D \subset \mathbb{R}^n$ conjunto convexo no vac\'io.
+\begin{itemize}
+\item[a) ] Si $f$ es convexa en $D$, entonces $S_\alpha = \{x \in D \mid f(x) \le \alpha\}$
+es un conjunto convexo para todo $\alpha \in \mathbb{R}$.
+
+\item[b) ] Si $f$ es c\'oncava en $D$, entonces $T_\alpha = \{x \in D \mid f(x) \ge \alpha\}$
+es un conjunto convexo para todo $\alpha \in \mathbb{R}$.
+\end{itemize}
+
+\item[v) ] Sea $f : D \to \mathbb{R}$, $D \subset \mathbb{R}^n$ conjunto convexo no vac\'io y sea $g : E \to \mathbb{R}$ tal que $\mathrm{Im}\, f \subset E \subset \mathbb{R}$.
+\begin{itemize}
+\item[a) ] Si $f$ es convexa y $g$ es creciente y convexa, entonces $g \circ f$ es convexa en $D$.
+
+\item[b) ] Si $f$ es convexa y $g$ es decreciente y c\'oncava, entonces $g \circ f$ es c\'oncava en $D$.
+
+\item[c) ] Si $f$ es c\'oncava y $g$ es decreciente y convexa, entonces $g \circ f$ es convexa en $D$.
+
+\item[) ] Si $f$ es c\'oncava y $g$ es creciente y c\'oncava, entonces $g \circ f$ es c\'oncava en $D$.
+\end{itemize}
+\end{itemize}
 
 \end{Propty}
 
