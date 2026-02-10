@@ -1,0 +1,966 @@
+
+\documentclass{article}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2552}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{Created=Monday, December 12, 2005 09:01:29}
+%TCIDATA{LastRevised=Monday, December 19, 2005 07:44:11}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+%TCIDATA{ComputeDefs=
+%$q(x)=q(x_{k}+p)=\frac{1}{2}p^{T}Gp$
+%$f_{j-1}=d^{T}x(t_{j-1})$
+%}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+
+\begin{document}
+
+
+PROGRAMACI\'{O}N CUADR\'{A}TICA
+
+\bigskip
+
+Los problemas de programaci\'{o}n cuadr\'{a}tica (QP) son aquellos que
+buscan minimizar una funci\'{o}n objetivo cuadr\'{a}tica sujeta a
+restricciones lineales. El problema general de programaci\'{o}n cuadr\'{a}%
+tica se puede plantear de la siguiente forma (la numeraci\'{o}n de las f\'{o}%
+rmulas corresponde a la del libro "Numerical Optimization" de J. Nocedal y
+S. Wright, disponible en la biblioteca CIMAT):
+
+\bigskip
+
+$\min_{x}$ $q(x)=\frac{1}{2}x^{T}Gx+x^{T}d\qquad \qquad \qquad \qquad \qquad
+\ \ \ \ (16.1a)$
+
+sujeto a$\qquad a_{i}^{T}x=b_{i},\qquad i\in \varepsilon ,\qquad \qquad
+\qquad \qquad (16.1b)$
+
+\qquad \qquad $\qquad a_{i}^{T}x\geq b_{i},\qquad i\in I,\qquad \qquad
+\qquad \qquad \ (16.1c)$
+
+\bigskip
+
+donde G es una matriz sim\'{e}trica de $n$ x $n$, $\varepsilon $ e $I$ son
+conjuntos finitos de \'{\i}ndices, $d,xy$ \{$a_{i}$\}, $i$ $\in \varepsilon $
+$\cup $ $I,$son vectores con $n$ elementos$.$Si la matriz G es definida
+positiva, el problema es convexo y aproximadamente tan f\'{a}cil de resolver
+como un problema de programaci\'{o}n cuadr\'{a}tica. De lo contrario el
+problema puede presentar m\'{\i}nimos locales y ser mas dif\'{\i}cil de
+resolver.
+
+\bigskip
+
+PROGRAMACI\'{O}N CUADR\'{A}TICA CON\ RESTRICCIONES DE IGUALDAD (QPS)
+
+\bigskip
+
+Primero se revisara el caso de (QP) cuando solo hay restricciones de
+igualdad presentes. Este caso particular es \'{u}til porque funciona como
+auxiliar en casos mas generales donde para resolver un problema mas grande,
+se resuelven subproblemas con restricciones de igualdad.
+
+\bigskip
+
+Se supondr\'{a} que el n\'{u}mero de restricciones es m, y se aumira que m $%
+\leq $ n, y el problema de programaci\'{o}n cuadr\'{a}tica se establecer\'{a}
+como sigue:
+
+\bigskip
+
+$\min_{x}$ $q(x)=\frac{1}{2}x^{T}Gx+x^{T}d\qquad \qquad \qquad \qquad \qquad
+\qquad \qquad (16.3a)$
+
+sujeto a$\qquad a^{T}x=b,\qquad \qquad \qquad \qquad \qquad \qquad \qquad
+\qquad (16.3b)$
+
+donde $A$ es la matriz Jacobiana de $m$ x $n$ definida como:
+
+\bigskip
+
+$A$=[$a_{i}$]$_{i\in \varepsilon }^{T}.$
+
+\bigskip
+
+Se asumir\'{a} que A es de rango completo y que las restricciones son
+consistentes. El Lagragiano y su gradiente ser\'{a}n, respectivamente:
+
+\bigskip
+
+$\tciLaplace (x)=\frac{1}{2}x^{T}Gx+x^{T}d-\lambda ^{T}(Ax-b)$
+
+$\bigtriangledown $\bigskip $\tciLaplace (x)=Gx+d-A^{T}\lambda $
+
+donde $\lambda $ es un vector de multiplicadores de Lagrange. Aplicando las
+condiciones de Karush--Kuhn--Tucker (KKT) obtenemos el siguiente sistema:
+
+\bigskip
+
+$\left[ 
+\begin{array}{cc}
+G & -A^{T} \\ 
+A & 0%
+\end{array}%
+\right] \left[ 
+\begin{array}{c}
+x^{\ast } \\ 
+\lambda ^{\ast }%
+\end{array}%
+\right] =\left[ 
+\begin{array}{c}
+-d \\ 
+b%
+\end{array}%
+\right] \qquad \qquad \qquad \qquad \qquad (16.4)$
+
+\bigskip
+
+donde $x^{\ast }$ es una soluci\'{o}n del sistema y $\lambda ^{\ast }$ es el
+vector de multiplicadores de Lagrange en la soluci\'{o}n. Ahora, se
+descompone el vector $x^{\ast }=x+p$, donde $x$ es alguna estimaci\'{o}n de
+la soluci\'{o}n, y $p$ es el paso que se esta buscando para llegar a la
+soluci\'{o}n. Introduciendo esta notaci\'{o}n en (16.4) tenemos:
+
+\bigskip
+
+$\left[ 
+\begin{array}{cc}
+G & -A^{T} \\ 
+A & 0%
+\end{array}%
+\right] \left[ 
+\begin{array}{c}
+-p \\ 
+\lambda ^{\ast }%
+\end{array}%
+\right] =\left[ 
+\begin{array}{c}
+g \\ 
+c%
+\end{array}%
+\right] \qquad \qquad \qquad \qquad \qquad (16.5)$
+
+\bigskip
+
+donde:
+
+\bigskip
+
+$c=Ax-b,\qquad \qquad g=d+Gx,\qquad \qquad p=x^{\ast }-x.\qquad (16.6)$
+
+\bigskip
+
+La matriz de (16.5) se conoce como la matriz de Karuxh--Kuhn--Tucker (KKT).
+A continuaci\'{o}n se mencionan dos lemas que son importantes para los
+cuales la matriz es no singular y la solucion $x^{\ast }$ es global. $Z$
+denota la matriz de $n$ x ($n$--$m$) cuyas columnas son una base para el
+espacio nulo de A.
+
+\bigskip
+
+Lema 16.1.
+
+Sea A una matriz de rango por renglones y asumiendo que el Hessiano reducido 
+$Z^{T}GZ$ es positivo definido. Entonces la matriz KKT:
+
+\bigskip
+
+$K=\left[ 
+\begin{array}{cc}
+G & -A^{T} \\ 
+A & 0%
+\end{array}%
+\right] \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad (16.7)$
+
+\bigskip
+
+es no singular, y hay un \'{u}nico par de vectores $(x^{\ast },\lambda
+^{\ast })$ satisfaciendo (16.4).
+
+\bigskip
+
+Lema 16.2.
+
+\bigskip
+
+Sup\'{o}ngase que las condciones del lema 16.1 son satisfechas. Entonces el
+vector $x^{\ast }$ que satisface (16.4) es la \'{u}nica soluci\'{o}n global
+de (16.3).
+
+\bigskip
+
+Se puede encontrar las demostraciones a estos lemas en el libro "Numerical
+Optimization" en el capitulo 16.1.
+
+\bigskip
+
+RESOLVIENDO\ EL\ SISTEMA\ KKT.
+
+\bigskip
+
+Existen varios m\'{e}todos para resolver el sistema KKT (16.4) o el (16.5).
+Primero mencionaremos un lema que es \'{u}til para saber que m\'{e}todo
+conviene usar.
+
+\bigskip
+
+Lema 16.3.
+
+Sup\'{o}ngase que $A$ tiene rango completo en los renglones y que el
+Hessiano reducido $Z^{T}GZ$ es positivo definido. Entonces la matriz KKT
+(16.7) tiene $n$ eigen valores positivos, $m$ negativos y ninguno igual a
+cero.
+
+\bigskip
+
+Soluci\'{o}n Directa
+
+\bigskip
+
+Una opci\'{o}n es realizar una factorizaci\'{o}n y hacer substituci\'{o}n
+hacia adelante y hacia atr\'{a}s. La factorizaci\'{o}n de Cholesky no
+funciona ya que la matriz del sistema (16.4-5) es indefinda. Por otro lado,
+la eliminaci\'{o}n Gaussiana con pivoteo no toma en cuenta la simetr\'{\i}a
+del sistema. Lo mas efectivo es usar una factorizaci\'{o}n sim\'{e}trica
+indefinida como se describen en el cap\'{\i}tulo 6 del libro "Numerical
+Optimization". Para una matriz sim\'{e}trica K, esta factorizaci\'{o}n tiene
+la forma:
+
+\bigskip
+
+$P^{T}KP=LBL^{T}\qquad \qquad \qquad \qquad \qquad \qquad \qquad (16.12)$
+
+\bigskip
+
+donde P es una matriz de permutaci\'{o}n, L es una matriz unitaria inferior
+triangular, y B es una matriz diagonal a bloques, con bloques de 1 x 1 o 2 x
+2. Las permutaciones sim\'{e}tricas definidas por la matriz P son para
+mantener la estabilidad n\'{u}merica y para mantener la dispersidad. Este
+tipo de factorizaci\'{o}n es aproximadamente la mitad de una eliminacion
+Gaussiana. Para resolver (16.5) calculamos la factorizaci\'{o}n (16.12),
+sustituyendo la matriz KKT por K. Entonces realizamos la siguiente secuencia
+de operaciones para llegar a la soluci\'{o}n:
+
+\bigskip
+
+resolver $Ly=P^{T}\left[ 
+\begin{array}{c}
+g \\ 
+c%
+\end{array}%
+\right] $ para obtener $y$;
+
+\bigskip resolver $By^{\symbol{94}}=y$ para obtener $y^{\symbol{94}}$;
+
+resolver $L^{T}y^{-}=y^{\symbol{94}}$ para obtener $y^{-}$;
+
+hacer $\left[ 
+\begin{array}{c}
+-p \\ 
+\lambda ^{\ast }%
+\end{array}%
+\right] =Py^{-}$.
+
+\bigskip
+
+La mayor\'{\i}a de las operaciones que implica este m\'{e}todo pueden
+implementarse de manera muy eficiente. La multiplicaci\'{o}n por la matriz
+de permutaci\'{o}n $P$ y su transpuesta, por ejemplo, implica solamente el
+reacomodo de renglones o columnas. Sin embargo, puede ser dif\'{\i}cil
+definir la matriz de permutaci\'{o}n $P$.
+
+\bigskip
+
+M\'{e}todo del Espacio de Rangos.
+
+\bigskip
+
+En el m\'{e}todo del espacio de rangos, se usa la matriz G para realizar una
+eliminaci\'{o}n por bloques en el sistema (16.5). Asumiendo que G es
+positiva definida, se multiplica la primera ecuaci\'{o}n en (16.5) por $%
+AG^{-1}$ y entonces se extrae la segunda ecuaci\'{o}n para obtener un
+sistema linear en el vector $\lambda ^{\ast }$:
+
+\bigskip
+
+$(AG^{-1}A^{T})\lambda ^{\ast }=(AG^{-1}g-c).\qquad \qquad \qquad (16.13)$
+
+\bigskip
+
+Se resuelve este sistema sim\'{e}trico positivo definido para $\lambda
+^{\ast }$, y se recupera $p$ de la primera ecuaci\'{o}n en (16.5) resolviendo
+
+\bigskip
+
+$Gp=A^{T}\lambda ^{\ast }-g\qquad \qquad \qquad \qquad \qquad \qquad (16.4)$
+
+\bigskip
+
+Este m\'{e}todo requiere realizar operaciones con $G^{-1}$, as\'{\i} como
+calcular la factorizaci\'{o}n de la matriz de $m$ x $m$, $AG^{-1}A^{T}$. Por
+lo tanto es mas \'{u}til cuando:
+
+\bigskip
+
+\begin{itemize}
+\item $G$ es bien condicionada y f\'{a}cil de invertir, (duando G es
+diagonal o diagonal por bloques).
+
+\item $G^{-1}$ es conocida expl\'{\i}citamente a trav\'{e}z de una formula
+de actualizaci\'{o}n de cuasi-Newton o
+
+\item el n\'{u}mero de ecuaciones de igualdad $m$ es peque\~{n}o, de manera
+que el n\'{u}mero de resoluciones hacia atr\'{a}s necesario para formar la
+matriz $AG^{-1}A^{T}$ no es muy grande.
+\end{itemize}
+
+\bigskip
+
+PROBLEMAS CON RESTRICCIONES DE DESIGUALDAD
+
+\bigskip
+
+En el resto del cap\'{\i}tulo se discutir\'{a}n varios algoritmos para
+resolver problemas de programaci\'{o}n cuadr\'{a}tica que contienen
+restricciones de desigualdad. El m\'{e}todo de conjuntos activos es ya cl%
+\'{a}sico y puede ser aplicado tanto en m\'{e}todos convexos como no
+convexos. El m\'{e}todo de proyecci\'{o}n de gradiente tratan de acelerar la
+soluci\'{o}n, permitiendo cambios r\'{a}pidos en el conjunto activo. Los m%
+\'{e}todos de punto interior han demostrado ser efectivos para resolver
+problemas cuadr\'{a}ticos convexos grandes.
+
+\bigskip
+
+CONDICIONES DE OPTIMALIDAD PARA PROBLEMAS CON RESTRICIONES DE DESIGUALDAD
+
+\bigskip
+
+Se discutir\'{a}n algunas de las propiedades de los problemas de programaci%
+\'{o}n cuadr\'{a}tica con restricciones de desigualdad. Aplicando el
+Lagragiano a (16.1), tenemos:
+
+\bigskip
+
+$\tciLaplace (x,\lambda )=\frac{1}{2}x^{T}Gx+x^{T}d-\sum_{i\in I\cup
+\varepsilon }\lambda _{i}(a_{i}^{T}x-b_{i})\qquad \qquad \qquad \qquad
+(16.24)$
+
+\bigskip
+
+Adem\'{a}s, definimos el conjunto activo $A(x^{\ast })$ en un punto \'{o}%
+ptimo $x^{\ast }$ como los \'{\i}ndices de las restricciones en las cuales
+la igualdades se cumplen, es decir,
+
+\bigskip
+
+$A(x^{\ast })=\{i\in \varepsilon \cup I:a_{i}^{T}x^{\ast }=b_{i}\}\qquad
+\qquad \qquad \qquad \qquad \qquad \qquad (16.25)$
+
+\bigskip
+
+Simplificando las condiciones necesarias de primer orden, incluimos que
+cualquier soluci\'{o}n $x^{\ast }$ de (16.1) satisfacen las siguientes
+condiciones de primer orden:
+
+\bigskip 
+
+\begin{eqnarray*}
+Gx^{\ast }+d-\sum_{i\in A(x^{\ast })}\lambda _{i}^{\ast }a_{i} &=&0,\text{ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (16.26a)} \\
+a_{i}^{T}x^{\ast } &=&b_{i},\text{ para toda }i\in A(x^{\ast }),\text{ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (16.26b)} \\
+a_{i}^{T}x^{\ast } &\geq &b_{i},\text{ para toda }i\in I\setminus A(x^{\ast
+}),\text{ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (16.26c)} \\
+\lambda _{i}^{\ast } &\geq &0,\text{para toda i}\in I\cap A(x^{\ast }),\text{
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (16.26d)}
+\end{eqnarray*}
+
+\bigskip 
+
+Las condiciones suficientes de segundo orden para que $x^{\ast }$ sea un
+minimizador local son satisfechas si $Z^{T}GZ$ es positiva definida, donde $Z
+$ es  una matriz base del espacio nulo para la matriz Jacobiana de
+restriciones activas
+
+\bigskip 
+
+$[a_{i}]_{i\in A(x^{\ast })}^{T}.$
+
+\bigskip 
+
+$x^{\ast }$ es la soluci\'{o}n global cuando las restricciones son de
+igualdad. Cuando $G$ no es positiva definida, pueden existir varios m\'{\i}%
+nimos locales estrictos en los cuales las condiciones necesarias de segundo
+orden son satisfechas. Estos problemas son conocidos como como no "convexos"
+o "indefinidos" y pueden causar complicaciones en los algoritmos.
+
+\bigskip 
+
+DEGENERACI\'{O}N
+
+\bigskip 
+
+Otra propiedad que puede causar problemas para algunos algoritmos es la
+degeneraci\'{o}n. Esto se refiere a situaciones en las que pueden ocurrir
+alguna de estas cosas
+
+\begin{itemize}
+\item los gradientes de las restricciones activas $a_{i}$, $i\in A(x^{\ast })
+$, son linealmente dependientes en la solucion $x^{\ast }$, o
+
+\item la condici\'{o}n de complementariedad estricta no se cumple, o sea que
+el vector de multplicadores de Lagrange en el \'{o}ptimo contiene elementos $%
+\lambda _{i}=0$ para algunos \'{\i}ndices $i\in A(x^{\ast })$. 
+\end{itemize}
+
+La degeneraci\'{o}n puede traer como consecuencia, dificultad en el c\'{a}%
+lculo de la matriz de espacio nulo $Z$, lo que a su vez provoca que la
+matriz $AG^{-1}A^{T}$ del m\'{e}todo del espacio de rangos sea singular.
+Cuando las restricciones son d\'{e}bilmente activas, puede ser dif\'{\i}cil
+para un algoritmo decidir si esas restricciones son activas o no.
+
+\bigskip 
+
+\bigskip M\'{E}TODO DE LOS CONJUNTOS ACTIVOS PARA PROGRAMACI\'{O}N CUADR\'{A}%
+TICA
+
+Estos m\'{e}todos son efectivos para problemas peque\~{n}os y medianos.
+Asumen inicialmente que $G$ es semidefinida positiva. Escencialmente
+trabajan con subconjuntos de restricciones que est\'{a}n activas, y
+actualizan este subconjunto hasta dar con la soluci\'{o}n \'{o}ptima. El m%
+\'{e}todo simplex es un m\'{e}todo de conjunto activos, que entre sus
+caracter\'{\i}sticas esta que la soluci\'{o}n siempre se encuentra en uno de
+los v\'{e}rtices del poliotipo que forman las restricciones.\bigskip 
+
+Los tres m\'{e}todos de conjuntos activos que se manejan son:
+
+\begin{itemize}
+\item Primal dual-$(x,\lambda )$
+
+\item Primal-$(x)$
+
+\item Duales-$(\lambda )$
+\end{itemize}
+
+Usualmente se asume un punto factible $x_{0}$ y se contin\'{u}a con una
+secuencia que permanece factible. Cada paso consiste en resolver un
+subproblema cuadr\'{a}tico con restricciones de igualdad. A cada conjunto de
+restricciones se le denomina "working set" o conjunto activo y es denotado
+en la $k-$\'{e}sima iteraci\'{o}n como $W_{k}$ y contiene a todas las
+restricciones de igualdad y algunas de desigualdad (activas). 
+
+\bigskip 
+
+Dada $x_{k}$ y $W_{k}$ revisamos si $x_{k}$ minimiza $q(x)=x^{T}Gx+x^{T}d$
+en el subespacio definido por $W_{k}$, si no, calculamos un paso $p$
+resolviendo el subproblema con restricciones de igualdad. Definimos:
+
+\bigskip 
+
+$p=x-x_{k}$, \ \ \ \ \ \ \ \ \ $q_{k}=Gx_{k}+d$
+
+\bigskip 
+
+luego
+
+\bigskip 
+
+$q(x)=q(x_{k}+p)=\frac{1}{2}p^{T}Gp+g_{k}^{T}p+c$
+
+\bigskip 
+
+donde $c=\frac{1}{2}x_{k}^{T}Gx_{k}+d^{T}x_{k}$ es una constante, y por lo
+tanto podemos desecharla sin alterar el m\'{\i}nimo del problema. Se escribe
+el subproblema de programaci\'{o}n cuadr\'{a}tica a resolver en la $k$-\'{e}%
+sima iteraci\'{o}n como:
+
+\bigskip 
+
+\begin{eqnarray*}
+&&\min_{p}\frac{1}{2}p^{T}Gpg_{k}^{T}p \\
+\text{sujeto a }a_{i}^{T}p &=&0\text{ \ para toda }i\in W_{k}
+\end{eqnarray*}
+
+$\bigskip $
+
+Y se le llama $p_{k}$ a la soluci\'{o}n de este subproblema. Sup\'{o}ngase
+que $p_{k}\neq 0$. Debe decidirse que tan lejos se avanza en esta direcci%
+\'{o}n. Si $x_{k}+p_{k}$ es factible para todas las restricciones, entonces
+la variable $x_{k+1}$ ser\'{a} igual a esta suma. De lo contrario, el valor
+de $x_{k+1}$ ser\'{a} igual a:
+
+\bigskip 
+
+\[
+x_{k+1}=x_{k}+\alpha _{k}p_{k}
+\]
+
+donde $\alpha $ es el valor mas alto en  $[0,1)$ que no viola ninguna
+restricci\'{o}n. Para cualquier valor de alfa, las restricciones del
+conjunto activo se cumplen, por lo tanto, para todas las restricciones que
+no estan en el conjunto activo se debe cumplir que $a_{i}^{T}(x_{k}+\alpha
+_{k}p_{k})\geq \alpha _{i}^{T}x_{k}\geq b_{i}$. De esto se deriva que para
+todas las restricciones fuera del conjunto activo, se debe cumplir que:
+
+\bigskip 
+
+$\alpha _{k}\leq \frac{b_{i}-a_{i}^{T}x_{k}}{a_{i}^{T}p_{k}}$
+
+\bigskip 
+
+Como se busca hacer $\alpha _{k}$ lo m\'{a}s grande posible en el intervalo $%
+[0,1]$ sujeto a mantener la factibilidad, se tiene la siguiente definici\'{o}%
+n:
+
+\bigskip 
+
+$\alpha _{k}=\min \left( 1,\min_{i\notin W_{k},a_{i}^{T}p_{k\,0}}\frac{%
+b_{i}-a_{i}^{T}x_{k}}{a_{i}^{T}p_{k}}\right) \qquad \qquad \qquad (16.29)$
+
+\bigskip 
+
+Se le llama restricci\'{o}n bloqueadora a aquella para la cual el m\'{\i}%
+nimo en (16.29) es alcanzado. Si $\alpha =1$, entonces no hay restricciones
+bloqueadoras y no se agrega ning\'{u}n nuevo elemento al conjunto activo. Si 
+$\alpha \,<1$, el conjunto activo es actualizado agregando una de las
+restricciones bloqueadoras. Seguimos iterando de esta manera hasta encontrar
+un punto que minimiza la funci\'{o}n objetivo para el conjunto activo
+actual. Esto se detecta f\'{a}cilmente, ya que el vector $p_{k}$ ser\'{a}
+igual a cero.
+
+Lo que sigue es examinar los multiplicadores de Lagrange del conjunto activo
+actual. Si alguno de los multiplicadores de las restricciones de desigualdad
+es menor a cero, entonces la condici\'{o}n (16.26d) no se cumple. Se debe
+retirar tal restricci\'{o}n del conjunto activo y seguir con el algoritmo.
+
+\bigskip 
+
+A continuaci\'{o}n se presenta un pseudoc\'{o}digo del m\'{e}todo de los
+conjuntos activos:
+
+\bigskip 
+
+CONJUNTOS ACTIVOS
+
+Calcular un punto inicial factible $x_{0}$;
+
+Hacer $W_{0}$ un subconjunto de las restricciones activas en $x_{0}$
+
+\textbf{para} $k=0,1,2,...$
+
+\qquad Resolver (16.27) y encontrar $pk$;
+
+\qquad \textbf{si} $p_{k}=0$
+
+\qquad \qquad Calcular los multiplicadores de Lagange $\hat{\lambda}_{i}$
+que satisface (16.30),
+
+\qquad \qquad \qquad Hacer $\hat{W}=W_{k}$;
+
+\qquad \qquad \textbf{si} $\hat{\lambda}_{i}\geq 0$ para todo $i\in
+W_{k}\cap I$;
+
+\qquad \qquad \qquad DETENER con las soluci\'{o}n $x^{\ast }=x_{k}$;
+
+\qquad \qquad \textbf{De lo contrario}
+
+\qquad \qquad \qquad Hacer $j=\arg \min_{j\in W_{k}\cap i}\hat{\lambda}_{j}$;
+
+\qquad \qquad \qquad $x_{k+1}=x_{k}$; $W_{k+1}\leftarrow W_{k}\diagdown \{j\}
+$;
+
+\qquad \textbf{De lo contrario} ($^{\ast }p_{k}\neq 0^{\ast }$)
+
+\qquad \qquad Calcular $\alpha _{k}$ de (16.29);
+
+\qquad \qquad $x_{k+1}\leftarrow x_{k}+\alpha _{k}p_{k}$;
+
+\qquad \qquad \textbf{Si} existen restricciones bloqueadoras
+
+\qquad \qquad \qquad Obtener $W_{k+1}$ agregando una de las restricciones
+bloqueadoras a $W_{k+1}$;
+
+\qquad \qquad \textbf{De lo contrario}
+
+\qquad \qquad \qquad $W_{k+1}\leftarrow W_{k}$
+
+\textbf{fin} ($^{\ast }$\textbf{para}$^{\ast }$)
+
+\bigskip M\'{E}TODO DE PROYECCI\'{O}N DE GRADIENTE
+
+\bigskip 
+
+Este m\'{e}todo esta dise\~{n}ado para realizar cambios rapidos en el
+conjunto de restricciones activas. Es muy eficiente e problemas de
+restricciones de cota y puede aplicarse por igual a problemas convexos y no
+convexos. Se mantendr\'{a} el enfoque en problemas del tipo siguiente:
+
+\bigskip 
+
+$\min_{x}q(x)=\frac{1}{2}x^{T}Gx+x^{T}d\qquad \qquad \qquad $(16.43a)
+
+sujeto a $l\leq x\leq u$,\qquad \qquad \qquad \qquad \qquad (16.43b)
+
+\bigskip 
+
+donde G es sim\'{e}trica y $l$ y $u$ son vectores de l\'{\i}mite superior e
+inferior en los componentes de $x$., la zona factible tiene forma de caja.
+Cada iteraci\'{o}n del m\'{e}todo de proyecci\'{o}n de gradiente consiste en
+dos etapas. En la primera se mueve en la direcci\'{o}n de m\'{a}ximo
+descenso a partir del punto acutal $x$. Cuando un l\'{\i}mite es alcanzado,
+la direcci\'{o}n de b\'{u}squeda es "doblada" de forma que se mantiene
+factible. Buscamos a lo largo de este camino a pedazos y localizamos el
+primer minimizador local de $q$ al que se llamar\'{a} $x^{c}$, tambi\'{e}n
+conocido como punto de Cauchy. En la segunda etapa se "explora" la cara de
+la caja donde se encuentra el punto de Cauchy resolviendo un subproblema en
+el cual los componenetes activos $x_{i}$ para cada $i\in A(x^{c})$ est\'{a}n
+fijos a los valores $x_{i}^{c}$. Se usar\'{a}n super \'{\i}ndices para
+indicar el n\'{u}mero de iteraci\'{o}n y sub\'{\i}ndices para indicar
+elementos de un vector.
+
+\bigskip 
+
+C\'{A}LCULO\ DEL\ PUNTO\ DE CAUCHY
+
+\bigskip 
+
+La proyecci\'{o}n de un punto arbitrario $x$ dentro de la regi\'{o}n
+factible $\Omega $ (16.43b) esta dada por 
+
+\bigskip 
+
+$P(x,l,u)=\left\{ 
+\begin{array}{cc}
+l_{i} & x_{i}<l_{i} \\ 
+x_{i} & l_{i}\leq x_{i}\leq u_{i} \\ 
+u_{i} & x_{i}\geq u_{i}%
+\end{array}%
+\right. $
+
+\bigskip 
+
+para el $i-$\'{e}simo componente de $x_{i}$.
+
+\bigskip 
+
+Luego el camino recto a pedazos, que inicia en $x_{0}$, a lo largo de $-g$,
+donde $g=Gx+d$, est\'{a} dado por:
+
+\bigskip 
+
+$x(t)=P(x^{0}-tg,l,u)$
+
+\bigskip 
+
+N\'{o}tese que el problema de cota puede tener a lo m\'{a}s $n$
+restricciones activas.
+
+\bigskip 
+
+Ahora se calcula el punto de Cauchy $x^{c}$, el cual se define como el
+primer minimizador local de la funcion cuadr\'{a}tica a pedazos $q(x(t))$,
+para $t\geq 0$. Este minimizador se obtiene examinando cada uno de los
+segmentos de l\'{\i}nea que forman $x(t)$. Para realizar esta b\'{u}squeda,
+se determinan los valores $t$ para los cuales ocurren los dobleces o
+quiebres. Primero se identifica los valores de $t$ para los cuales cada
+componente alcanza su l\'{\i}mite a lo largo de la direcci\'{o}n -$g$. Estos
+valores $\hat{t}_{i}$ se obtienen por las siguientes f\'{o}rmulas explicitas:
+
+\bigskip 
+
+$\hat{t}_{i}=\left\{ 
+\begin{array}{cc}
+(x_{i}^{0}-u_{i})/g_{i} & \text{si }g_{i}<0\text{ y }u_{i}<\infty  \\ 
+(x_{i}^{0}-l_{i})/g_{i} & \text{si }g_{i}>0\text{ y }u_{i}>-\infty  \\ 
+\infty  & \text{si no ocurre lo anterior}%
+\end{array}%
+\right. \qquad \qquad (16.46)$
+
+\bigskip 
+
+Los componentes de $x(t)$ para cualquer $t$ son:
+
+\bigskip 
+
+$x_{i}(t)=\left\{ 
+\begin{array}{cc}
+x_{i}^{0}-tg_{i} & \text{si }t\leq \hat{t}_{i} \\ 
+x_{i}^{0}-\hat{t}g_{i} & \text{de lo contrario}%
+\end{array}%
+\right. $
+
+\bigskip 
+
+Para buscar el primer minimizador local a lo largo de $P(x^{0}-tg,l,u)$, se
+eliminan los valors duplicados y cero de $\hat{t}_{i}$ del conjunto \{$\hat{t%
+}_{1},\hat{t}_{2},...,\hat{t}_{n}$\} y se ordenan los elementos restantes en
+una secuencia ordenada $t_{1},t_{2},...$ tal que $0\leq t_{1}\leq t_{2}...,$
+luego se examinan los int\'{e}rvalos $[0,t_{1}],[t_{1},t_{2}],...$ en turno.
+Suponiendo que se han examinado los int\'{e}rvalos hasta $[t_{j-2},t_{j-1}]$
+para alg\'{u}n $j$, y determinado que el minimizador local esta en alg\'{u}n
+valor $t\geq t_{j-1}$. Para el int\'{e}rvalo $[t_{j-1},t_{j}]$ entre el ($j-1
+$)avo punto de quiebre, tenemos que
+
+\bigskip 
+
+$x(t)=x(t_{j-1})+\bigtriangleup tp^{j-1}$
+
+\bigskip 
+
+donde
+
+\bigskip 
+
+$\bigtriangleup t=t-t_{j-1},$ \ \ \ \ \ $\bigtriangleup t\in \lbrack
+0,t_{j}-t_{j-1}],$
+
+\bigskip 
+
+y
+
+\bigskip 
+
+$p^{j-1}=\left\{ 
+\begin{array}{cc}
+-g_{i} & \text{si }t_{j-1}\,\hat{t}_{i,} \\ 
+0 & \text{de lo contrario}%
+\end{array}%
+\right. \qquad \qquad \qquad (16.47)$
+
+\bigskip 
+
+Usando esta notaci\'{o}n, escribimos la cuadr\'{a}tica (16.43a) en el
+segmento de l\'{\i}nea $[x(t_{j-1}),x(t_{j})]$ como
+
+\bigskip 
+
+$q(x(t))=d^{T}(x(t_{j-1})+\Delta tp^{j-1})+\frac{1}{2}(x(t_{j-1})+\Delta
+tp^{j-1})^{T}G(x(t_{j-1})+\Delta tp^{j-1})$,
+
+\bigskip 
+
+donde $\Delta t\in \lbrack 0,t_{j}-t_{j-1}]$.
+
+\bigskip 
+
+Expandiendo y agrupando los coeficientes de $1$, $\Delta t$, y $(\Delta
+t)^{2}$, encontramos que
+
+\bigskip 
+
+$q(x(t))=f_{j-1}+f_{j-1}^{\prime }+\frac{1}{2}f_{j-1}^{\prime \prime
+}(\Delta t)^{2}$, \ \ \ \ \ \ $\Delta t\in \lbrack 0,t_{j}-t_{j-1}]$, \ \ \
+\ \ \ \ \ \ \ (16.48)
+
+\bigskip 
+
+donde los coeficientes $f_{j-1},f_{j-1}^{\prime },$ y $f_{j-1}^{\prime
+\prime }$ se definen como
+
+\bigskip 
+
+\begin{eqnarray*}
+f_{j-1} &=&d^{T}x(t_{j-1})+\frac{1}{2}x(t_{j-1})^{T}Gx(t_{j-1}), \\
+f_{j-1}^{\prime } &=&d^{T}p^{j-1}+x(t_{j-1})^{T}Gp^{j-1}, \\
+f_{j-1}^{\prime \prime } &=&(p^{j-1})^{T}Gp^{j-1}.
+\end{eqnarray*}
+
+\bigskip 
+
+diferenciando (16.48) e igualando a cero
+
+\bigskip 
+
+$\Delta t^{\ast }=-f_{j-1}/f_{j-1}^{\prime \prime }$
+
+\bigskip 
+
+si $\Delta t^{\ast }\in \lbrack 0,t_{j}-t_{j-1}]$ tenemos el primer m\'{\i}%
+nimo local $x^{c}$. Si $\Delta t^{\ast }$ no cae en el int\'{e}rvalo, se
+busca en el int\'{e}rvalo siguiente $[t_{j},t_{j+1}]$ hasta encontrar un $%
+x^{c}$.
+
+\bigskip 
+
+Ahora se contin\'{u}a con el segundo paso del m\'{e}todo. Dado $x^{c}$ y su
+conjunto activo $A(x^{c})$ se resuelve aproximadamente el siguiente problema
+de programaci\'{o}n cuadr\'{a}tica:
+
+\bigskip 
+
+\begin{eqnarray*}
+\min_{x}q(x) &=&\frac{1}{2}x^{T}Gx+x^{T}d\text{ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ (16.49a)} \\
+\text{sujeto a }x_{i} &=&x_{i}^{c}\text{, \ \ \ \ }i\in A(x^{c})\text{ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ (16.49b)} \\
+l_{i} &\leq &x_{i}\leq u_{i},\text{ \ \ \ }i\notin A(x^{c})\text{ \ \ \ \ \
+\ \ \ (16.49c)}
+\end{eqnarray*}
+
+\bigskip 
+
+A continuaci\'{o}n se presenta el m\'{e}todo de proyecci\'{o}n de gradiente
+para programaci\'{o}n cuadr\'{a}tica.
+
+\bigskip 
+
+Calcular un punto inicial factible $x^{0}$;
+
+\textbf{para} $k=0,1,2,...$
+
+\qquad \textbf{si} $x^{k}$ satisface las condiciones KKT para (16.43)
+
+\qquad \qquad PARAR con la soluci\'{o}n $x^{\ast }=x^{k}$;
+
+\qquad Hacer $x=x^{k}$ y encontrar el punto de Cauchy $x^{c}$;
+
+\qquad Encontrar una soluci\'{o}n aproximada $x^{+}$ de (16.49) tal que $%
+q(x^{+})<q(x^{c})$ y $x^{+}$ es factible;
+
+\qquad $x^{k+1}\leftarrow x^{+};$
+
+\textbf{fin} (\textbf{para})
+
+\bigskip 
+
+M\'{E}TODOS DE PUNTO INTERIOR
+
+\bigskip 
+
+Se pueden usar los m\'{e}todos de punto interior primales duales para
+resolver los problemas de progrmaci\'{o}n cuadr\'{a}tica. Se considerar\'{a}
+el caso convexo ($G$ es semipositiva definida). Planteamos el problema de la
+siguiente forma:
+
+\bigskip 
+
+\begin{eqnarray*}
+\min_{x}q(x) &=&\frac{1}{2}x^{T}Gx+d^{T}x\text{ \ \ \ \ \ (16.50a)} \\
+\text{sujeto a }Ax &\geq &b\text{ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ (16.50b)}
+\end{eqnarray*}
+
+\bigskip 
+
+\bigskip $G$ es positiva definida, $A$ es una mariz de $m$ x $n$ donde $m$ $%
+\leq n$, $x\in R^{n}$, $b\in R^{m}$.
+
+\bigskip 
+
+Si $x^{\ast }$ es soluci\'{o}n del problema, entonces existe un vector $%
+\lambda $ tal que se satisfacen las condiciones de KKT. Calculando el
+Lagragiano e igualando a cero
+
+\bigskip 
+
+\begin{eqnarray*}
+Gx+d-A\lambda  &=&0, \\
+Ax-b &\geq &0, \\
+\lambda ,x &\geq &0
+\end{eqnarray*}%
+$\bigskip $
+
+\bigskip 
+
+Introduciendo variables de holgura $y=Ax-b$.
+
+\bigskip 
+
+\begin{eqnarray*}
+Gx-A^{T}\lambda +d &=&0, \\
+Ax-y-b &=&0, \\
+y_{i}\lambda _{i} &=&0, \\
+(\lambda ,y) &\geq &0
+\end{eqnarray*}
+
+\bigskip 
+
+El problema obtenido equivale a resolver:
+
+\bigskip 
+
+$F(x,y,\lambda )=\left\{ 
+\begin{array}{c}
+Gx-A^{T}y+d \\ 
+Ax-y-b \\ 
+Y\Lambda e%
+\end{array}%
+=0\right. $
+
+\bigskip 
+
+sujeto a $(y,\lambda )\geq 0$
+
+\bigskip 
+
+$Y=diag(y_{1},y_{2},..,y_{m})$
+
+$\Lambda =diag(\lambda _{1},\lambda _{2},..,\lambda _{m})$
+
+\bigskip 
+
+Usando el m\'{e}todo del camino central, el sistema KKT queda:
+
+\bigskip 
+
+$\left[ 
+\begin{array}{ccc}
+G & -A^{T} & 0 \\ 
+A & -I & 0 \\ 
+0 & \Lambda  & Y%
+\end{array}%
+\right] \left[ 
+\begin{array}{c}
+\Delta x \\ 
+\Delta y \\ 
+\Delta \lambda 
+\end{array}%
+\right] =\left[ 
+\begin{array}{c}
+-rd \\ 
+-rb \\ 
+-Y\Lambda e+\sigma \mu e%
+\end{array}%
+\right] $
+
+\bigskip 
+
+donde 
+
+\begin{eqnarray*}
+rd &=&Gx-A^{T}\lambda +d, \\
+rb &=&Ax-y-b, \\
+(y,\lambda ) &\geq &0, \\
+\mu  &=&\frac{1}{m}\sum_{i=1}^{m}y_{i}\lambda _{i}, \\
+\sigma  &\in &[0,1]
+\end{eqnarray*}
+
+\end{document}

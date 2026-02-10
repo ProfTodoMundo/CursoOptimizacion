@@ -1,0 +1,187 @@
+\documentclass{Article}
+\usepackage[dvips]{graphicx}
+
+\title{Optimizaci\'on II. \\
+    Programaci\'on Cuadr\'atica Secuencial}
+
+
+
+\begin{document}
+\maketitle
+El M\'etodo de Programaci\'on Cuadr\'atica Secuencial es uno de los m\'as efectivos para problemas de optimizaci\'on
+con restricciones no lineales.
+\begin{itemize}
+\item Es apropiado para peque\~nos y grandes problemas
+\item Es muy bueno resolviendo  problemas con no-linealidades significativas.
+\end{itemize}
+La idea general del m\'etodo consiste en, a partir de un problema dado, construir una serie de problemas
+cuadr\'aticos equivalente al primero, por lo que  resolver el problema se reducir\'ia a resolver esta secuancia de problemas QP.\\
+
+\textsc{\underline{m\'etodo local sqp}}:\\\\
+Comencemos por el problema:\\
+\begin{eqnarray}
+% \nonumber to remove numbering (before each equation)
+  \min f(x) &&    \label{eq:18_1a}\\
+  sa: c(x) &=& 0  \label{eq:18_1b}
+\end{eqnarray}
+donde $f: R^n \rightarrow R$ y $c: R^n \rightarrow R^m$ son funciones suaves.\\\\
+Este problema solo contiene restricciones de igualdad, el cual no es muy com\'un, pero la comprensi\'on de (\ref{eq:18_1}) es muy
+importante en el dise\~no de SQP para problemas con restricciones m\'as generales.\\
+La idea de SQP es modelar (\ref{eq:18_1a}) en la iteraci\'on $x_k$ como un subproblema cuadr\'atico y usar el minimizador de este subproblema
+para definir la pr\'oxima iteraci\'on.\\
+
+Se conoce que el Lagrangiano para este problema es: $\mathcal{L}(x,\lambda)=
+f(x) - \lambda^Tc(x)$.\\\\
+Denotemos por $A(x)$ el jacobiano de las restricciones, es decir: \\
+\begin{equation}\label{}
+   A(x) = [\nabla c_1(x), \nabla c_2(x) , ..., \nabla c_m(x)]^T \, \label{eq:18_2}
+\end{equation}
+donde $c_i(x)$ son las componentes del vector $c(x)$.\\
+
+Especificando las restricciones de KKT para el caso de las restricciones de igualdad, obtenemos el
+siguiente sistema de ecuaciones de$n+m$ ecuaciones con $n+m$ inc\'ognitas $x$ y $\lambda$.\\
+\begin{equation}\label{}
+    F(x,\lambda) = \left[\begin{array}{c}
+                        \nabla f(x) - A(x)^T\lambda\\
+                        c(x)
+                         \end{array}\right] = 0 \label{eq:18_3}
+\end{equation}
+Si $A_*$ es de rango completo, cualquier soluci\'on $(x^*, \lambda^*)$ del problema (\ref{eq:18_1a}) satisface (\ref{eq:18_3}).\\\\
+La expresi\'on (\ref{eq:18_3}) sugiere usar el M\'etodo de Newton.\\\\
+El Jacobiano de (\ref{eq:18_3}) esta dado por:\\
+\begin{equation}\label{}
+    \left[\begin{array}{cc}
+        W(x,\lambda) & -A(x)^T \\
+        A(x)         & 0
+        \end{array}\right], \label{eq:18_4}
+\end{equation}
+donde $W$ denota el Hessiano del Lagrangiano,\\\\
+\begin{equation}\label{}
+    W(x,\lambda) = \nabla_{xx}^2\mathcal{L}(x,\lambda) \label{eq:18_5}
+\end{equation}
+
+El paso de Newton para la iteraci\'on $(x_k, \lambda_k)$ es dada por:\\
+\begin{equation}\label{eq:18_6}
+    \left[ \begin{array}{c}
+                x_{k+1}\\
+                \lambda_{k+1}
+    \end{array}\right]=
+        \left[ \begin{array}{c}
+                x_{k}\\
+                \lambda_{k}
+    \end{array}\right]
+    +
+        \left[ \begin{array}{c}
+                p_{k}\\
+                p_{\lambda}
+    \end{array}\right]
+\end{equation}
+donde $p_k = x_{k+1} - x_k$ y $p_\lambda = \lambda_{k+1} - \lambda_k$ resuelven el sistema de KKT,
+\begin{equation}\label{eq:18_7}
+        \left[ \begin{array}{cc}
+                W_k & -A_k^T\\
+                A_k & 0
+    \end{array}\right]
+            \left[ \begin{array}{c}
+                p_{k}\\
+                p_{\lambda}
+    \end{array}\right] =
+            \left[ \begin{array}{c}
+                -\nabla f_k + A^T\lambda_k\\
+                -c_k
+    \end{array}\right]
+\end{equation}
+
+Esta iteraci\'on, la cual es llamada a veces como M\'etodo de Newton-Lagrange, est\'a bien definida cuando la matriz de KKT
+es no singular.\\
+La no singularidad es consecuancia de las siguientes condiciones:\\
+\begin{description}
+    \item[a] El Jacobiano de las restricciones $A_k$ es de rango completo por columnas.
+    \item[b] La matriz $W_k$ es positiva definida en el espacio tangente de las restricciones, $d^TW_kd>0$ para
+            todo $d \neq 0$ tal que $A_kd = 0$.
+\end{description}
+La primera condici\'on nos garantiza LICQ para los gradientes de las restricciones y la segunda garantiza que se cumplan las condiciones suficientes de segundo orden en
+la soluci\'on.\\
+
+Hay un enfoque alternativo para las iteraciones (\ref{eq:18_6}) y (\ref{eq:18_7}). Supongamos que en la iteraci\'on $x_k,\lambda_k$ se define el problema.\\
+\begin{eqnarray}
+% \nonumber to remove numbering (before each equation)
+  \min_p  \frac{1}{2}p^TW_kp + \nabla f_k^Tp &&  \label{eq:18_8}\\
+  s.a: A_kp + c_k &=& 0
+\end{eqnarray}
+
+\textit{Nota:} El problema anterior se obtiene de la aproximaci\'on de 2do orden del lagrangiano $\mathcal{L}(x_k+p)$ .\\\\
+\begin{eqnarray*}
+  \mathcal{L}(x_k+p) & \approx & \mathcal{L}(x_k) +\nabla \mathcal{L}(x_k)^Tp + \frac{1}{2} p^T W_kp\\
+  & = & f_k - \lambda^Tc_k +(\nabla f_k -  \nabla c_k \lambda)^Tp + \frac{1}{2} p^T W_kp \\
+  & = & f_k - \lambda^T(c_k +  \nabla c_k^Tp) + \nabla f_k^T p + \frac{1}{2} p^T W_kp \\
+  & = & f_k - \lambda^T(c_k +  A_kp) + \nabla f_k^T p + \frac{1}{2} p^T W_kp
+\end{eqnarray*}
+
+Si se cumplen las condiciones anteriores para el problema (\ref{eq:18_1a}) entonces el problema anterior tiene la \'unica soluci\'on
+$(x_k, \lambda_k)$.\\
+\begin{eqnarray}
+% \nonumber to remove numbering (before each equation)
+  W_kp_k + \nabla f_k -A_k^T\mu_k&=& 0 \\
+  A_kp_k + c_k &=& 0
+\end{eqnarray}
+lo anterior lo podemos escribir:\\
+\begin{equation}\label{}
+    \left[\begin{array}{cc}
+        W_k  & -A_k^T\\
+        A_k  & 0
+        \end{array}\right]
+        \left[\begin{array}{c}
+        p_k\\
+        \mu_k
+        \end{array}\right]=
+        \left[\begin{array}{c}
+        -\nabla f_k\\
+        -c_k
+        \end{array}\right]
+\end{equation}
+
+Desarrollando (\ref{eq:18_7}) tenemos que:\\
+\begin{equation}\label{}
+    \left[\begin{array}{cc}
+        W_k  & -A_k^T\\
+        A_k  & 0
+        \end{array}\right]
+        \left[\begin{array}{c}
+        p_k\\
+        \lambda_{k+1}
+        \end{array}\right]=
+        \left[\begin{array}{c}
+        -\nabla f_k\\
+        -c_k
+        \end{array}\right]
+\end{equation}
+Como la matriz es no singular, entonces la soluci\'on  es \'unica y por tanto $\lambda_{k+1} = \mu_k$\\\\
+\textbf{Algoritmo 18.1}(Algoritmo Local SQP)\\\\
+Selecionar un punto inicial $(x_0, \lambda_0)$\\
+for  k = 0, 1, 2, ...\\
+\indent Evaluar $f_k, \nabla f_k, W_k =W(x_k,\lambda_k), c_k$ y $A_k $;\\
+\indent Resolver (\ref{eq:18_8}) para obtener $p_k$ y $\mu_k$;\\
+\indent $x_{k+1} \leftarrow x_k + p_k$;$\lambda_{k+1} \leftarrow \lambda_k + p_k$;\\
+\indent Si \textit{se cumple la prueba de convergencia}\\
+\indent \indent     PARAR con la soluci\'on aproximada $(x_{k+1}, \lambda_{k+1})$;\\
+end (for)\\
+
+\underline{\textsc{restricciones de desigualdad}}\\\\
+El modelo SQP puede ser extendido f\'acilmente al problema general de programaci\'on no lineal:\\
+\begin{eqnarray}
+% \nonumber to remove numbering (before each equation)
+  \min f(x)&&  \label{eq:18_11}\\
+  s.a: c_i(x) & = & 0, \; i \in E \\
+  c_i(x) & \geq & 0, \; i \in  I
+\end{eqnarray}
+Para definir el subproblema se linealizan tanto las restricciones de igualdad como de desigualdad, y obtenemos:\\
+\begin{eqnarray}
+% \nonumber to remove numbering (before each equation)
+  \min \frac{1}{2} p^TW_kp + \nabla f_k^Tp&&  \label{eq:18_12}\\
+  s.a: \nabla c_i(x_k)^Tp + c_i(x_k) & = & 0, \; i \in E \\
+       \nabla c_i(x_k)^Tp + c_i(x_k) & \geq & 0, \; i \in  I
+\end{eqnarray}
+
+Y para resolver este problema se pueden usar los algoritmos de programaci\'on cuadr\'atica vistos en secciones anteriores.
+\end{document}

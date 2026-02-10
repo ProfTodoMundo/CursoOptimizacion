@@ -1,0 +1,136 @@
+\documentclass{report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+%\usepackage{latexsym}
+%\parskip 1ex
+%\linespread{1.3}%
+%\oddsidemargin 0.2in%
+%\textwidth 6in%
+%\topmargin 0in%
+%\textheight 8.5in
+%\parindent 2em
+\decimalpoint
+
+\begin{document}
+
+\title{Cap\'itulo $\#8$ de Optimizaci\'on II}
+
+\author{Angel Eduardo Mu\~noz Zavala}
+%\institute{Center for Research in Mathematics (CIMAT)\\
+%Department of Computer Science\\
+%A.P. 402, Guanajuato, Gto. 36240, M\'{e}xico\\
+%\email{aemz,artha@cimat.mx}}
+
+\maketitle
+
+
+%\begin{keywords}
+%Constrained Optimization, Evolutionary computation, Particle swarm
+%optimization.
+%\end{keywords}
+
+
+
+\section{El camino m\'as corto}
+El camino m\'as corto de un nodo $i$ a un nodo $j$, en un grafo dirigido o no dirigido, es un problema de combinatoria; ya que existe un n\'umero finito de posibilidades para viajar del nodo $i$ al nodo $j$, pasando a lo m\'as una vez por el mismo nodo.\bigskip
+
+Como mencione anteriormente, el an\'alisis es aplicable a grafos dirigidos o no dirigidos; imaginemos que tenemos el siguiente grafo dirigido que se muestra en la Figura \ref{fig:grafo}:
+  
+\begin{figure}[hb]
+    \centering
+    \includegraphics[width=6cm]{grafo.eps}
+    \caption{Grafo Dirigido}
+    \label{fig:grafo}
+\end{figure}
+
+Es un ejemplo muy sencillo, donde a simple vista podemos obtener el camino m\'as corto de un nodo a otro. Por ejemplo, el camino mas corto del nodo $0$ al nodo $7$, posee una distancia de $5$ unidades y 3 caminos diferentes con esa misma distancia; como s eilustra en la Figura \ref{fig:grafo}.\bigskip
+
+Desafortunadamente, no todos los grafos son asi de sencillos, pueden tener un enorme n\'umero de nodos y a\'un m\'as aristas. Por este motivo, existen algoritmos que nos sirven para resolver nuestro problema de una forma iterativa. Pero antes de ver uno de esos algoritmos, primero debemos realizar ciertas definiciones.
+
+
+
+\section{Conceptos B\'asicos}
+Primero definamos un grafo $D$, como el conjunto de nodos $V$ y de aristas $A$; $D=\{V,A\}$. Y sea $C_{i,j}$ el costo de viajar del nodo $i$ al nodo $j$; es decir, la distancia entre 2 nodos contenidos en $V$.\bigskip
+
+Entonces, el costo total de ir de un nodo $X$ a un nodo $Y$, es la suma de todas las aristas visitadas; es decir:\bigskip
+
+\noindent Sea $P(V_i,V_j)$ el camino a seguir para viajar del nodo $V_i$ al nodo $V_j$, que pertencen al conjunto de nodos $V$: 
+
+\begin{eqnarray}
+	P(V_i,V_j) & = & \left\{ w_0,w_1,...,w_n : w_0=V_i, w_n=V_j,\right.\nonumber\\ 
+	& & \left. (w_k,w_{k+1})\in A, 0 \leq k < n \right\}
+\end{eqnarray}\bigskip
+
+\noindent El costo de un camino $P(V_i,V_j)$ se define como:
+
+\begin{eqnarray}
+	C(P(V_i,V_j)) = \sum_{k=0}^{n-1} C_{w_k,w_{k+1}} \qquad \forall w_k \in P(V_i,V_j)
+\end{eqnarray}\bigskip
+
+El problema de encontrar el camino m\'as corto del nodo $V_i$ al nodo $V_j$, se puede plantear como:
+
+\begin{eqnarray}
+	\min_{P(V_i,V_j)} C(P(V_i,V_j))
+\end{eqnarray}\bigskip
+
+Una forma de atacar el problema es:
+
+\begin{eqnarray}
+	\min_{P(V_i,X)} C(P(V_i,X)) \qquad \forall X \in V
+\end{eqnarray}\bigskip
+
+Por lo tanto, equivale a encontrar los caminos m\'as cortos del nodo $V_i$ a cualquier nodo $X \in V$. Y para este problema de combinatoria usaremos el algoritmo que se revisa en la siguiente secci\'on.
+
+
+
+\section{M\'etodo Dijkstra}
+El algoritmo de Dijkstra, se utiliza para encontrar la distancia m\'as corta de un nodo $V_i$ a otro nodo $X$ que pertenecen a $V$, resolviendo una seria de subproblemas o subgrafos que van encontrando las distancias m\'as cortas entre $V_i$ y $Y \in W$, donde $W_k$ es el conjunto de nodos del subgrafo en la iteraci\'on k-\'esima.\bigskip
+
+El algoritmo de Dijkstra se presenta en la Figura \ref{fig:dijkstra}, donde $V$ es el conjunto de nodos y $A$ el conjunto de aristas que pertenecen al grafo $D$.
+
+\begin{figure}[htb]
+    \small
+    \centering
+    \begin{tabular}{|p{8cm}|}
+    \hline
+		Dado $D=\{V,A\}$ con costos $C_{i,j}\geq 0$ $\forall (i,j)\in A$ \\
+		Y dado el nodo $s\in V$\\ \\ 
+		Inicializar $W_0=\{s\}, \rho(s)=0$\\ \\
+		$\forall y \in V-W_0$ \\ 
+\begin{eqnarray}
+	\rho(y)=\left\{
+	\begin{array}{ccc}
+	C_{s,y} & si & (s,y)\in A\\
+	\infty & si & (s,y)\notin A\\
+	\end{array}
+	\right.\nonumber
+\end{eqnarray}\bigskip\\
+		While $W_k\neq V$\\\\
+		\qquad Encontrar $\rho(x)=\min\{\rho(y): y\notin W\}$\\\\
+		\qquad Hacer $W_{k+1}=W_k \cup \{x\}$\\\\
+		\qquad $\forall y \in V-W_{k+1}$ \\\\
+		\qquad \qquad $\rho(y)=\min\{\rho(y),\rho(x)+C_{x,y}\}$\\
+\begin{eqnarray}
+	C_{x,y}=\left\{
+	\begin{array}{ccc}
+	C_{x,y} & si & (x,y)\in A\\
+	\infty & si & (x,y)\notin A\\
+	\end{array}
+	\right.\nonumber
+\end{eqnarray}\bigskip
+    End\\
+    \hline
+    \end{tabular}
+    \normalsize
+    \caption{Pseudoc\'odigo del M\'etodo Dijkstra}
+    \label{fig:dijkstra}
+\end{figure}
+
+\noindent donde $\rho(z)$ es la distancia del camino m\'as corto del nodo $s$ al nodo $z$. Pero, este m\'etodo no tiene el procedimiento necesario para conocer el camino que se siguio para llegar de $s$ a cada nodo; que es en especial el tema de este reporte. Para conocer el camino que el m\'etodo de Dijkstra siguio para encontrar la distancia minima de un nodo $s$ a un nodo $y$.\bigskip
+
+Notemos que en cualquier instante de la propagaci\'on existe un conjunto $W$ de nodos con costo $\rho(x) \forall x \in V$. Por \'ultimo, el camino m\'as corto de $s$ a $y$ utiliza utiliza unicamente nodos en $W$, de otra forma existir\'ia un $z \notin V$ cuya $\rho(z)<\rho(y)$ y tendr\'ia que insertarse primero en $W$, para despu\'es llegar a $y$. 
+\end{document}
+
+

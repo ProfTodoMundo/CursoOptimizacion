@@ -1,0 +1,431 @@
+\documentclass[letterpaper,10pt]{report}
+\usepackage[dvips]{graphicx}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{verbatim}
+\usepackage{amsbsy}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\newtheorem{definicion}{Definici\'on}[chapter]
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{lema}{Lema}[chapter]
+
+% Title Page
+\title{Notas de Optimizaci\'on II. \\Unidad 3}
+\author{V\'ictor Mu\~niz S\'anchez}
+
+
+\begin{document}
+\maketitle
+
+\chapter{M\'etodos de Punto Interior para Programaci\'on Lineal}
+
+Estos m\'etodos surgen a mediados de la d\'ecada de los 80's, y sin \'utiles para problemas lineales de gran escala. Est\'an basados en el m\'etodo de Newton.	\\
+
+Consideremos el problema de PL en forma est\'andar:
+
+\begin{equation}\label{eq14-1}
+\min c^T x \textrm{, subject to } Ax=b, x\geq 0
+\end{equation}
+
+donde $c$ y $x$ son vectores en $\mathbb{R}^n$, $b$ es un vector en $\mathbb{R}^m$ y $A$ es una matriz de $m\times n$.	\\
+Los algoritmos de PI se caracterizan por requerir que todas las iteraciones satisfagan las restricciones de desigualdad en forma estricta (de ah\'i el nombre de \emph{punto interior}). El m\'etodo Simplex act\'ua alrededor de la frontera del pol\'itopo factible, probando una secuencia de v\'ertices hasta que encuentra el \'optimo. Los m\'etodos de PI se aproximan a la frontera del conjunto factible solamente en el l\'imite. Pueden aproximar la soluci\'on ya sea desde el interior o el exterior de la regi\'on factible, pero no en la frontera de esta regi\'on.	\\
+\section{M\'etodos Primal-Dual}
+
+El problema dual para (\ref{eq14-1}) es
+
+\begin{equation}\label{eq14-2}
+\max b^T \lambda \textrm{, subject to } A^T \lambda+s=c, s\geq 0
+\end{equation}
+
+donde $\lambda \in \mathbb{R}^m$ y $s \in \mathbb{R}^n$. Las condiciones de Karush-Kuhn-Tucker (KKT) que caracterizan las soluciones para el problema dual son:
+
+\begin{eqnarray}\label{eq14-3}
+A^T \lambda + s	&	=	&	c	\\
+A x				&	=	&	b	\\
+x^T s			&	=	&	0	\\
+(x,s)			&	\geq	& 0
+\end{eqnarray}
+
+Los m\'etodos primal-dual encuentran soluciones $(x^{*},\lambda^{*},s^{*})$ de este sistema aplicando variantes del m\'etodo de Newton para las tres igualdades en (\ref{eq14-3}) y modificando las direcciones de b\'usqueda y tama\~nos de paso tales que las desigualdades  $(x,s)\geq 0$ se satisfacen \emph{estr\'ictamente} en cada iteraci\'on.	\\
+
+Recordemos el m\'etodo de Newton, que busca resolver:
+
+\begin{displaymath}
+\min f(x) \textrm{, }\quad  x \in \mathbb{R}^n 
+\end{displaymath}
+
+si $f(x)$ es convexa, equivale a resolver
+
+\begin{displaymath}
+\nabla f(x) = 0
+\end{displaymath}
+
+usando Newton:
+
+\begin{displaymath}
+x^{k+1}=x^k + \alpha p
+\end{displaymath}
+
+con $p$ como soluci\'on de 
+
+\begin{displaymath}
+\nabla^2 f(x^k)p^k = -\nabla f(x^k)
+\end{displaymath}
+
+Entonces puede verse el m\'etodo de optimizaci\'on de Newton como un m\'etodo de soluci\'on de sistemas no lineales.	\\
+
+Las ecuaciones (\ref{eq14-3}) pueden reescribirse en la siguiente forma (sistema KKT):
+
+\begin{equation}\label{eq14-4}
+F(x,\lambda,s)=
+\left( 
+\begin{array}{c}
+A^T \lambda + s	- c	\\
+A x -	b	\\
+XSe
+\end{array}
+\right)
+=0
+\end{equation}
+
+\begin{equation}\label{eq14-4b}
+(x,s) \geq 0
+\end{equation}
+
+donde
+
+\begin{equation}\label{eq14-5}
+X=\textrm{diag}(x_1, x_2, \ldots ,x_n), \; S=\textrm{diag}(s_1, s_2, \ldots ,s_n)
+\end{equation}
+
+y $e=(1,1,\ldots ,1)^T$. Entonces, los m\'etodos primal-dual generan iteraciones $(x^{k},\lambda^{k},s^{k})$ que satisfacen estrictamente las restricciones de frontera (\ref{eq14-4b}). Definamos los conjuntos primal-dual \emph{factible} $\mathcal{F}$ y \emph{estrictamente factible} $\mathcal{F}^o$ como
+
+\begin{eqnarray}
+\mathcal{F}	&	=	&\left\lbrace (x,\lambda,s)|Ax=b, A^T \lambda+s=c, 
+						(x,s) \geq 0 \right\rbrace 	\label{eq14-6a}	\\
+\mathcal{F}^o	&	=	&\left\lbrace (x,\lambda,s)|Ax=b, A^T \lambda+s=c, 
+						(x,s) > 0 \right\rbrace  \label{eq14-6b}
+\end{eqnarray}
+
+as\'i, podemos escribir la condici\'on de factibilidad estricta como $(x^{k},\lambda^{k},s^{k})\in \mathcal{F}^o$.	\\
+Como la mayor\'ia de los algoritmos iterativos de optimizaci\'on, los m\'etodos primal-dual de PI tienen un procedimiento para determinar las direcciones de descenso y el tama\~no de paso. Esto se realiza siguiendo el m\'etodo de Newton, el cual forma un modelo lineal para $F$ alrededor del punto actual y obtiene la direcci\'on de b\'usqueda $(\triangle x,\triangle\lambda,\triangle s)$ resolviendo el sistema de ecuaciones lineales que se muestra:
+
+\begin{displaymath}
+J(x,\lambda,s)
+\left( 
+\begin{array}{c}
+\triangle x	\\
+\triangle\lambda\\
+\triangle s
+\end{array}
+\right)
+=-F(x,\lambda,s)
+\end{displaymath}
+
+donde $J$ es el Jacobiano de $F$. Si $(x^{k},\lambda^{k},s^{k})\in \mathcal{F}^o$, las ecuaciones de Newton se vuelven:
+
+\begin{equation}\label{eq14-7}
+\left( 
+\begin{array}{ccc}
+0	&	A^T	&	I	\\
+A	&	0	&	0	\\
+S	&	0	&	X	\\
+\end{array}
+\right)
+\left( 
+\begin{array}{c}
+\triangle x	\\
+\triangle\lambda\\
+\triangle s
+\end{array}
+\right)
+=
+\left( 
+\begin{array}{c}
+0	\\
+0	\\
+-XSe
+\end{array}
+\right)
+\end{equation}
+
+y la nueva iteraci\'on ser\'a $(x,\lambda,s)+ \alpha(\triangle x,\triangle\lambda,\triangle s)$, pero que no viole la restricci\'on (\ref{eq14-4b}).	\\
+
+Un problema es encontrar un punto inicial estrictamente factible, pero el algoritmo anterior puede modificarse en la siguiente forma. Definamos los residuales para las dos ecuaciones lineales mediante
+
+\begin{equation}\label{eq14-14}
+r_b = Ax-b, \; r_c = A^T \lambda + s - c
+\end{equation}
+
+y la ecuaci\'on de paso queda como
+
+\begin{equation}\label{eq14-15}
+\left( 
+\begin{array}{ccc}
+0	&	A^T	&	I	\\
+A	&	0	&	0	\\
+S	&	0	&	X	\\
+\end{array}
+\right)
+\left( 
+\begin{array}{c}
+\triangle x	\\
+\triangle\lambda \\
+\triangle s
+\end{array}
+\right)
+=
+\left( 
+\begin{array}{c}
+-r_c	\\
+-r_b	\\
+-X S e + \sigma \mu e
+\end{array}
+\right)
+(x,s) \geq 0
+\end{equation}
+
+y esta direcci\'on de b\'usqueda es a\'un un paso de Newton que trata de corregir la no factibilidad en las ecuaciones de igualdad en un solo paso. Puede verse que estos residuales se vuelven cero en las primeras iteraciones del algoritmo y las subsecuentes iteraciones permanecen estr\'ictamente factibles. A este procedimiento se le llama \emph{m\'etodos de punto interior infactibles}.	\\
+N\'otese que si tengo un $(x^0, \lambda^0, s^0) \in \mathcal{F}$ pero no son \'optimos y adem\'as se satisface $x_i s_i \approx 0$, entonces una soluci\'on trivial al sistema de Newton es $(x^0, \lambda^0, s^0)=0$ y no puede avanzar. La soluci\'on es modificar el vector $XSe$ de forma tal que se garantice que no sea cero:
+
+\begin{displaymath}
+\left( 
+\begin{array}{c}
+-r_c	\\
+-r_b	\\
+-X S e + e \tau
+\end{array}
+\right)
+\end{displaymath}
+
+con $\tau \rightarrow 0$ para $k$ grandes. Una opci\'on para elegir $\tau$ es $\tau=0.99^k$. Una mejor opci\'on es elegirla dependiendo de los productos $s_i x_i$:
+
+\begin{displaymath}
+\tau = \sigma \mu
+\end{displaymath}
+
+con $\sigma \in [0,1]$ como \emph{par\'ametro de centrado}  y $\mu$ como \emph{medida de dualidad} definida por
+
+\begin{equation}\label{eq14-10}
+\mu = \frac{1}{n} \sum_{i=1}^n x_i s_i = \frac{x^T s}{n}
+\end{equation}
+
+Si $\sigma_i=1$, entonces $s_i x_i=\mu$ y el m\'etodo sesga la iteraci\'on al interior del octante. Por ejemplo, para $i=2$, el comportamiento ser\'ia como se muestra en la figura \ref{fPI}.
+
+\begin{figure}[htbp]
+\center{\includegraphics[width=6cm]{/home/victor/optimizacionII/tareas/reportes/figuras/pinterior.eps}}
+\label{fPI}
+\end{figure}
+
+Con todo esto, podemos expresar un esquema de un m\'etodo primal-dual de PI, que se muestra en el algoritmo~\ref{algprimaldual}.
+
+\begin{algorithm}
+\caption{Primal-Dual}
+\label{algprimaldual}
+\begin{algorithmic}[1]
+\STATE Given $(x^0, \lambda^0, s^0) \in \mathcal{F}^o$
+\FOR{$k=0,1,2\ldots$}
+\STATE Solve
+
+\begin{equation}\label{eq14-12}
+\left( 
+\begin{array}{ccc}
+0	&	A^T	&	I	\\
+A	&	0	&	0	\\
+S^k	&	0	&	X^k	\\
+\end{array}
+\right)
+\left( 
+\begin{array}{c}
+\triangle x^k	\\
+\triangle\lambda^k \\
+\triangle s^k
+\end{array}
+\right)
+=
+\left( 
+\begin{array}{c}
+0	\\
+0	\\
+-X^k S^k e + \sigma_k \mu_k e
+\end{array}
+\right)
+\end{equation}
+where $\sigma_k \in [0,1]$ and $\mu_k \frac{(x^k)^T s^k}{n}$
+
+\STATE Set
+
+\begin{equation}\label{eq14-13}
+(x^{k+1}, \lambda^{k+1}, s^{k+1}) = (x^k, \lambda^k, s^k) + \alpha_k(\triangle x^k,\triangle\lambda^k,\triangle s^k)
+\end{equation}
+choosing $\alpha_k$ such that $(x^{k+1},s^{k+1})>0$
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\section{Resoluci\'on del sistema de Newton}
+Del tercer rengl\'on de (\ref{eq14-15}):
+
+\begin{displaymath}
+S \triangle x + X \triangle s = -XSe + \sigma\mu e
+\end{displaymath}
+
+luego,
+
+\begin{displaymath}
+\triangle s = -Se + \sigma\mu X^{-1}e - X^{-1} S \triangle x
+\end{displaymath}
+
+obteni\'endose
+
+\begin{displaymath}
+\left( 
+\begin{array}{ccc}
+0	&	A^T	&	I	\\
+A	&	0	&	0	\\
+\end{array}
+\right)
+\left( 
+\begin{array}{c}
+\triangle x	\\
+\triangle\lambda \\
+-s + \sigma\mu X^{-1}e - X^{-1} S \triangle x
+\end{array}
+\right)
+=
+\left( 
+\begin{array}{c}
+-r_c	\\
+-r_b	\\
+\end{array}
+\right)
+\end{displaymath}
+
+Del primer rengl\'on:
+
+
+\begin{displaymath}
+A^T \triangle \lambda + (-s + \sigma\mu X^{-1}e - X^{-1} S \triangle x)=-r_c
+\end{displaymath}
+
+luego
+
+\begin{displaymath}
+A^T \triangle \lambda - X^{-1} S \triangle x = -r_c + s - \sigma\mu X^{-1}e 
+\end{displaymath}
+
+Definiendo
+
+\begin{displaymath}
+D \stackrel{{\scriptsize\textrm{def}}}{=} S^{-1/2}X^{1/2}
+\end{displaymath}
+
+\begin{displaymath}
+-D^{-2} = -X^{-1}S
+\end{displaymath}
+
+y tenemos:
+
+\begin{equation}\label{eq14-26}
+\left( 
+\begin{array}{cc}
+0	&	A	\\
+A^T	&	-D^{-2}	\\
+\end{array}
+\right)
+\left( 
+\begin{array}{c}
+\triangle\lambda \\
+\triangle x	\\
+\end{array}
+\right)
+=
+\left( 
+\begin{array}{c}
+-r_b	\\
+-r_c + s - \sigma\mu X^{-1}e 
+\end{array}
+\right)
+\end{equation}
+con
+\begin{displaymath}
+\triangle s = -s + \sigma\mu X^{-1}e - X^{-1} S^{-1} \triangle x
+\end{displaymath}
+
+A este sistema se le conoce como \emph{Sistema Aumentado}.
+
+Como $X^{-1}S$ es diagonal y no singular, podemos resolver para $\triangle x$ del segundo rengl\'on de (\ref{eq14-26}), obteniendo:
+
+\begin{eqnarray}
+AD^2A^T \triangle\lambda	&	=	&	-r_b + A(-S^{-1}Xr_c + x - \sigma\mu S^{-1}e)\label{eq14-28a}	\\
+	\triangle s				&	=	&	-r_c - A^T \triangle \lambda	\\
+	\triangle x				&	=	&	-x + \sigma\mu S^{-1}e - S^{-1}X \triangle s
+\end{eqnarray}
+
+que se conocen como \emph{Ecuaciones Normales}.
+
+\section{M\'etodos seguidores de la ruta (path-following)}
+
+Estos m\'etodos restringen expl\'icitamente las iteraciones a una vecindad de la ruta central $\mathcal{C}$ y siguen $\mathcal{C}$ para una soluci\'on del problema de PL. Previniendo que las iteraciones se acerquen demasiado a la frontera del octante no negativo, se asegura que las direcciones de b\'usqueda calculadas en cada iteraci\'on hagan al menos alg\'una cantidad m\'inima de progreso hacia la soluci\'on.	\\
+Definamos las siguientes vecindades:
+
+\begin{equation}\label{eq14-16}
+\mathcal{N}_{2}(\theta) = \left\lbrace (x, \lambda, s) \in \mathcal{F}^o : 
+								||XSe-\mu e||_2 \leq \theta_\mu \right\rbrace 
+\end{equation}
+
+para un $\theta \in [0,1)$
+
+\begin{equation}\label{eq14-17}
+\mathcal{N}_{-\infty}(\gamma) = \left\lbrace (x, \lambda, s) \in \mathcal{F}^o | 
+								x_is_i \geq \gamma\mu \textrm{, para }i=1,2,\ldots,n \right\rbrace 
+\end{equation}
+
+para alg\'un $\gamma \in (0,1]$. \\
+
+$\mathcal{N}_{2}(\theta)$ es m\'as restrictiva, no importa si $\theta \approx 1$, algunos puntos de $\mathcal{F}^o$ no estar\'an en $\mathcal{N}_{2}$. A medida que se acerca uno al \'optimo, $x_i s_i \rightarrow 0$ y se reduce $\mathcal{N}$, tambi\'en $\mu \rightarrow 0$. La figura \ref{frc} muestra el comportamiento del algoritmo.
+
+\begin{figure}[htbp]
+\center{\includegraphics[width=6cm]{/home/victor/optimizacionII/tareas/reportes/figuras/rutacentral.eps}}
+\label{frc}
+\end{figure}
+
+El algoritmo~\ref{alglongstep}, muestra el procedimiento para un m\'etodo seguidor de ruta, que puede hacer un r\'apido progreso por el uso de la vecindad amplia $\mathcal{N}_{-\infty}(\gamma)$ para $\gamma$ cercana a 0. 
+Aqu\'i, 
+
+\begin{displaymath}
+(x^k(\alpha),\lambda^k(\alpha),s^k(\alpha)) = (x^k,\lambda^k,s^k) + \alpha(\triangle x^k,\triangle\lambda^k,\triangle s^k)
+\end{displaymath}
+
+\begin{algorithm}
+\caption{Long-Step Path-Following}
+\label{alglongstep}
+\begin{algorithmic}[1]
+\STATE Given $\gamma, \sigma_{min}, \sigma_{max}$, con $\gamma \in (0,1), 0<\sigma_{min}<\sigma_{max}<1$, and $(x^0, \lambda^0, s^0) \in \mathcal{N}_{-\infty}(\gamma)$
+\FOR{$k=0,1,2\ldots$}
+\STATE Choose $\sigma_k \in [\sigma_{min},\sigma_{max}]$
+\STATE Solve (\ref{eq14-12}) to obtain $(\triangle x^k,\triangle\lambda^k,\triangle s^k)$
+\STATE Choose $\alpha_k$ as the largest value of $\alpha \in [0,1]$ such that
+\begin{equation}\label{eq14-19}
+(x^k(\alpha),\lambda^k(\alpha),s^k(\alpha)) \in \mathcal{N}_{-\infty}(\gamma)
+\end{equation}
+\STATE Set
+\begin{displaymath}
+(x^{k+1}, \lambda^{k+1}, s^{k+1}) = (x^k(\alpha_k),\lambda^k(\alpha_k),s^k(\alpha_k))
+\end{displaymath}
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{thebibliography}{1}
+
+\bibitem{nocedal}
+Jorge Nocedal y Stephen J. Wright, \emph{Numerical optimization}, Springer Series in Operations Research, Springer.
+\end{thebibliography}
+
+
+\end{document}
