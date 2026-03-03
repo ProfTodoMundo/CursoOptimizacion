@@ -4,6 +4,10 @@
 \section{Fundamentos}
 %===========================================
 
+%===========================================
+\subsection{\'Algebra Lineal}
+%===========================================
+
 \begin{Def}[Valores y vectores propios]
 Sea $A$ una matrix de $n\times n$, $v$ vector de dimensi\'on $n$ y $\lambda$ escalar. Se dice que $v$ es un vector propio de $A$ y $\lambda$ es vector propio de $A$ si se cumple
 \begin{eqnarray*}
@@ -37,13 +41,6 @@ Sea $A$ una matriz de $n\times n$, y sean $\lambda_{1},\lambda_{2},\dots,\lambda
 \begin{Def}
 Sea $\lambda$ valor propio de $A$, la multiplicidad geom\'etrica de $\lambda$ es la dimensi\'on del espacio propio correspondiente a $\lambda$.
 \end{Def}
-
-
-\begin{Propty}[Matrices]
-
-
-\end{Propty}
-
 
 \begin{Def}Semejantes
 Sean $A$ y $B$ matrices de $n\times n$ son semejantes si existe una matriz invertible $C$ de $n\times n$ tal que
@@ -256,20 +253,27 @@ es un conjunto convexo para todo $\alpha \in \mathbb{R}$.
 
 \end{Propty}
 
+\subsubsection{Ejercicios}
+
+\begin{enumerate}
+\item
+\end{enumerate}
+
+
 %===========================================
-\section{Introducci\'on}
+\subsection{Optimizaci\'on}
 %===========================================
 
 \begin{Def}[Extremos locales y globales]
 \begin{itemize}
-\item[i) ] Una función $f(x)=f(x_1,\ldots,x_n)$ alcanza un \textit{máximo relativo o local} en un punto $x_0=(x_1^0,\ldots,x_n^0)$ de su dominio si se verifica que $f(x)\le f(x_0)$ para todo punto $x$ perteneciente a una vecindad de $x_0$.
+\item[i) ] Una funci\'on $f(x)=f(x_1,\ldots,x_n)$ alcanza un \textit{m\'aximo relativo o local} en un punto $x_0=(x_1^0,\ldots,x_n^0)$ de su dominio si se verifica que $f(x)\le f(x_0)$ para todo punto $x$ perteneciente a una vecindad de $x_0$.
 
-\item[ii) ] Una función $f(x)=f(x_1,\ldots,x_n)$ alcanza un \textit{mínimo relativo o local} en un punto  $x_0=(x_1^0,\ldots,x_n^0)$ de su dominio si se verifica que $f(x)\ge f(x_0)$ para todo punto $x$ perteneciente a un entorno de $x_0$.
+\item[ii) ] Una funci\'on $f(x)=f(x_1,\ldots,x_n)$ alcanza un \textit{m\'inimo relativo o local} en un punto  $x_0=(x_1^0,\ldots,x_n^0)$ de su dominio si se verifica que $f(x)\ge f(x_0)$ para todo punto $x$ perteneciente a un entorno de $x_0$.
 \end{itemize}
 \end{Def}
 
 \begin{Obs}
-Si las desigualdades de las definiciones anteriores se cumplen para todos los puntos $x$ pertenecientes al dominio de la función $f$, entonces $f$ alcanza un \textit{máximo absoluto o global} (o \textit{mínimo absoluto o global}) en el punto $x_0$.
+Si las desigualdades de las definiciones anteriores se cumplen para todos los puntos $x$ pertenecientes al dominio de la funci\'on $f$, entonces $f$ alcanza un \textit{m\'aximo absoluto o global} (o \textit{m\'inimo absoluto o global}) en el punto $x_0$.
 \end{Obs}
 
 
@@ -279,227 +283,634 @@ Un problema de optimizaci\'on sin restricciones se puede formular de la siguient
 \end{eqnarray*}
 
 
-\subsection*{2.1.1 Condición necesaria para la existencia de óptimos locales}
+\subsection*{Condici\'on necesaria para la existencia de \'optimos locales}
 
-\begin{Teo} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, $f\in C^1(D)$. Si en $x_0\in D$ la función $f$ presenta un óptimo local, entonces $\nabla f(x_0)=0$, es decir, $f'_{x_1}(x_0)=0,\ldots,f'_{x_n}(x_0)=0$.
+\begin{Teo} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, $f\in C^1(D)$. Si en $x_0\in D$ la funci\'on $f$ presenta un \'optimo local, entonces $\nabla f(x_0)=0$, es decir, $f'_{x_1}(x_0)=0,\ldots,f'_{x_n}(x_0)=0$.
 \end{Teo}
 
-\begin{Def} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, $f\in C^1(D)$ y $x_0\in D$. Se dice que $x_0$ es un \textit{punto crítico} de $f$ si $\nabla f(x_0)=0$.
+\begin{Def} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, $f\in C^1(D)$ y $x_0\in D$. Se dice que $x_0$ es un \textit{punto cr\'itico} de $f$ si $\nabla f(x_0)=0$.
 \end{Def}
 
 
-\begin{Teo} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, $f\in C^2(D)$ y sea $x_0\in D$ un punto crítico de $f$. Se cumple lo siguiente:
+\begin{Teo} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, $f\in C^2(D)$ y sea $x_0\in D$ un punto cr\'itico de $f$. Se cumple lo siguiente:
 
 \begin{itemize}
-\item[(i)] Si la forma cuadrática dada por $Hf(x_0)$ es definida positiva, entonces $f$ presenta en $x_0$ un mínimo local.
-\item[(ii)] Si la forma cuadrática dada por $Hf(x_0)$ es definida negativa, entonces $f$ presenta en $x_0$ un máximo local.
-\item[(iii)] Si la forma cuadrática dada por $Hf(x_0)$ es indefinida, entonces $f$ presenta en $x_0$ un punto silla.
+\item[(i)] Si la forma cuadr\'atica dada por $Hf(x_0)$ es definida positiva, entonces $f$ presenta en $x_0$ un m\'inimo local.
+\item[(ii)] Si la forma cuadr\'atica dada por $Hf(x_0)$ es definida negativa, entonces $f$ presenta en $x_0$ un m\'aximo local.
+\item[(iii)] Si la forma cuadr\'atica dada por $Hf(x_0)$ es indefinida, entonces $f$ presenta en $x_0$ un punto silla.
 \end{itemize}
 \end{Teo}
 
 
-\textbf{Observación:} Si $x_0$ es un punto crítico de $f$ pero $f$ no tiene un óptimo local en $x_0$, se dice que
-$x_0$ es un \textit{punto silla} o \textit{punto de ensilladura} de $f$.
+\begin{Obs} Si $x_0$ es un punto cr\'itico de $f$ pero $f$ no tiene un \'optimo local en $x_0$, se dice que $x_0$ es un \textit{punto silla} o \textit{punto de ensilladura} de $f$, es decir, $x_0$ es un punto silla de $f$ si y s\'olo si existen puntos $x$ e $y$ en una vecindad de $x_0$ tales que  $f(x)<f(x_0)<f(y)$.
+\end{Obs}
 
-Es decir, $x_0$ es un punto silla de $f$ si y sólo si existen puntos $x$ e $y$ en un entorno de $x_0$ que verifican
-\[
-f(x)<f(x_0)<f(y).
-\]
-
-\subsection*{2.1.5 Condición suficiente de optimalidad global}
-
-\textbf{Teorema 12:} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto y convexo, $f\in C^1(D)$ y sea
-$x_0\in D$ un punto crítico de $f$. Se verifica:
+\begin{Teo} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto y convexo, $f\in C^1(D)$ y sea $x_0\in D$ un punto cr\'itico de $f$. Entonces se cumple lo siguiente:
 
 \begin{itemize}
-\item[(i)] Si $f$ es convexa en $D$, entonces $f$ presenta en $x_0$ un mínimo global.
-\item[(ii)] Si $f$ es estrictamente convexa en $D$, entonces $f$ presenta en $x_0$ un mínimo global único.
-\item[(iii)] Si $f$ es cóncava en $D$, entonces $f$ presenta en $x_0$ un máximo global.
-\item[(iv)] Si $f$ es estrictamente cóncava en $D$, entonces $f$ presenta en $x_0$ un máximo global único.
+\item[(i)] Si $f$ es convexa en $D$, entonces $f$ presenta en $x_0$ un m\'inimo global.
+\item[(ii)] Si $f$ es estrictamente convexa en $D$, entonces $f$ presenta en $x_0$ un m\'inimo global \'unico.
+\item[(iii)] Si $f$ es c\'oncava en $D$, entonces $f$ presenta en $x_0$ un m\'aximo global.
+\item[(iv)] Si $f$ es estrictamente c\'oncava en $D$, entonces $f$ presenta en $x_0$ un m\'aximo global \'unico.
 \end{itemize}
+\end{Teo}
 
-\textbf{Observación:} Si $f$ es cóncava (convexa) en $D$, con $D$ abierto y convexo y $f\in C^1(D)$, la condición
-$\nabla f(x_0)=0$ para $x_0\in D$ es necesaria y suficiente para que la función $f$ alcance en $x_0$ un máximo
-(mínimo) global.
+\begin{Obs} Si $f$ es c\'oncava (convexa) en $D$, con $D$ abierto y convexo y $f\in C^1(D)$, la condici\'on $\nabla f(x_0)=0$ para $x_0\in D$ es necesaria y suficiente para que la funci\'on $f$ alcance en $x_0$ un m\'aximo(m\'inimo) global.
+\end{Obs}
 
-\subsection*{2.1.6 Composición de funciones}
-
-\textbf{Proposición 13:} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, y sea $g:A\to\mathbb{R}$ de manera
-que $\text{Im }f\subset A\subset\mathbb{R}$. $f\in C^1(D)$ y sea $x_0\in D$ un punto crítico de $f$. Se verifica:
+\begin{Prop} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, y sea $g:A\to\mathbb{R}$  tal que $Im\left(f\right)\subset A\subset\mathbb{R}$. $f\in C^1(D)$ y sea $x_0\in D$ un punto cr\'itico de $f$. Entonces se cumple que:
 
 \begin{itemize}
-\item[(i)] Si $g$ es creciente, entonces los puntos donde $f$ alcanza máximos (mínimos) en $D$ coinciden con los puntos
-donde $g\circ f$ alcanza máximos (mínimos) en $D$.
-\item[(ii)] Si $g$ es decreciente, entonces los puntos donde $f$ alcanza máximos (mínimos) en $D$ coinciden con los puntos
-donde $g\circ f$ alcanza mínimos (máximos) en $D$.
+\item[(i)] Si $g$ es creciente, entonces los puntos donde $f$ alcanza m\'aximos (m\'inimos) en $D$ coinciden con los puntos donde $g\circ f$ alcanza m\'aximos (m\'inimos) en $D$.
+\item[(ii)] Si $g$ es decreciente, entonces los puntos donde $f$ alcanza m\'aximos (m\'inimos) en $D$ coinciden con los puntos donde $g\circ f$ alcanza m\'inimos (m\'aximos) en $D$.
 \end{itemize}
+\end{Prop}
 
-\subsection*{2.1.7 Análisis de sensibilidad}
+\subsection{Ejercicios}
 
-Consideremos el siguiente problema:
+
+\begin{Ejer}
+Dada la siguiente matriz:
 \[
-\max_x f(x,a) \qquad (P)
-\]
-donde $f\in C^1(D)$ con $x\in\mathbb{R}^n$ (variables de decisión) y $a\in\mathbb{R}$ (parámetro).
-
-Sea $A\subset\mathbb{R}$ un conjunto abierto y supongamos que para todo $a\in A$ existe
-$x^*(a)=(x_1^*(a),\ldots,x_n^*(a))$ solución óptima del problema $(P)$ con $x^*$ una función $C^1$.
-
-Si definimos la función objetivo indirecta o función valor como
-\[
-\varphi(a)=f(x^*(a),a),
-\]
-se verifica:
-\[
-\frac{d\varphi(a)}{da}=\frac{\partial f(x^*(a),a)}{\partial a}.
+A=
+\begin{pmatrix}
+2 & 0 & 6\\
+0 & 0 & 1\\
+1 & 0 & 1
+\end{pmatrix}
 \]
 
-El resultado anterior se conoce como \textbf{Teorema de la Envolvente}.
+Hallar los autovalores y autovectores de la matriz $A$.
+\end{Ejer}
 
-\section*{2.2 Optimización con restricciones de igualdad}
-
-Un programa matemático con restricciones de igualdad se formula de la siguiente manera $(m<n)$:
+\begin{Ejer}
+Dada la siguiente matriz:
 \[
-(P)\quad
+A=
+\begin{pmatrix}
+1 & 0 & 1\\
+0 & 1 & 3\\
+0 & 0 & 2
+\end{pmatrix}
+\]
+
+Hallar los autovalores y autovectores de la matriz $A$.
+\end{Ejer}
+
+
+\begin{Ejer}
+
+Hallar los autovalores y autovectores de la siguiente matriz simétrica:
+\[
+A=
+\begin{pmatrix}
+7 & -2 & 1\\
+-2 & 10 & -2\\
+1 & -2 & 7
+\end{pmatrix}
+\]
+\end{Ejer}
+
+\begin{Ejer}
+Dada la siguiente matriz indicar si es diagonalizable. 
+En caso de que lo sea, calcular las matrices $D$ y $P$ que verifican:
+\[
+D = P^{-1} A P
+\]
+
+\[
+A=
+\begin{pmatrix}
+1 & 0 & 1\\
+0 & 1 & 3\\
+0 & 0 & 2
+\end{pmatrix}
+\]
+
+Dada la siguiente matriz indicar si es diagonalizable. 
+En caso de que lo sea, calcular las matrices $D$ y $P$ que verifican:
+\[
+D = P^{-1} A P
+\]
+
+\[
+A=
+\begin{pmatrix}
+-2 & -1 & -1\\
+4 & -8 & -6\\
+-4 & 11 & 9
+\end{pmatrix}
+\]
+\end{Ejer}
+
+\begin{Ejer}
+Dada la siguiente matriz simétrica $A$:
+\[
+A=
+\begin{pmatrix}
+7 & -2 & 1\\
+-2 & 10 & -2\\
+1 & -2 & 7
+\end{pmatrix}
+\]
+
+Determinar la matriz diagonal $(D)$ y la matriz ortogonal $(Q)$ que verifican:
+\[
+D = Q^t A Q
+\]
+\end{Ejer}
+
+
+\begin{Ejer}
+
+Dada la siguiente matriz simétrica $A$:
+\[
+A=
+\begin{pmatrix}
+7 & -2 & 1\\
+-2 & 10 & -2\\
+1 & -2 & 7
+\end{pmatrix}
+\]
+
+Determinar la matriz diagonal $(D)$ y la matriz ortogonal $(Q)$ que verifican:
+\[
+D = Q^t A Q
+\]
+\end{Ejer}
+
+\begin{Ejer}
+a) Buscar la expresión polinómica de la forma cuadrática asociada a la siguiente matriz:
+
+\[
+A=
+\begin{pmatrix}
+2 & -1 & \frac{3}{2}\\
+-1 & 0 & -2\\
+\frac{3}{2} & -2 & -1
+\end{pmatrix}
+\]
+
+
+
+b) Buscar la matriz asociada a la siguiente forma cuadrática
+
+\[
+\varphi(x_1,x_2,x_3)
+= 3x_1^2 - x_2^2 + 4x_3^2 + 5x_1x_2 - 6x_1x_3 - x_2x_3
+\]
+\end{Ejer}
+
+
+
+\begin{Ejer}
+Determinar el signo de las siguientes formas cuadráticas a partir del signo de sus autovalores:
+
+a) $\varphi(x_1,x_2)=3x_1^2+x_2^2$ es definida positiva
+
+\[
+A=
+\begin{pmatrix}
+3 & 0\\
+0 & 1
+\end{pmatrix}
+\]
+
+Autovalores:
+\[
+\lambda_1=3>0,
+\qquad
+\lambda_2=1>0
+\]
+
+b) $\varphi(x_1,x_2)=(x_1-x_2)^2=x_1^2-2x_1x_2+x_2^2$ es semidefinida positiva
+
+\[
+A=
+\begin{pmatrix}
+1 & -1\\
+-1 & 1
+\end{pmatrix}
+\]
+
+Autovalores:
+\[
+\lambda_1=2>0,
+\qquad
+\lambda_2=0
+\]
+
+c) $\varphi(x_1,x_2,x_3)=-7x_1^2-2x_2^2-4x_3^2$ es definida negativa
+
+\[
+A=
+\begin{pmatrix}
+-7 & 0 & 0\\
+0 & -2 & 0\\
+0 & 0 & -4
+\end{pmatrix}
+\]
+
+Autovalores:
+\[
+\lambda_1=-7<0,\quad
+\lambda_2=-2<0,\quad
+\lambda_3=-4<0
+\]
+
+d) $\varphi(x_1,x_2,x_3)=-3x_1^2-(x_2-2x_3)^2
+= -3x_1^2-x_2^2+4x_2x_3-4x_3^2$ es semidefinida negativa
+
+\[
+A=
+\begin{pmatrix}
+-3 & 0 & 0\\
+0 & -1 & 2\\
+0 & 2 & -4
+\end{pmatrix}
+\]
+
+Autovalores:
+\[
+\lambda_1=-3<0,\quad
+\lambda_2=-5<0,\quad
+\lambda_3=0
+\]
+
+e) $\varphi(x_1,x_2)=5x_1^2-7x_2^2$ es indefinida
+
+\[
+A=
+\begin{pmatrix}
+5 & 0\\
+0 & -7
+\end{pmatrix}
+\]
+
+Autovalores:
+\[
+\lambda_1=5>0,\qquad
+\lambda_2=-7<0
+\]
+\end{Ejer}
+
+
+\begin{Ejer}
+Determinar el signo de las siguientes formas cuadráticas a partir del signo de sus menores principales:
+
+a) $\varphi(x_1,x_2)=3x_1^2+x_2^2$ es definida positiva
+
+\[
+A=
+\begin{pmatrix}
+3 & 0\\
+0 & 1
+\end{pmatrix}
+\]
+
+Los menores principales:
+\[
+A_1=3>0,\qquad
+A_2=\det(A)=3>0
+\]
+
+b) $\varphi(x_1,x_2)=(x_1-x_2)^2$ es semidefinida positiva
+
+\[
+A=
+\begin{pmatrix}
+1 & -1\\
+-1 & 1
+\end{pmatrix}
+\]
+
+Los menores principales:
+\[
+A_1=1>0,\qquad
+A_2=\det(A)=0
+\]
+
+c) $\varphi(x_1,x_2,x_3)=-7x_1^2-2x_2^2-4x_3^2$ es definida negativa
+
+\[
+A=
+\begin{pmatrix}
+-7 & 0 & 0\\
+0 & -2 & 0\\
+0 & 0 & -4
+\end{pmatrix}
+\]
+
+Los menores principales:
+\[
+A_1=-7<0,\quad
+A_2=14>0,\quad
+A_3=\det(A)=-56<0
+\]
+
+d) $\varphi(x_1,x_2,x_3)=-3x_1^2-(x_2-2x_3)^2$ es semidefinida negativa
+
+\[
+A=
+\begin{pmatrix}
+-3 & 0 & 0\\
+0 & -1 & 2\\
+0 & 2 & -4
+\end{pmatrix}
+\]
+
+Los menores principales:
+\[
+A_1=-3<0,\quad
+A_2=3>0,\quad
+A_3=\det(A)=0
+\]
+
+e) $\varphi(x_1,x_2)=5x_1^2-7x_2^2$ es indefinida
+
+\[
+A=
+\begin{pmatrix}
+5 & 0\\
+0 & -7
+\end{pmatrix}
+\]
+
+Los menores principales:
+\[
+A_1=5>0,\qquad
+A_2=\det(A)=-35<0
+\]
+\end{Ejer}
+
+\begin{Ejer}
+
+Analizar el signo de la siguiente forma cuadrática
+
+\[
+\varphi(x_1,x_2,x_3)
+= -x_1^2 + 6x_1x_2 - 9x_2^2 - 2x_3^2
+\]
+
+La matriz asociada es
+
+\[
+A=
+\begin{pmatrix}
+-1 & 3 & 0\\
+3 & -9 & 0\\
+0 & 0 & -2
+\end{pmatrix}
+\]
+
+
+
+Los menores principales son
+
+\[
 \begin{cases}
-\text{opt } z=f(x_1,\ldots,x_n)\\
-\text{s.a. } g_1(x_1,\ldots,x_n)=b_1\\
-\vdots\\
-g_m(x_1,\ldots,x_n)=b_m
+A_1 = -1 < 0 \\
+A_2 = \det
+\begin{pmatrix}
+-1 & 3\\
+3 & -9
+\end{pmatrix}
+= 0 \\
+A_3 = \det(A) = 0
 \end{cases}
 \]
-o bien en forma resumida:
+
+
+\bigskip
+
+Sea
+
 \[
-\text{opt } z=f(x)\quad \text{s.a. } g(x)=b.
+f(x,y)=\frac{1}{x}+\frac{1}{y},
+\qquad (x>0 \ \wedge \ y>0)
 \]
 
-En este caso el conjunto de soluciones factibles es
+Calculamos las derivadas parciales
+
 \[
-S=\{x\in D \mid g_i(x)=b_i,\;1\le i\le m\}.
+\begin{cases}
+f_x = -\frac{1}{x^2} \\
+f_y = -\frac{1}{y^2}
+\end{cases}
 \]
 
-\subsection*{2.2.1 Condición necesaria para la existencia de óptimos locales}
+La matriz Hessiana es:
 
-\textbf{Teorema 14 (Teorema de Lagrange):} Sea $f:D\to\mathbb{R}$ y sean $g_i:D\to\mathbb{R}$ $(1\le i\le m)$,
-$D\subseteq\mathbb{R}^n$ abierto, $f,g_i\in C^1(D)$. Sea $x_0\in S$ tal que
 \[
-\text{rg}[Jg(x_0)]=m.
-\]
-Si el problema $(P)$ presenta en $x_0$ un óptimo local, entonces existen números reales únicos
-$\lambda_1,\ldots,\lambda_m$ soluciones del sistema:
-\[
-\nabla f(x_0)-\lambda_1\nabla g_1(x_0)-\cdots-\lambda_m\nabla g_m(x_0)=0.
+Hf(x,y)=
+\begin{pmatrix}
+\dfrac{2}{x^3} & 0 \\
+0 & \dfrac{2}{y^3}
+\end{pmatrix}
 \]
 
-\textbf{Definición 13:} Los números reales $\lambda_1,\ldots,\lambda_m$ se denominan \textit{multiplicadores de Lagrange}
-asociados al punto $x_0$.
+¿C\'omo se determina el signo de la matriz Hessiana?
+\end{Ejer}
 
-\textbf{Definición 14:} Un punto del conjunto factible $S$ que verifique la condición de Lagrange se denomina
-\textit{punto crítico del programa}.
+\begin{Ejer}
 
-%-------------------------------------------------
-\section*{SEGUNDA PARTE: OPTIMIZACIÓN ESTÁTICA}
-\begin{center}
-\textbf{Autoras: María José Bianco y Verónica García Fronti}
-\end{center}
-
-\subsection*{2.1. Optimización sin restricciones}
-
-\subsubsection*{Extremos locales y globales}
-
-Una función $f(x)=f(x_1,\ldots,x_n)$ alcanza un \textit{máximo relativo o local} en un punto
 \[
-x_0=(x_1^0,\ldots,x_n^0)
-\]
-de su dominio si se verifica que
-\[
-f(x)\le f(x_0)
-\]
-para todo punto $x$ perteneciente a un entorno de $x_0$.
-
-Una función $f(x)=f(x_1,\ldots,x_n)$ alcanza un \textit{mínimo relativo o local} en un punto
-\[
-x_0=(x_1^0,\ldots,x_n^0)
-\]
-de su dominio si se verifica que
-\[
-f(x)\ge f(x_0)
-\]
-para todo punto $x$ perteneciente a un entorno de $x_0$.
-
-\textbf{Observación:} Si las desigualdades de las definiciones anteriores se cumplen para todos los puntos $x$
-pertenecientes al dominio de la función $f$, entonces $f$ alcanza un
-\textit{máximo absoluto o global} (o \textit{mínimo absoluto o global}) en el punto $x_0$.
-
----
-
-Un programa matemático sin restricciones se formula de la siguiente manera:
-\[
-\text{Optimizar } f(x) \quad \text{siendo } f:D\to\mathbb{R}, \; D\subseteq\mathbb{R}^n
+f(x_1,x_2,x_3)
+= (x_1-1)^2 + 2x_2^3 + 5x_3^2
 \]
 
-En este tipo de programas, el conjunto de soluciones factibles coincide con el dominio $D$ de la función objetivo.
+Calculamos las derivadas parciales
 
-\subsubsection*{2.1.1 Condición necesaria para la existencia de óptimos locales}
-
-\textbf{Teorema 10:} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, $f\in C^1(D)$.
-Si en $x_0\in D$ la función $f$ presenta un óptimo local, entonces
 \[
-\nabla f(x_0)=0
-\]
-(es decir, $f'_{x_1}(x_0)=0,\ldots,f'_{x_n}(x_0)=0$).
-
-\textbf{Definición 12:} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, $f\in C^1(D)$ y $x_0\in D$.
-Se dice que $x_0$ es un \textit{punto crítico} de $f$ si
-\[
-\nabla f(x_0)=0.
+\begin{cases}
+f_{x_1} = 2(x_1-1) \\
+f_{x_2} = 6x_2^2 \\
+f_{x_3} = 10x_3
+\end{cases}
 \]
 
-\subsubsection*{2.1.2 Condición suficiente para la existencia de óptimos locales}
+La matriz Hessiana es:
 
-\textbf{Teorema 11:} Sea $f:D\to\mathbb{R}$ con $D\subseteq\mathbb{R}^n$ abierto, $f\in C^2(D)$ y sea $x_0\in D$
-un punto crítico de $f$. Se verifica:
-
-\begin{itemize}
-\item[(i)] Si la forma cuadrática dada por $Hf(x_0)$ es definida positiva, entonces $f$ presenta en $x_0$ un mínimo local.
-\item[(ii)] Si la forma cuadrática dada por $Hf(x_0)$ es definida negativa, entonces $f$ presenta en $x_0$ un máximo local.
-\item[(iii)] Si la forma cuadrática dada por $Hf(x_0)$ es indefinida, entonces $f$ presenta en $x_0$ un punto silla.
-\end{itemize}
-
-\textbf{Observación:} Si $x_0$ es un punto crítico de $f$ pero $f$ no tiene un óptimo local en $x_0$, se dice que
-$x_0$ es un \textit{punto silla} o \textit{punto de ensilladura} de $f$.
-
-Es decir, $x_0$ es un punto silla de $f$ si y sólo si existen puntos $x$ e $y$ en un entorno de $x_0$ tales que
 \[
-f(x)<f(x_0)<f(y).
+Hf(x_1,x_2,x_3)=
+\begin{pmatrix}
+2 & 0 & 0 \\
+0 & 12x_2 & 0 \\
+0 & 0 & 10
+\end{pmatrix}
 \]
 
-\subsubsection*{2.1.3 ¿Cuándo falla?}
+Observemos que si se considera $D=\mathbb{R}^3$ la función no es c\'oncava ni convexa, 
+pero si consideramos como dominio
 
-\begin{itemize}
-\item \textit{Matriz Hessiana semidefinida en un punto crítico.} El Teorema 2.2 no da información sobre un punto donde
-la forma cuadrática sea semidefinida positiva o negativa. En esos casos habrá que hacer un estudio de la función
-en un entorno del punto.
-\item \textit{Función no derivable en un punto perteneciente al dominio de la función.}
-Un punto crítico es un candidato a óptimo local. Otros candidatos serían todos aquellos puntos que pertenecen
-al dominio de la función, pero en los cuales la función no es derivable.
-\end{itemize}
+\[
+D=\{(x_1,x_2,x_3)\in\mathbb{R}^3 \mid x_2>0\}
+\]
 
-\subsubsection*{2.1.4 Paso a paso}
+(conjunto abierto y convexo) entonces $f$ es estrictamente convexa en $D$.
+\end{Ejer}
 
-\begin{enumerate}
-\item Hallar el dominio de la función objetivo.
-\item Calcular el gradiente de la función.
-\item Buscar los puntos que anulan el gradiente (puntos críticos).
-\item Fijarse si existen puntos pertenecientes al dominio de la función donde la función no es derivable.
-\item Hallar la matriz Hessiana.
-\item Reemplazar cada uno de los puntos críticos en la matriz Hessiana y definir el carácter de cada uno.
-\item Si en alguno de los puntos críticos la matriz Hessiana es semidefinida (positiva o negativa),
-realizar un estudio local.
-\end{enumerate}
+\begin{Ejer}
 
-%-------------------------------------------------
-\subsubsection*{Ejemplo 15}
+\[
+f(x,y)=x^2+y^2+xy-2x-10y+5
+\]
+
+Hallamos las derivadas parciales primeras, las igualamos a cero y resolvemos el sistema:
+
+\[
+\begin{cases}
+f_x = 2x+y-2=0\\
+f_y = 2y+x-10=0
+\end{cases}
+\quad \Longrightarrow \quad (-2,6) \text{ es el punto crítico}
+\]
+
+Ahora hallamos las derivadas parciales segundas y construimos la matriz Hessiana:
+
+\[
+Hf(x,y)=
+\begin{pmatrix}
+2 & 1\\
+1 & 2
+\end{pmatrix}
+\]
+
+Los menores principales son:
+
+\[
+\begin{cases}
+|H_1|=2>0\\
+|H_2|=\det(Hf)=3>0
+\end{cases}
+\]
+
+Como la matriz Hessiana es definida positiva concluimos que la función presenta en 
+$(-2,6)$ un mínimo relativo.
+
+Observemos que otra forma de expresar la solución hubiese sido: en 
+$(-2,6,f(-2,6))=(-2,6,-23)$ hay un mínimo relativo.
+\end{Ejer}
+
+
+\begin{Ejer}
+
+\[
+f(x,y)=e^{x^2+y^2}
+\]
+
+Hallamos las derivadas parciales primeras, las igualamos a cero y resolvemos el sistema:
+
+\[
+\begin{cases}
+f_x = 2xe^{x^2+y^2}=0\\
+f_y = 2ye^{x^2+y^2}=0
+\end{cases}
+\quad \Longrightarrow \quad (0,0) \text{ es el punto crítico}
+\]
+
+Ahora hallamos las derivadas parciales segundas y construimos la matriz Hessiana:
+
+\[
+Hf(x,y)=
+\begin{pmatrix}
+(4x^2+2)e^{x^2+y^2} & 4xye^{x^2+y^2}\\
+4xye^{x^2+y^2} & (4y^2+2)e^{x^2+y^2}
+\end{pmatrix}
+\]
+
+Reemplazamos por el punto crítico:
+
+\[
+Hf(0,0)=
+\begin{pmatrix}
+2 & 0\\
+0 & 2
+\end{pmatrix}
+\]
+
+Los menores principales son:
+
+\[
+\begin{cases}
+|H_1|=2>0\\
+|H_2|=\det(Hf)=4>0
+\end{cases}
+\]
+
+Como la matriz Hessiana es definida positiva concluimos que la función presenta en 
+$(0,0)$ un mínimo relativo.
+\end{Ejer}
+
+\begin{Ejer}
+
+\[
+f(x_1,x_2,x_3)= -x_1^3 + 3x_1x_3 + 2x_2 - x_2^2 - 3x_3^2
+\]
+
+Hallamos las derivadas parciales primeras, las igualamos a cero y resolvemos el sistema:
+
+\[
+\begin{cases}
+f_{x_1} = -3x_1^2 + 3x_3 = 0\\
+f_{x_2} = 2 - 2x_2 = 0\\
+f_{x_3} = 3x_1 - 6x_3 = 0
+\end{cases}
+\]
+
+Los puntos críticos son
+
+\[
+P_1=\left(\frac{1}{2},1,\frac{1}{4}\right)
+\quad \text{y} \quad
+P_2=(0,1,0).
+\]
+\end{Ejer}
+
+\begin{Ejer}
+
+Consideremos la función 
+\[
+f(x,y)=e^{x^2+y^2}
+\]
+y sea 
+\[
+g(x)=\ln x
+\]
+(función estrictamente creciente).
+
+Busco los extremos de la función:
+
+\[
+h(x,y)=g\circ f(x,y)=x^2+y^2
+\]
+
+\[
+\begin{cases}
+h_x = 2x=0\\
+h_y = 2y=0
+\end{cases}
+\quad \Longrightarrow \quad (0,0) \text{ es el punto crítico}
+\]
+
+La matriz Hessiana es:
+
+\[
+Hh(x,y)=
+\begin{pmatrix}
+2 & 0\\
+0 & 2
+\end{pmatrix}
+\]
+
+Como la matriz Hessiana es definida positiva concluimos que la función $h$ presenta en 
+$(0,0)$ un mínimo relativo.
+
+Luego en ese punto la función $f$ también alcanza un mínimo relativo.
+\end{Ejer}
+
+
+\begin{Ejer}
 
 \[
 f(x,y)=x^2+y^2+xy-2x-10y+5
@@ -528,16 +939,15 @@ Menores principales:
 |H_1|=2>0,\qquad |H_2|=\det Hf=3>0
 \]
 
-Luego $(-2,6)$ es un mínimo relativo.
+Luego $(-2,6)$ es un m\'inimo relativo.
+\end{Ejer}
 
-%-------------------------------------------------
-\subsubsection*{Ejemplo 16}
-
+\begin{Ejer}
 \[
 f(x,y)=2-3x^2+3x^2y+y^3-3y^2
 \]
 
-Puntos críticos:
+Puntos cr\'iticos:
 \[
 P_1=(0,0),\; P_2=(0,2),\; P_3=(1,1),\; P_4=(-1,1)
 \]
@@ -551,21 +961,21 @@ Hf(x,y)=
 \end{pmatrix}
 \]
 
-Clasificación:
+Clasificaci\'on:
 \[
-P_1:\text{máximo},\quad
-P_2:\text{mínimo},\quad
+P_1:\text{m\'aximo},\quad
+P_2:\text{m\'inimo},\quad
 P_3,P_4:\text{puntos silla}
 \]
+\end{Ejer}
 
-%-------------------------------------------------
-\subsubsection*{Ejemplo 17}
 
+\begin{Ejer}
 \[
 f(x,y)=e^{x^2+y^2}
 \]
 
-Punto crítico:
+Punto cr\'itico:
 \[
 (0,0)
 \]
@@ -577,111 +987,28 @@ Hf(0,0)=
 2 & 0\\
 0 & 2
 \end{pmatrix}
-\Rightarrow \text{mínimo relativo}
+\Rightarrow \text{m\'inimo relativo}
 \]
+\end{Ejer}
 
-%-------------------------------------------------
-\subsubsection*{Ejemplo 18}
-
+\begin{Ejer}
 \[
 f(x_1,x_2,x_3)=-x_1^3+3x_1x_3+2x_2-x_2^2-3x_3^2
 \]
 
-Puntos críticos:
+Puntos cr\'iticos:
 \[
 P_1=\left(\tfrac12,1,\tfrac14\right),\quad P_2=(0,1,0)
 \]
 
-Clasificación:
+Clasificaci\'on:
 \[
-P_1:\text{máximo relativo},\quad P_2:\text{punto silla}
+P_1:\text{m\'aximo relativo},\quad P_2:\text{punto silla}
 \]
+\end{Ejer}
 
-%-------------------------------------------------
-\subsubsection*{2.1.5 Condición suficiente de optimalidad global}
 
-\textbf{Teorema 12:} Sea $f:D\to\mathbb{R}$ con $D$ abierto y convexo, $f\in C^1(D)$ y $x_0$ punto crítico.
-
-\begin{itemize}
-\item[(i)] $f$ convexa $\Rightarrow$ mínimo global.
-\item[(ii)] $f$ estrictamente convexa $\Rightarrow$ mínimo global único.
-\item[(iii)] $f$ cóncava $\Rightarrow$ máximo global.
-\item[(iv)] $f$ estrictamente cóncava $\Rightarrow$ máximo global único.
-\end{itemize}
-
-\subsubsection*{2.1.6 Composición de funciones}
-
-\textbf{Proposición 13:} Si $g$ es creciente (decreciente), los máximos y mínimos de $f$ coinciden con los de $g\circ f$
-(cambiando máximo por mínimo si $g$ es decreciente).
-
-\subsubsection*{2.1.7 Análisis de sensibilidad}
-
-Problema:
-\[
-\max_x f(x,a)
-\]
-
-Función valor:
-\[
-\varphi(a)=f(x^*(a),a)
-\]
-
-\[
-\frac{d\varphi(a)}{da}=\frac{\partial f(x^*(a),a)}{\partial a}
-\]
-
-\textbf{Teorema de la Envolvente.}
-
-\begin{itemize}
-\item[(b)] La matriz $\bar H(x_0,\lambda_0)$ es definida negativa si y sólo si los $n-m$ últimos
-menores principales de $\bar H(x_0,\lambda_0)$ alternan signo comenzando por el signo $(-1)^{m+1}$.
-\item[(c)] Si las condiciones a) y b) no se cumplen y los determinantes son distintos de cero
-entonces la matriz $\bar H(x_0,\lambda_0)$ es indefinida.
-\end{itemize}
-
-\textbf{Teorema 15:} Sea $f:D\to\mathbb{R}$ y sean $g_i:D\to\mathbb{R}$ $(1\le i\le m)$,
-$D\subseteq\mathbb{R}^n$ abierto, $f,g_i\in C^2(D)$.
-Sea $x_0$ un punto crítico del programa $(P)$ con $\lambda_0$ multiplicadores de Lagrange asociados.
-
-\begin{itemize}
-\item[(i)] Si la matriz $\bar H(x_0,\lambda_0)$ es definida positiva entonces el problema $(P)$
-presenta en $x_0$ un mínimo local.
-\item[(ii)] Si la matriz $\bar H(x_0,\lambda_0)$ es definida negativa entonces el problema $(P)$
-presenta en $x_0$ un máximo local.
-\end{itemize}
-
-\subsubsection*{2.2.3 ¿Cuándo falla?}
-
-\begin{itemize}
-\item No se verifica la condición de regularidad. Si esto sucede la condición de Lagrange no
-tiene que verificarse necesariamente. Como consecuencia, para resolver un problema con
-restricciones de igualdad, siempre hay que tener en cuenta los puntos del conjunto de soluciones
-factibles que no cumplen la condición de regularidad.
-\item No existencia de extremos del programa. Si la hipótesis de funciones $C^1$ se cumple y la
-condición de regularidad se verifica, pero no existen puntos críticos, entonces el problema
-planteado carece de extremos locales.
-\item Matriz hessiana orlada semidefinida en un punto crítico. En esos casos habrá que hacer un
-estudio de la función en un entorno del punto.
-\end{itemize}
-
-\subsubsection*{2.2.4 Paso a paso}
-
-\begin{enumerate}
-\item Hallar el dominio de la función objetivo y el conjunto de soluciones factibles.
-\item Plantear la función de Lagrange.
-\item Calcular el gradiente de la función de Lagrange.
-\item Buscar los puntos que anulan el gradiente (puntos críticos).
-\item Fijarse si existen puntos pertenecientes al conjunto de soluciones factibles donde no se
-cumpla la condición de regularidad. En caso afirmativo realizar un estudio local.
-\item Hallar la matriz hessiana orlada.
-\item Reemplazar cada uno de los puntos críticos en la matriz hessiana orlada y definir el carácter
-de cada uno de ellos.
-\item Si en alguno de los puntos críticos la matriz hessiana es semidefinida (positiva o negativa)
-realizar un estudio local.
-\end{enumerate}
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 21}
+\begin{Ejer}
 
 \[
 \begin{cases}
@@ -690,7 +1017,7 @@ x+y=12
 \end{cases}
 \]
 
-Función de Lagrange:
+Funci\'on de Lagrange:
 \[
 \mathcal{L}(x,y,\lambda)=xy+\lambda(12-x-y)
 \]
@@ -714,7 +1041,7 @@ Reemplazando:
 12-x-x=0 \Rightarrow x=6,\; y=6,\; \lambda=6
 \]
 
-Punto crítico $P=(6,6)$.
+Punto cr\'itico $P=(6,6)$.
 
 Matriz Hessiana orlada:
 \[
@@ -728,15 +1055,17 @@ Matriz Hessiana orlada:
 
 Como $n=2$, $m=1$ entonces $n-m=1$.
 
-Para máximo relativo:
+Para m\'aximo relativo:
 \[
 |\bar H|>0
 \]
 
-Como $\det(\bar H)=2>0$, el problema presenta en $P=(6,6)$ un máximo relativo.
+Como $\det(\bar H)=2>0$, el problema presenta en $P=(6,6)$ un m\'aximo relativo.
+\end{Ejer}
+
 
 %-------------------------------------------------
-\subsubsection*{Ejemplo 22}
+\begin{Ejer}
 
 \[
 \begin{cases}
@@ -745,7 +1074,7 @@ f(x,y)=3x+2y\\
 \end{cases}
 \]
 
-Función de Lagrange:
+Funci\'on de Lagrange:
 \[
 \mathcal{L}(x,y,\lambda)=3x+2y+\lambda(210-2x^2-3y^2)
 \]
@@ -764,13 +1093,13 @@ De las dos primeras ecuaciones:
 \lambda=\frac{3}{4x}=\frac{1}{3y} \Rightarrow y=\frac{4}{9}x
 \]
 
-Reemplazando en la restricción:
+Reemplazando en la restricci\'on:
 \[
 2x^2+3\left(\frac{4}{9}x\right)^2=210
 \Rightarrow x^2=81
 \]
 
-Puntos críticos:
+Puntos cr\'iticos:
 \[
 P_1=(9,4),\;\lambda=\frac{1}{12}
 \qquad
@@ -789,14 +1118,15 @@ Matriz Hessiana orlada:
 
 Evaluando:
 \[
-\det\bar H(P_1)=840>0 \Rightarrow \text{máximo relativo}
+\det\bar H(P_1)=840>0 \Rightarrow \text{m\'aximo relativo}
 \]
 \[
-\det\bar H(P_2)=-840<0 \Rightarrow \text{mínimo relativo}
+\det\bar H(P_2)=-840<0 \Rightarrow \text{m\'inimo relativo}
 \]
+\end{Ejer}
 
 %-------------------------------------------------
-\subsubsection*{Ejemplo 23}
+\begin{Ejer}
 
 \[
 \begin{cases}
@@ -805,13 +1135,13 @@ x+y=2
 \end{cases}
 \]
 
-Función de Lagrange:
+Funci\'on de Lagrange:
 \[
 \mathcal{L}(x,y,z,\lambda)=x^2+y^2+z^2+\lambda(2-x-y)
 \]
-
+\end{Ejer}
 %-------------------------------------------------
-\subsubsection*{Ejemplo 24}
+\begin{Ejer}
 
 \[
 \begin{cases}
@@ -821,26 +1151,26 @@ x+y+z=0
 \end{cases}
 \]
 
-Función de Lagrange:
+Funci\'on de Lagrange:
 \[
 \mathcal{L}(x,y,z,\lambda_1,\lambda_2)=x+2y+2z+
 \lambda_1(25-x^2-y^2)+\lambda_2(-x-y-z)
 \]
 
-Puntos críticos:
+Puntos cr\'iticos:
 \[
 P_1=(5,0,-5),\quad
 P_2=(-5,0,5)
 \]
 
-Clasificación:
+Clasificaci\'on:
 \[
-P_1:\text{mínimo relativo},\quad
-P_2:\text{máximo relativo}
+P_1:\text{m\'inimo relativo},\quad
+P_2:\text{m\'aximo relativo}
 \]
-
+\end{Ejer}
 %-------------------------------------------------
-\subsubsection*{Ejemplo 25}
+\begin{Ejer}
 
 \[
 \begin{cases}
@@ -849,1785 +1179,15 @@ x-y=0
 \end{cases}
 \]
 
-Función de Lagrange:
+Funci\'on de Lagrange:
 \[
 \mathcal{L}(x,y,\lambda)=x^4+y^4+\lambda(-x+y)
 \]
 
-Punto crítico:
+Punto cr\'itico:
 \[
 P=(0,0)
 \]
 
 Como $\det\bar H(P)=0$, no se puede concluir. Se requiere estudio local.
-
-%-------------------------------------------------
-\subsubsection*{2.2.5 Condiciones suficientes de optimalidad global}
-
-\textbf{Teorema 16:} Si $f$ es convexa (estrictamente convexa) en $S$ convexo, entonces el
-problema $(P)$ presenta un mínimo global (único).
-
-\textbf{Teorema 17:} Si $f$ es cuasiconvexa (cuasicóncava) en $S$ convexo, entonces el
-problema $(P)$ presenta un mínimo (máximo) global.
-
-\textbf{IMPORTANTE:}
-\begin{itemize}
-\item Si $f$ es convexa o cuasiconvexa en $S$ convexo, la condición de Lagrange es necesaria y
-suficiente para optimalidad global.
-\item El conjunto de soluciones factibles es convexo si y sólo si las restricciones son lineales.
-\end{itemize}
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 27}
-
-\[
-\begin{cases}
-f(x,y)=e^{x^2+y^2}\\
-2x-y=5
-\end{cases}
-\]
-
-Solución:
-\[
-P=(2,-1)
-\]
-
-Presenta un mínimo relativo (y global).
-
-%-------------------------------------------------
-\subsubsection*{2.2.7 Análisis de sensibilidad}
-
-\textbf{Teorema 19 (Interpretación de los multiplicadores de Lagrange):}
-\[
-\frac{\partial f(x^*)}{\partial b_j}=\lambda_j
-\]
-
-\textbf{IMPORTANTE:}
-\begin{itemize}
-\item $\lambda_j>0$: aumentar $b_j$ aumenta el valor óptimo.
-\item $\lambda_j<0$: aumentar $b_j$ disminuye el valor óptimo.
-\item $\lambda_j=0$: no hay información de primer orden.
-\end{itemize}
-
-Económicamente, $\lambda_j$ representa el \textit{valor sombra de la restricción}.
-
-
-\[
-f_N \simeq \sum_{j=1}^{m}\lambda_j^{*}\,\Delta b_j + f_{opt}
-\]
-
-\subsubsection*{Ejemplo 28}
-
-Consideremos el Ejemplo 23, el problema presenta en el punto
-\[
-P=(1,1,0)\quad (\text{con }\lambda=2)
-\]
-un mínimo relativo, siendo el valor mínimo de la función
-\[
-f_{\min}=f(1,1,0)=2.
-\]
-
-Si ahora consideramos el problema
-\[
-\begin{cases}
-f(x,y,z)=x^2+y^2+z^2\\
-x+y=3
-\end{cases}
-\]
-
-sin resolver nuevamente se podría encontrar el valor óptimo aproximado de este problema de la siguiente forma:
-\[
-f_N \simeq 2(3-2)+2=4.
-\]
-
-Consideremos el siguiente problema:
-\[
-(Pa)\quad
-\begin{cases}
-\text{opt } z=f(x,a)\\
-\text{s.a. } g(x,a)=b
-\end{cases}
-\]
-
-donde $f\in C^1$ con $x\in\mathbb{R}^n$ (variables de decisión) y $a\in\mathbb{R}^k$ (parámetros).
-
-Sea $A\subset\mathbb{R}^k$ un conjunto abierto y supongamos que para todo
-$a=(a_1,\ldots,a_k)\in A$ existe
-\[
-x^*(a)=\big(x_1^*(a_1,\ldots,a_k),\ldots,x_n^*(a_1,\ldots,a_k)\big)
-\]
-solución óptima del problema $(Pa)$ con multiplicadores de Lagrange asociados
-\[
-\lambda^*(a)=(\lambda_1^*(a_1,\ldots,a_k),\ldots,\lambda_m^*(a_1,\ldots,a_k)),
-\]
-siendo $x^*$ y $\lambda^*$ funciones $C^1$.
-
-Si definimos la función objetivo indirecta o función valor como
-\[
-\varphi(a)=f(x^*(a);a),
-\]
-se verifica:
-\[
-\frac{\partial \varphi(a)}{\partial a_i}
-=
-\frac{\partial \mathcal{L}(x^*(a);\lambda^*(a))}{\partial a_i},
-\qquad 1\le i\le k.
-\]
-
-donde $\mathcal{L}$ es la función de Lagrange asociada al problema $(Pa)$.
-
-El resultado anterior se conoce como \textbf{Teorema de la Envolvente}.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 29}
-
-Consideremos una empresa que compra sus insumos productivos capital $(K)$ y trabajo $(L)$
-en mercados perfectamente competitivos a precios $r$ y $w$ respectivamente, y sea
-$f(L,K)$ la función de producción de la empresa.
-
-El problema consiste en resolver:
-\[
-\begin{cases}
-\min C(L,K)=wL+rK\\
-\text{s.a. } f(L,K)=Q
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(L,K,\lambda)=wL+rK+\lambda[Q-f(L,K)]
-\]
-
-Condiciones de primer orden:
-\[
-\begin{cases}
-\mathcal{L}'_L=w-\lambda f_L'(L,K)=0\\
-\mathcal{L}'_K=r-\lambda f_K'(L,K)=0\\
-\mathcal{L}'_\lambda=Q-f(L,K)=0
-\end{cases}
-\]
-
-Al despejar (si tuviéramos la forma explícita de la función de producción) obtendríamos:
-\[
-L^*=L^*(w,r,Q),\qquad
-K^*=K^*(w,r,Q),\qquad
-\lambda^*=\lambda^*(w,r,Q).
-\]
-
-Reemplazando en la función de costo se obtiene la función de costo indirecta:
-\[
-C_{\min}=C(L^*,K^*)=C(w,r,Q).
-\]
-
-Por el teorema de la envolvente:
-\[
-\frac{\partial C_{\min}}{\partial w}=L^*,\qquad
-\frac{\partial C_{\min}}{\partial r}=K^*,\qquad
-\frac{\partial C_{\min}}{\partial Q}=\lambda^*.
-\]
-
-Estas derivadas indican cómo impactan cambios en $w$, $r$ y $Q$ en el costo mínimo.
-
-\textbf{Observación:}
-De las ecuaciones anteriores se desprende que las funciones de demanda condicionadas de
-los insumos $L$ y $K$ de la empresa son:
-\[
-L^*=\frac{\partial C(w,r,Q)}{\partial w},
-\qquad
-K^*=\frac{\partial C(w,r,Q)}{\partial r}.
-\]
-
-Estos resultados se conocen como el \textbf{Lema de Shepard}.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 30}
-
-Consideremos un individuo que consume dos bienes $X$ e $Y$ en un mercado perfectamente
-competitivo a precios $p_x$ y $p_y$ respectivamente, con una renta monetaria $M$.
-
-El problema consiste en resolver:
-\[
-\begin{cases}
-\max U=U(x,y)\\
-\text{s.a. } p_x x+p_y y=M
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=U(x,y)+\lambda[M-p_x x-p_y y]
-\]
-
-Condiciones de primer orden:
-\[
-\begin{cases}
-U_x'(x,y)-p_x\lambda=0\\
-U_y'(x,y)-p_y\lambda=0\\
-M-p_x x-p_y y=0
-\end{cases}
-\]
-
-Al despejar:
-\[
-x^*=x^*(p_x,p_y,M),\quad
-y^*=y^*(p_x,p_y,M),\quad
-\lambda^*=\lambda^*(p_x,p_y,M).
-\]
-
-La utilidad indirecta queda:
-\[
-U_{\max}=U(x^*,y^*)=U(p_x,p_y,M).
-\]
-
-Por el teorema de la envolvente:
-\[
-\frac{\partial U_{\max}}{\partial p_x}=-x^*,\quad
-\frac{\partial U_{\max}}{\partial p_y}=-y^*,\quad
-\frac{\partial U_{\max}}{\partial M}=\lambda^*.
-\]
-
-Estos resultados se conocen como el \textbf{Lema de Roy}.
-
-%-------------------------------------------------
-\subsection*{2.3 Optimización con restricciones de desigualdad}
-
-Un programa matemático con restricciones de desigualdad se formula como:
-
-\[
-(P1)\;
-\begin{cases}
-\max z=f(x)\\
-\text{s.a. } g(x)\le b
-\end{cases}
-\qquad
-(P2)\;
-\begin{cases}
-\min z=f(x)\\
-\text{s.a. } g(x)\ge b
-\end{cases}
-\]
-
-El conjunto de soluciones factibles es:
-\[
-S=\{x\in D\mid g_j(x)\le b_j,\;1\le j\le m\}\quad \text{para }(P1)
-\]
-\[
-S=\{x\in D\mid g_j(x)\ge b_j,\;1\le j\le m\}\quad \text{para }(P2)
-\]
-
-Se dice que $x_0$ \textit{satura} la restricción $j$-ésima si $g_j(x_0)=b_j$.
-
-\textbf{Observación:}
-\begin{itemize}
-\item Si $x_0\in \text{Int}(S)$, ninguna restricción se satura en $x_0$.
-\item Si $x_0\in \text{Fr}(S)$, algunas restricciones se saturan en $x_0$.
-\end{itemize}
-
-\subsubsection*{2.3.1 Condición necesaria para la existencia de óptimos locales}
-
-\textbf{Teorema 20 (Kuhn--Tucker):}
-Sea $f:D\to\mathbb{R}$ y $g_j:D\to\mathbb{R}$ $(1\le j\le m)$,
-$D\subset\mathbb{R}^n$ abierto, $f,g_j\in C^1(D)$.
-Sea $x_0\in S$ y supongamos que las restricciones activas son las $p$ primeras.
-Si el problema presenta en $x_0$ un óptimo local, entonces existen
-$\lambda_j\ge0$ tales que:
-
-\[
-\begin{cases}
-\nabla f(x_0)-\sum_{j=1}^{m}\lambda_j\nabla g_j(x_0)=0\\
-\lambda_j[b_j-g_j(x_0)]=0,\quad 1\le j\le m
-\end{cases}
-\]
-
-\textbf{Definición 15:} Un punto factible que verifica las condiciones de Kuhn--Tucker
-se denomina \textit{punto crítico del programa}.
-
-\textbf{Definición 16:} Los números $\lambda_1,\ldots,\lambda_m$ se denominan
-\textit{multiplicadores de Lagrange}.
-
-%-------------------------------------------------
-\subsubsection*{2.3.3 Cuadro resumen}
-
-\[
-\begin{array}{c|c}
-\textbf{P1} & \textbf{P2}\\ \hline
-\max f(x) & \min f(x)\\
-g(x)\le b & g(x)\ge b
-\end{array}
-\]
-
-\textbf{Condiciones necesarias:}
-\[
-\mathcal{L}'_x=0,\quad
-\mathcal{L}'_\lambda\ge0,\quad
-\lambda\ge0
-\]
-
-\textbf{Condiciones suficientes:}
-\begin{itemize}
-\item $f$ cóncava (P1), convexa (P2).
-\item $g$ convexa (P1), cóncava (P2).
-\end{itemize}
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 32}
-
-\[
-\begin{cases}
-\min f(x,y)=x^2+(y+5)^2\\
-\text{s.a. } 2x+y\ge10
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=x^2+(y+5)^2+\lambda(10-2x-y)
-\]
-
-Condiciones:
-\[
-\begin{cases}
-2x-2\lambda=0\\
-2(y+5)-\lambda=0\\
-\lambda(10-2x-y)=0\\
-\lambda\ge0
-\end{cases}
-\]
-
-Resolviendo:
-\[
-x=6,\quad y=-2,\quad \lambda=6.
-\]
-
-Luego el punto crítico es $(6,-2)$.
-
-\[
-f_N \simeq \sum_{j=1}^{m}\lambda_j^{*}\,\Delta b_j + f_{opt}
-\]
-
-\subsubsection*{Ejemplo 28}
-
-Consideremos el Ejemplo 23, el problema presenta en el punto
-\[
-P=(1,1,0)\quad (\text{con }\lambda=2)
-\]
-un mínimo relativo, siendo el valor mínimo de la función
-\[
-f_{\min}=f(1,1,0)=2.
-\]
-
-Si ahora consideramos el problema
-\[
-\begin{cases}
-f(x,y,z)=x^2+y^2+z^2\\
-x+y=3
-\end{cases}
-\]
-
-sin resolver nuevamente se podría encontrar el valor óptimo aproximado de este problema de la siguiente forma:
-\[
-f_N \simeq 2(3-2)+2=4.
-\]
-
-Consideremos el siguiente problema:
-\[
-(Pa)\quad
-\begin{cases}
-\text{opt } z=f(x,a)\\
-\text{s.a. } g(x,a)=b
-\end{cases}
-\]
-
-donde $f\in C^1$ con $x\in\mathbb{R}^n$ (variables de decisión) y $a\in\mathbb{R}^k$ (parámetros).
-
-Sea $A\subset\mathbb{R}^k$ un conjunto abierto y supongamos que para todo
-$a=(a_1,\ldots,a_k)\in A$ existe
-\[
-x^*(a)=\big(x_1^*(a_1,\ldots,a_k),\ldots,x_n^*(a_1,\ldots,a_k)\big)
-\]
-solución óptima del problema $(Pa)$ con multiplicadores de Lagrange asociados
-\[
-\lambda^*(a)=(\lambda_1^*(a_1,\ldots,a_k),\ldots,\lambda_m^*(a_1,\ldots,a_k)),
-\]
-siendo $x^*$ y $\lambda^*$ funciones $C^1$.
-
-Si definimos la función objetivo indirecta o función valor como
-\[
-\varphi(a)=f(x^*(a);a),
-\]
-se verifica:
-\[
-\frac{\partial \varphi(a)}{\partial a_i}
-=
-\frac{\partial \mathcal{L}(x^*(a);\lambda^*(a))}{\partial a_i},
-\qquad 1\le i\le k.
-\]
-
-donde $\mathcal{L}$ es la función de Lagrange asociada al problema $(Pa)$.
-
-El resultado anterior se conoce como \textbf{Teorema de la Envolvente}.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 29}
-
-Consideremos una empresa que compra sus insumos productivos capital $(K)$ y trabajo $(L)$
-en mercados perfectamente competitivos a precios $r$ y $w$ respectivamente, y sea
-$f(L,K)$ la función de producción de la empresa.
-
-El problema consiste en resolver:
-\[
-\begin{cases}
-\min C(L,K)=wL+rK\\
-\text{s.a. } f(L,K)=Q
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(L,K,\lambda)=wL+rK+\lambda[Q-f(L,K)]
-\]
-
-Condiciones de primer orden:
-\[
-\begin{cases}
-\mathcal{L}'_L=w-\lambda f_L'(L,K)=0\\
-\mathcal{L}'_K=r-\lambda f_K'(L,K)=0\\
-\mathcal{L}'_\lambda=Q-f(L,K)=0
-\end{cases}
-\]
-
-Al despejar (si tuviéramos la forma explícita de la función de producción) obtendríamos:
-\[
-L^*=L^*(w,r,Q),\qquad
-K^*=K^*(w,r,Q),\qquad
-\lambda^*=\lambda^*(w,r,Q).
-\]
-
-Reemplazando en la función de costo se obtiene la función de costo indirecta:
-\[
-C_{\min}=C(L^*,K^*)=C(w,r,Q).
-\]
-
-Por el teorema de la envolvente:
-\[
-\frac{\partial C_{\min}}{\partial w}=L^*,\qquad
-\frac{\partial C_{\min}}{\partial r}=K^*,\qquad
-\frac{\partial C_{\min}}{\partial Q}=\lambda^*.
-\]
-
-Estas derivadas indican cómo impactan cambios en $w$, $r$ y $Q$ en el costo mínimo.
-
-\textbf{Observación:}
-De las ecuaciones anteriores se desprende que las funciones de demanda condicionadas de
-los insumos $L$ y $K$ de la empresa son:
-\[
-L^*=\frac{\partial C(w,r,Q)}{\partial w},
-\qquad
-K^*=\frac{\partial C(w,r,Q)}{\partial r}.
-\]
-
-Estos resultados se conocen como el \textbf{Lema de Shepard}.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 30}
-
-Consideremos un individuo que consume dos bienes $X$ e $Y$ en un mercado perfectamente
-competitivo a precios $p_x$ y $p_y$ respectivamente, con una renta monetaria $M$.
-
-El problema consiste en resolver:
-\[
-\begin{cases}
-\max U=U(x,y)\\
-\text{s.a. } p_x x+p_y y=M
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=U(x,y)+\lambda[M-p_x x-p_y y]
-\]
-
-Condiciones de primer orden:
-\[
-\begin{cases}
-U_x'(x,y)-p_x\lambda=0\\
-U_y'(x,y)-p_y\lambda=0\\
-M-p_x x-p_y y=0
-\end{cases}
-\]
-
-Al despejar:
-\[
-x^*=x^*(p_x,p_y,M),\quad
-y^*=y^*(p_x,p_y,M),\quad
-\lambda^*=\lambda^*(p_x,p_y,M).
-\]
-
-La utilidad indirecta queda:
-\[
-U_{\max}=U(x^*,y^*)=U(p_x,p_y,M).
-\]
-
-Por el teorema de la envolvente:
-\[
-\frac{\partial U_{\max}}{\partial p_x}=-x^*,\quad
-\frac{\partial U_{\max}}{\partial p_y}=-y^*,\quad
-\frac{\partial U_{\max}}{\partial M}=\lambda^*.
-\]
-
-Estos resultados se conocen como el \textbf{Lema de Roy}.
-
-%-------------------------------------------------
-\subsection*{2.3 Optimización con restricciones de desigualdad}
-
-Un programa matemático con restricciones de desigualdad se formula como:
-
-\[
-(P1)\;
-\begin{cases}
-\max z=f(x)\\
-\text{s.a. } g(x)\le b
-\end{cases}
-\qquad
-(P2)\;
-\begin{cases}
-\min z=f(x)\\
-\text{s.a. } g(x)\ge b
-\end{cases}
-\]
-
-El conjunto de soluciones factibles es:
-\[
-S=\{x\in D\mid g_j(x)\le b_j,\;1\le j\le m\}\quad \text{para }(P1)
-\]
-\[
-S=\{x\in D\mid g_j(x)\ge b_j,\;1\le j\le m\}\quad \text{para }(P2)
-\]
-
-Se dice que $x_0$ \textit{satura} la restricción $j$-ésima si $g_j(x_0)=b_j$.
-
-\textbf{Observación:}
-\begin{itemize}
-\item Si $x_0\in \text{Int}(S)$, ninguna restricción se satura en $x_0$.
-\item Si $x_0\in \text{Fr}(S)$, algunas restricciones se saturan en $x_0$.
-\end{itemize}
-
-\subsubsection*{2.3.1 Condición necesaria para la existencia de óptimos locales}
-
-\textbf{Teorema 20 (Kuhn--Tucker):}
-Sea $f:D\to\mathbb{R}$ y $g_j:D\to\mathbb{R}$ $(1\le j\le m)$,
-$D\subset\mathbb{R}^n$ abierto, $f,g_j\in C^1(D)$.
-Sea $x_0\in S$ y supongamos que las restricciones activas son las $p$ primeras.
-Si el problema presenta en $x_0$ un óptimo local, entonces existen
-$\lambda_j\ge0$ tales que:
-
-\[
-\begin{cases}
-\nabla f(x_0)-\sum_{j=1}^{m}\lambda_j\nabla g_j(x_0)=0\\
-\lambda_j[b_j-g_j(x_0)]=0,\quad 1\le j\le m
-\end{cases}
-\]
-
-\textbf{Definición 15:} Un punto factible que verifica las condiciones de Kuhn--Tucker
-se denomina \textit{punto crítico del programa}.
-
-\textbf{Definición 16:} Los números $\lambda_1,\ldots,\lambda_m$ se denominan
-\textit{multiplicadores de Lagrange}.
-
-%-------------------------------------------------
-\subsubsection*{2.3.3 Cuadro resumen}
-
-\[
-\begin{array}{c|c}
-\textbf{P1} & \textbf{P2}\\ \hline
-\max f(x) & \min f(x)\\
-g(x)\le b & g(x)\ge b
-\end{array}
-\]
-
-\textbf{Condiciones necesarias:}
-\[
-\mathcal{L}'_x=0,\quad
-\mathcal{L}'_\lambda\ge0,\quad
-\lambda\ge0
-\]
-
-\textbf{Condiciones suficientes:}
-\begin{itemize}
-\item $f$ cóncava (P1), convexa (P2).
-\item $g$ convexa (P1), cóncava (P2).
-\end{itemize}
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 32}
-
-\[
-\begin{cases}
-\min f(x,y)=x^2+(y+5)^2\\
-\text{s.a. } 2x+y\ge10
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=x^2+(y+5)^2+\lambda(10-2x-y)
-\]
-
-Condiciones:
-\[
-\begin{cases}
-2x-2\lambda=0\\
-2(y+5)-\lambda=0\\
-\lambda(10-2x-y)=0\\
-\lambda\ge0
-\end{cases}
-\]
-
-Resolviendo:
-\[
-x=6,\quad y=-2,\quad \lambda=6.
-\]
-
-Luego el punto crítico es $(6,-2)$.
-
-
-\[
-f(x,y)=x^2+(y+5)^2,
-\qquad
-Hf=
-\begin{pmatrix}
-2 & 0\\
-0 & 2
-\end{pmatrix}
-\]
-
-La matriz Hessiana es definida positiva, por lo tanto la función es estrictamente convexa.
-Además, $g(x,y)=2x+y$ es una función lineal, por lo tanto es cóncava y convexa.
-Concluimos que el problema presenta en el punto $(6,-2)$ un mínimo global único.
-
-\subsubsection*{Interpretación geométrica}
-
-En el ejercicio anterior se pretende minimizar la función
-\[
-f(x,y)=x^2+(y+5)^2
-\]
-en el dominio indicado.
-
-Para ello trazamos las curvas de nivel de la función:
-\[
-x^2+(y+5)^2=k.
-\]
-
-Se busca el mínimo valor de $k$ de manera que la curva de nivel interseque la región factible.
-
-%-------------------------------------------------
-\subsection*{Adición de restricciones de no negatividad en el problema}
-
-Consideremos ahora los siguientes problemas:
-\[
-(P1)\;
-\begin{cases}
-\max z=f(x)\\
-\text{s.a. } g(x)\le b\\
-x\ge0
-\end{cases}
-\qquad
-(P2)\;
-\begin{cases}
-\min z=f(x)\\
-\text{s.a. } g(x)\ge b\\
-x\ge0
-\end{cases}
-\]
-
-Podríamos resolver estos problemas como antes considerando la restricción de no negatividad
-como una nueva restricción que lleva su propio multiplicador en la función de Lagrange.
-
-\textbf{Otra forma es la siguiente:}
-
-\[
-(P1)\;
-\begin{cases}
-\max z=f(x)\\
-\text{s.a. } g(x)\le b\\
-x\ge0
-\end{cases}
-\qquad
-(P2)\;
-\begin{cases}
-\min z=f(x)\\
-\text{s.a. } g(x)\ge b\\
-x\ge0
-\end{cases}
-\]
-
-\[
-\mathcal{L}(x,\lambda)=f(x)+\lambda[b-g(x)]
-\]
-
-\textbf{Condiciones necesarias P1}
-\[
-\begin{cases}
-\mathcal{L}'_x\le0\\
-x\,\mathcal{L}'_x=0\\
-\mathcal{L}'_\lambda\le0\\
-\lambda\,\mathcal{L}'_\lambda=0\\
-x\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-\textbf{Condiciones necesarias P2}
-\[
-\begin{cases}
-\mathcal{L}'_x\ge0\\
-x\,\mathcal{L}'_x=0\\
-\mathcal{L}'_\lambda\ge0\\
-\lambda\,\mathcal{L}'_\lambda=0\\
-x\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-\textbf{Condiciones suficientes P1}
-\begin{itemize}
-\item $f$ cóncava, estrictamente cóncava o cuasicóncava.
-\item $g$ convexa, estrictamente convexa o cuasiconvexa.
-\end{itemize}
-
-\textbf{Condiciones suficientes P2}
-\begin{itemize}
-\item $f$ convexa, estrictamente convexa o cuasiconvexa.
-\item $g$ cóncava, estrictamente cóncava o cuasicóncava.
-\end{itemize}
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 33}
-
-\[
-\begin{cases}
-\min f(x,y)=x^2+(y+5)^2\\
-\text{s.a. } 2x+y\ge10\\
-x\ge0,\;y\ge0
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=x^2+(y+5)^2+\lambda(10-2x-y)
-\]
-
-Condiciones necesarias:
-\[
-\begin{cases}
-2x-2\lambda\ge0\\
-2(y+5)-\lambda\ge0\\
-10-2x-y\le0\\
-x[2x-2\lambda]=0\\
-y[2(y+5)-\lambda]=0\\
-\lambda[10-2x-y]=0\\
-x\ge0,\;y\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-Resolviendo se obtiene el punto crítico:
-\[
-(5,0)\quad \text{con }\lambda=5.
-\]
-
-Condiciones suficientes:
-
-\[
-Hf=
-\begin{pmatrix}
-2 & 0\\
-0 & 2
-\end{pmatrix}
-\]
-
-La Hessiana es definida positiva, por lo tanto la función es estrictamente convexa.
-Como $g(x,y)=2x+y$ es lineal, concluimos que el problema presenta en $(5,0)$
-un mínimo global único.
-
-\subsubsection*{Interpretación geométrica}
-
-Partimos de $\lambda=0$ y obtenemos los puntos $(0,-5)$ y $(0,0)$.
-Luego, para $\lambda>0$ obtenemos los puntos $(0,10)$, $(6,-2)$ y el punto $(5,0)$,
-donde el problema presenta el mínimo.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 34}
-
-\[
-\begin{cases}
-\max f(x,y)=x+y\\
-\text{s.a. } x^2+2y^2\le6\\
-x\ge0,\;y\ge0
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=x+y+\lambda(6-x^2-2y^2)
-\]
-
-Condiciones necesarias:
-\[
-\begin{cases}
-1-2\lambda x\le0\\
-1-4\lambda y\le0\\
-6-x^2-2y^2\ge0\\
-x(1-2\lambda x)=0\\
-y(1-4\lambda y)=0\\
-\lambda(6-x^2-2y^2)=0\\
-x\ge0,\;y\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-Resolviendo:
-\[
-x=2,\quad y=1,\quad \lambda=\tfrac14.
-\]
-
-Condiciones suficientes:
-
-$f(x,y)=x+y$ es lineal (cóncava y convexa) y
-\[
-Hf=
-\begin{pmatrix}
-2 & 0\\
-0 & 4
-\end{pmatrix}
-\]
-es definida positiva.
-
-Concluimos que el problema presenta en $(2,1)$ un máximo global.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 35}
-
-La función de producción de una empresa es de tipo Cobb--Douglas:
-\[
-f(K,L)=K^\alpha L^\beta,
-\qquad \alpha>0,\;0<\beta<1,
-\]
-donde $K>0$ es capital y $L>0$ es trabajo. Los precios son $p_K$ y $p_L$.
-
-Se desea minimizar el costo con producción al menos $Q_0>0$:
-\[
-\begin{cases}
-\min C(K,L)=p_K K+p_L L\\
-\text{s.a. } K^\alpha L^\beta\ge Q_0\\
-K\ge0,\;L\ge0
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(K,L,\lambda)=p_KK+p_LL+\lambda(Q_0-K^\alpha L^\beta)
-\]
-
-Condiciones necesarias:
-\[
-\begin{cases}
-p_K-\lambda\alpha K^{\alpha-1}L^\beta\ge0\\
-p_L-\lambda\beta K^\alpha L^{\beta-1}\ge0\\
-Q_0-K^\alpha L^\beta\le0\\
-K[p_K-\lambda\alpha K^{\alpha-1}L^\beta]=0\\
-L[p_L-\lambda\beta K^\alpha L^{\beta-1}]=0\\
-\lambda(Q_0-K^\alpha L^\beta)=0\\
-K\ge0,\;L\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-Para $K>0$, $L>0$ se obtiene:
-\[
-\frac{p_K}{\alpha K^{\alpha-1}L^\beta}
-=
-\frac{p_L}{\beta K^\alpha L^{\beta-1}}
-\Rightarrow
-K=\frac{\alpha p_L}{\beta p_K}L.
-\]
-
-Reemplazando en la restricción:
-\[
-L^*=
-Q_0^{\frac{1}{\alpha+\beta}}
-\left(\frac{\beta p_K}{\alpha p_L}\right)^{\frac{\alpha}{\alpha+\beta}},
-\quad
-K^*=
-Q_0^{\frac{1}{\alpha+\beta}}
-\left(\frac{\alpha p_L}{\beta p_K}\right)^{\frac{\beta}{\alpha+\beta}}.
-\]
-
-Condiciones suficientes:
-\begin{itemize}
-\item La función de costos es lineal $\Rightarrow$ convexa.
-\item La función de producción Cobb--Douglas es cuasicóncava.
-\end{itemize}
-
-Luego, el problema presenta un mínimo global.
-
-Por el teorema de la envolvente:
-\[
-\frac{\partial C_{\min}}{\partial p_K}=K^*>0,
-\quad
-\frac{\partial C_{\min}}{\partial p_L}=L^*>0,
-\quad
-\frac{\partial C_{\min}}{\partial Q_0}=\lambda^*>0.
-\]
-
-Un aumento en $p_K$, $p_L$ o $Q_0$ incrementa el costo mínimo.
-
-
-\begin{itemize}
-\item[(b)] La matriz $\bar H(x_0,\lambda_0)$ es definida negativa si y sólo si los $n-m$ últimos
-menores principales de $\bar H(x_0,\lambda_0)$ alternan signo comenzando por el signo $(-1)^{m+1}$.
-\item[(c)] Si las condiciones a) y b) no se cumplen y los determinantes son distintos de cero
-entonces la matriz $\bar H(x_0,\lambda_0)$ es indefinida.
-\end{itemize}
-
-\textbf{Teorema 15:} Sea $f:D\to\mathbb{R}$ y sean $g_i:D\to\mathbb{R}$ $(1\le i\le m)$,
-$D\subseteq\mathbb{R}^n$ abierto, $f,g_i\in C^2(D)$.
-Sea $x_0$ un punto crítico del programa $(P)$ con $\lambda_0$ multiplicadores de Lagrange asociados.
-
-\begin{itemize}
-\item[(i)] Si la matriz $\bar H(x_0,\lambda_0)$ es definida positiva entonces el problema $(P)$
-presenta en $x_0$ un mínimo local.
-\item[(ii)] Si la matriz $\bar H(x_0,\lambda_0)$ es definida negativa entonces el problema $(P)$
-presenta en $x_0$ un máximo local.
-\end{itemize}
-
-\subsubsection*{2.2.3 ¿Cuándo falla?}
-
-\begin{itemize}
-\item No se verifica la condición de regularidad. Si esto sucede la condición de Lagrange no
-tiene que verificarse necesariamente. Como consecuencia, para resolver un problema con
-restricciones de igualdad, siempre hay que tener en cuenta los puntos del conjunto de soluciones
-factibles que no cumplen la condición de regularidad.
-\item No existencia de extremos del programa. Si la hipótesis de funciones $C^1$ se cumple y la
-condición de regularidad se verifica, pero no existen puntos críticos, entonces el problema
-planteado carece de extremos locales.
-\item Matriz hessiana orlada semidefinida en un punto crítico. En esos casos habrá que hacer un
-estudio de la función en un entorno del punto.
-\end{itemize}
-
-\subsubsection*{2.2.4 Paso a paso}
-
-\begin{enumerate}
-\item Hallar el dominio de la función objetivo y el conjunto de soluciones factibles.
-\item Plantear la función de Lagrange.
-\item Calcular el gradiente de la función de Lagrange.
-\item Buscar los puntos que anulan el gradiente (puntos críticos).
-\item Fijarse si existen puntos pertenecientes al conjunto de soluciones factibles donde no se
-cumpla la condición de regularidad. En caso afirmativo realizar un estudio local.
-\item Hallar la matriz hessiana orlada.
-\item Reemplazar cada uno de los puntos críticos en la matriz hessiana orlada y definir el carácter
-de cada uno de ellos.
-\item Si en alguno de los puntos críticos la matriz hessiana es semidefinida (positiva o negativa)
-realizar un estudio local.
-\end{enumerate}
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 21}
-
-\[
-\begin{cases}
-f(x,y)=xy\\
-x+y=12
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=xy+\lambda(12-x-y)
-\]
-
-Condiciones de primer orden:
-\[
-\begin{cases}
-\mathcal{L}'_x=y-\lambda=0\\
-\mathcal{L}'_y=x-\lambda=0\\
-\mathcal{L}'_\lambda=12-x-y=0
-\end{cases}
-\]
-
-De las dos primeras ecuaciones:
-\[
-\lambda=y,\quad \lambda=x \Rightarrow y=x
-\]
-
-Reemplazando:
-\[
-12-x-x=0 \Rightarrow x=6,\; y=6,\; \lambda=6
-\]
-
-Punto crítico $P=(6,6)$.
-
-Matriz Hessiana orlada:
-\[
-\bar H=
-\begin{pmatrix}
-0 & 1 & 1\\
-1 & 0 & 1\\
-1 & 1 & 0
-\end{pmatrix}
-\]
-
-Como $n=2$, $m=1$ entonces $n-m=1$.
-
-Para máximo relativo:
-\[
-|\bar H|>0
-\]
-
-Como $\det(\bar H)=2>0$, el problema presenta en $P=(6,6)$ un máximo relativo.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 22}
-
-\[
-\begin{cases}
-f(x,y)=3x+2y\\
-2x^2+3y^2=210
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=3x+2y+\lambda(210-2x^2-3y^2)
-\]
-
-Condiciones de primer orden:
-\[
-\begin{cases}
-3-4\lambda x=0\\
-2-6\lambda y=0\\
-210-2x^2-3y^2=0
-\end{cases}
-\]
-
-De las dos primeras ecuaciones:
-\[
-\lambda=\frac{3}{4x}=\frac{1}{3y} \Rightarrow y=\frac{4}{9}x
-\]
-
-Reemplazando en la restricción:
-\[
-2x^2+3\left(\frac{4}{9}x\right)^2=210
-\Rightarrow x^2=81
-\]
-
-Puntos críticos:
-\[
-P_1=(9,4),\;\lambda=\frac{1}{12}
-\qquad
-P_2=(-9,-4),\;\lambda=-\frac{1}{12}
-\]
-
-Matriz Hessiana orlada:
-\[
-\bar H=
-\begin{pmatrix}
-0 & 4x & 6y\\
-4x & -4\lambda & 0\\
-6y & 0 & -6\lambda
-\end{pmatrix}
-\]
-
-Evaluando:
-\[
-\det\bar H(P_1)=840>0 \Rightarrow \text{máximo relativo}
-\]
-\[
-\det\bar H(P_2)=-840<0 \Rightarrow \text{mínimo relativo}
-\]
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 23}
-
-\[
-\begin{cases}
-f(x,y,z)=x^2+y^2+z^2\\
-x+y=2
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,z,\lambda)=x^2+y^2+z^2+\lambda(2-x-y)
-\]
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 24}
-
-\[
-\begin{cases}
-f(x,y,z)=x+2y+2z\\
-x^2+y^2=25\\
-x+y+z=0
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,z,\lambda_1,\lambda_2)=x+2y+2z+
-\lambda_1(25-x^2-y^2)+\lambda_2(-x-y-z)
-\]
-
-Puntos críticos:
-\[
-P_1=(5,0,-5),\quad
-P_2=(-5,0,5)
-\]
-
-Clasificación:
-\[
-P_1:\text{mínimo relativo},\quad
-P_2:\text{máximo relativo}
-\]
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 25}
-
-\[
-\begin{cases}
-f(x,y)=x^4+y^4\\
-x-y=0
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=x^4+y^4+\lambda(-x+y)
-\]
-
-Punto crítico:
-\[
-P=(0,0)
-\]
-
-Como $\det\bar H(P)=0$, no se puede concluir. Se requiere estudio local.
-
-%-------------------------------------------------
-\subsubsection*{2.2.5 Condiciones suficientes de optimalidad global}
-
-\textbf{Teorema 16:} Si $f$ es convexa (estrictamente convexa) en $S$ convexo, entonces el
-problema $(P)$ presenta un mínimo global (único).
-
-\textbf{Teorema 17:} Si $f$ es cuasiconvexa (cuasicóncava) en $S$ convexo, entonces el
-problema $(P)$ presenta un mínimo (máximo) global.
-
-\textbf{IMPORTANTE:}
-\begin{itemize}
-\item Si $f$ es convexa o cuasiconvexa en $S$ convexo, la condición de Lagrange es necesaria y
-suficiente para optimalidad global.
-\item El conjunto de soluciones factibles es convexo si y sólo si las restricciones son lineales.
-\end{itemize}
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 27}
-
-\[
-\begin{cases}
-f(x,y)=e^{x^2+y^2}\\
-2x-y=5
-\end{cases}
-\]
-
-Solución:
-\[
-P=(2,-1)
-\]
-
-Presenta un mínimo relativo (y global).
-
-%-------------------------------------------------
-\subsubsection*{2.2.7 Análisis de sensibilidad}
-
-\textbf{Teorema 19 (Interpretación de los multiplicadores de Lagrange):}
-\[
-\frac{\partial f(x^*)}{\partial b_j}=\lambda_j
-\]
-
-\textbf{IMPORTANTE:}
-\begin{itemize}
-\item $\lambda_j>0$: aumentar $b_j$ aumenta el valor óptimo.
-\item $\lambda_j<0$: aumentar $b_j$ disminuye el valor óptimo.
-\item $\lambda_j=0$: no hay información de primer orden.
-\end{itemize}
-
-Económicamente, $\lambda_j$ representa el \textit{valor sombra de la restricción}.
-
-
-\[
-f_N \simeq \sum_{j=1}^{m}\lambda_j^{*}\,\Delta b_j + f_{opt}
-\]
-
-\subsubsection*{Ejemplo 28}
-
-Consideremos el Ejemplo 23, el problema presenta en el punto
-\[
-P=(1,1,0)\quad (\text{con }\lambda=2)
-\]
-un mínimo relativo, siendo el valor mínimo de la función
-\[
-f_{\min}=f(1,1,0)=2.
-\]
-
-Si ahora consideramos el problema
-\[
-\begin{cases}
-f(x,y,z)=x^2+y^2+z^2\\
-x+y=3
-\end{cases}
-\]
-
-sin resolver nuevamente se podría encontrar el valor óptimo aproximado de este problema de la siguiente forma:
-\[
-f_N \simeq 2(3-2)+2=4.
-\]
-
-Consideremos el siguiente problema:
-\[
-(Pa)\quad
-\begin{cases}
-\text{opt } z=f(x,a)\\
-\text{s.a. } g(x,a)=b
-\end{cases}
-\]
-
-donde $f\in C^1$ con $x\in\mathbb{R}^n$ (variables de decisión) y $a\in\mathbb{R}^k$ (parámetros).
-
-Sea $A\subset\mathbb{R}^k$ un conjunto abierto y supongamos que para todo
-$a=(a_1,\ldots,a_k)\in A$ existe
-\[
-x^*(a)=\big(x_1^*(a_1,\ldots,a_k),\ldots,x_n^*(a_1,\ldots,a_k)\big)
-\]
-solución óptima del problema $(Pa)$ con multiplicadores de Lagrange asociados
-\[
-\lambda^*(a)=(\lambda_1^*(a_1,\ldots,a_k),\ldots,\lambda_m^*(a_1,\ldots,a_k)),
-\]
-siendo $x^*$ y $\lambda^*$ funciones $C^1$.
-
-Si definimos la función objetivo indirecta o función valor como
-\[
-\varphi(a)=f(x^*(a);a),
-\]
-se verifica:
-\[
-\frac{\partial \varphi(a)}{\partial a_i}
-=
-\frac{\partial \mathcal{L}(x^*(a);\lambda^*(a))}{\partial a_i},
-\qquad 1\le i\le k.
-\]
-
-donde $\mathcal{L}$ es la función de Lagrange asociada al problema $(Pa)$.
-
-El resultado anterior se conoce como \textbf{Teorema de la Envolvente}.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 29}
-
-Consideremos una empresa que compra sus insumos productivos capital $(K)$ y trabajo $(L)$
-en mercados perfectamente competitivos a precios $r$ y $w$ respectivamente, y sea
-$f(L,K)$ la función de producción de la empresa.
-
-El problema consiste en resolver:
-\[
-\begin{cases}
-\min C(L,K)=wL+rK\\
-\text{s.a. } f(L,K)=Q
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(L,K,\lambda)=wL+rK+\lambda[Q-f(L,K)]
-\]
-
-Condiciones de primer orden:
-\[
-\begin{cases}
-\mathcal{L}'_L=w-\lambda f_L'(L,K)=0\\
-\mathcal{L}'_K=r-\lambda f_K'(L,K)=0\\
-\mathcal{L}'_\lambda=Q-f(L,K)=0
-\end{cases}
-\]
-
-Al despejar (si tuviéramos la forma explícita de la función de producción) obtendríamos:
-\[
-L^*=L^*(w,r,Q),\qquad
-K^*=K^*(w,r,Q),\qquad
-\lambda^*=\lambda^*(w,r,Q).
-\]
-
-Reemplazando en la función de costo se obtiene la función de costo indirecta:
-\[
-C_{\min}=C(L^*,K^*)=C(w,r,Q).
-\]
-
-Por el teorema de la envolvente:
-\[
-\frac{\partial C_{\min}}{\partial w}=L^*,\qquad
-\frac{\partial C_{\min}}{\partial r}=K^*,\qquad
-\frac{\partial C_{\min}}{\partial Q}=\lambda^*.
-\]
-
-Estas derivadas indican cómo impactan cambios en $w$, $r$ y $Q$ en el costo mínimo.
-
-\textbf{Observación:}
-De las ecuaciones anteriores se desprende que las funciones de demanda condicionadas de
-los insumos $L$ y $K$ de la empresa son:
-\[
-L^*=\frac{\partial C(w,r,Q)}{\partial w},
-\qquad
-K^*=\frac{\partial C(w,r,Q)}{\partial r}.
-\]
-
-Estos resultados se conocen como el \textbf{Lema de Shepard}.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 30}
-
-Consideremos un individuo que consume dos bienes $X$ e $Y$ en un mercado perfectamente
-competitivo a precios $p_x$ y $p_y$ respectivamente, con una renta monetaria $M$.
-
-El problema consiste en resolver:
-\[
-\begin{cases}
-\max U=U(x,y)\\
-\text{s.a. } p_x x+p_y y=M
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=U(x,y)+\lambda[M-p_x x-p_y y]
-\]
-
-Condiciones de primer orden:
-\[
-\begin{cases}
-U_x'(x,y)-p_x\lambda=0\\
-U_y'(x,y)-p_y\lambda=0\\
-M-p_x x-p_y y=0
-\end{cases}
-\]
-
-Al despejar:
-\[
-x^*=x^*(p_x,p_y,M),\quad
-y^*=y^*(p_x,p_y,M),\quad
-\lambda^*=\lambda^*(p_x,p_y,M).
-\]
-
-La utilidad indirecta queda:
-\[
-U_{\max}=U(x^*,y^*)=U(p_x,p_y,M).
-\]
-
-Por el teorema de la envolvente:
-\[
-\frac{\partial U_{\max}}{\partial p_x}=-x^*,\quad
-\frac{\partial U_{\max}}{\partial p_y}=-y^*,\quad
-\frac{\partial U_{\max}}{\partial M}=\lambda^*.
-\]
-
-Estos resultados se conocen como el \textbf{Lema de Roy}.
-
-%-------------------------------------------------
-\subsection*{2.3 Optimización con restricciones de desigualdad}
-
-Un programa matemático con restricciones de desigualdad se formula como:
-
-\[
-(P1)\;
-\begin{cases}
-\max z=f(x)\\
-\text{s.a. } g(x)\le b
-\end{cases}
-\qquad
-(P2)\;
-\begin{cases}
-\min z=f(x)\\
-\text{s.a. } g(x)\ge b
-\end{cases}
-\]
-
-El conjunto de soluciones factibles es:
-\[
-S=\{x\in D\mid g_j(x)\le b_j,\;1\le j\le m\}\quad \text{para }(P1)
-\]
-\[
-S=\{x\in D\mid g_j(x)\ge b_j,\;1\le j\le m\}\quad \text{para }(P2)
-\]
-
-Se dice que $x_0$ \textit{satura} la restricción $j$-ésima si $g_j(x_0)=b_j$.
-
-\textbf{Observación:}
-\begin{itemize}
-\item Si $x_0\in \text{Int}(S)$, ninguna restricción se satura en $x_0$.
-\item Si $x_0\in \text{Fr}(S)$, algunas restricciones se saturan en $x_0$.
-\end{itemize}
-
-\subsubsection*{2.3.1 Condición necesaria para la existencia de óptimos locales}
-
-\textbf{Teorema 20 (Kuhn--Tucker):}
-Sea $f:D\to\mathbb{R}$ y $g_j:D\to\mathbb{R}$ $(1\le j\le m)$,
-$D\subset\mathbb{R}^n$ abierto, $f,g_j\in C^1(D)$.
-Sea $x_0\in S$ y supongamos que las restricciones activas son las $p$ primeras.
-Si el problema presenta en $x_0$ un óptimo local, entonces existen
-$\lambda_j\ge0$ tales que:
-
-\[
-\begin{cases}
-\nabla f(x_0)-\sum_{j=1}^{m}\lambda_j\nabla g_j(x_0)=0\\
-\lambda_j[b_j-g_j(x_0)]=0,\quad 1\le j\le m
-\end{cases}
-\]
-
-\textbf{Definición 15:} Un punto factible que verifica las condiciones de Kuhn--Tucker
-se denomina \textit{punto crítico del programa}.
-
-\textbf{Definición 16:} Los números $\lambda_1,\ldots,\lambda_m$ se denominan
-\textit{multiplicadores de Lagrange}.
-
-%-------------------------------------------------
-\subsubsection*{2.3.3 Cuadro resumen}
-
-\[
-\begin{array}{c|c}
-\textbf{P1} & \textbf{P2}\\ \hline
-\max f(x) & \min f(x)\\
-g(x)\le b & g(x)\ge b
-\end{array}
-\]
-
-\textbf{Condiciones necesarias:}
-\[
-\mathcal{L}'_x=0,\quad
-\mathcal{L}'_\lambda\ge0,\quad
-\lambda\ge0
-\]
-
-\textbf{Condiciones suficientes:}
-\begin{itemize}
-\item $f$ cóncava (P1), convexa (P2).
-\item $g$ convexa (P1), cóncava (P2).
-\end{itemize}
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 32}
-
-\[
-\begin{cases}
-\min f(x,y)=x^2+(y+5)^2\\
-\text{s.a. } 2x+y\ge10
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=x^2+(y+5)^2+\lambda(10-2x-y)
-\]
-
-Condiciones:
-\[
-\begin{cases}
-2x-2\lambda=0\\
-2(y+5)-\lambda=0\\
-\lambda(10-2x-y)=0\\
-\lambda\ge0
-\end{cases}
-\]
-
-Resolviendo:
-\[
-x=6,\quad y=-2,\quad \lambda=6.
-\]
-
-Luego el punto crítico es $(6,-2)$.
-\[
-f(x,y)=x^2+(y+5)^2,
-\qquad
-Hf=
-\begin{pmatrix}
-2 & 0\\
-0 & 2
-\end{pmatrix}
-\]
-
-La matriz Hessiana es definida positiva, por lo tanto la función es estrictamente convexa.
-Además, $g(x,y)=2x+y$ es una función lineal, por lo tanto es cóncava y convexa.
-Concluimos que el problema presenta en el punto $(6,-2)$ un mínimo global único.
-
-\subsubsection*{Interpretación geométrica}
-
-En el ejercicio anterior se pretende minimizar la función
-\[
-f(x,y)=x^2+(y+5)^2
-\]
-en el dominio indicado.
-
-Para ello trazamos las curvas de nivel de la función:
-\[
-x^2+(y+5)^2=k.
-\]
-
-Se busca el mínimo valor de $k$ de manera que la curva de nivel interseque la región factible.
-
-%-------------------------------------------------
-\subsection*{Adición de restricciones de no negatividad en el problema}
-
-Consideremos ahora los siguientes problemas:
-\[
-(P1)\;
-\begin{cases}
-\max z=f(x)\\
-\text{s.a. } g(x)\le b\\
-x\ge0
-\end{cases}
-\qquad
-(P2)\;
-\begin{cases}
-\min z=f(x)\\
-\text{s.a. } g(x)\ge b\\
-x\ge0
-\end{cases}
-\]
-
-Podríamos resolver estos problemas como antes considerando la restricción de no negatividad
-como una nueva restricción que lleva su propio multiplicador en la función de Lagrange.
-
-\textbf{Otra forma es la siguiente:}
-
-\[
-(P1)\;
-\begin{cases}
-\max z=f(x)\\
-\text{s.a. } g(x)\le b\\
-x\ge0
-\end{cases}
-\qquad
-(P2)\;
-\begin{cases}
-\min z=f(x)\\
-\text{s.a. } g(x)\ge b\\
-x\ge0
-\end{cases}
-\]
-
-\[
-\mathcal{L}(x,\lambda)=f(x)+\lambda[b-g(x)]
-\]
-
-\textbf{Condiciones necesarias P1}
-\[
-\begin{cases}
-\mathcal{L}'_x\le0\\
-x\,\mathcal{L}'_x=0\\
-\mathcal{L}'_\lambda\le0\\
-\lambda\,\mathcal{L}'_\lambda=0\\
-x\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-\textbf{Condiciones necesarias P2}
-\[
-\begin{cases}
-\mathcal{L}'_x\ge0\\
-x\,\mathcal{L}'_x=0\\
-\mathcal{L}'_\lambda\ge0\\
-\lambda\,\mathcal{L}'_\lambda=0\\
-x\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-\textbf{Condiciones suficientes P1}
-\begin{itemize}
-\item $f$ cóncava, estrictamente cóncava o cuasicóncava.
-\item $g$ convexa, estrictamente convexa o cuasiconvexa.
-\end{itemize}
-
-\textbf{Condiciones suficientes P2}
-\begin{itemize}
-\item $f$ convexa, estrictamente convexa o cuasiconvexa.
-\item $g$ cóncava, estrictamente cóncava o cuasicóncava.
-\end{itemize}
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 33}
-
-\[
-\begin{cases}
-\min f(x,y)=x^2+(y+5)^2\\
-\text{s.a. } 2x+y\ge10\\
-x\ge0,\;y\ge0
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=x^2+(y+5)^2+\lambda(10-2x-y)
-\]
-
-Condiciones necesarias:
-\[
-\begin{cases}
-2x-2\lambda\ge0\\
-2(y+5)-\lambda\ge0\\
-10-2x-y\le0\\
-x[2x-2\lambda]=0\\
-y[2(y+5)-\lambda]=0\\
-\lambda[10-2x-y]=0\\
-x\ge0,\;y\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-Resolviendo se obtiene el punto crítico:
-\[
-(5,0)\quad \text{con }\lambda=5.
-\]
-
-Condiciones suficientes:
-
-\[
-Hf=
-\begin{pmatrix}
-2 & 0\\
-0 & 2
-\end{pmatrix}
-\]
-
-La Hessiana es definida positiva, por lo tanto la función es estrictamente convexa.
-Como $g(x,y)=2x+y$ es lineal, concluimos que el problema presenta en $(5,0)$
-un mínimo global único.
-
-\subsubsection*{Interpretación geométrica}
-
-Partimos de $\lambda=0$ y obtenemos los puntos $(0,-5)$ y $(0,0)$.
-Luego, para $\lambda>0$ obtenemos los puntos $(0,10)$, $(6,-2)$ y el punto $(5,0)$,
-donde el problema presenta el mínimo.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 34}
-
-\[
-\begin{cases}
-\max f(x,y)=x+y\\
-\text{s.a. } x^2+2y^2\le6\\
-x\ge0,\;y\ge0
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(x,y,\lambda)=x+y+\lambda(6-x^2-2y^2)
-\]
-
-Condiciones necesarias:
-\[
-\begin{cases}
-1-2\lambda x\le0\\
-1-4\lambda y\le0\\
-6-x^2-2y^2\ge0\\
-x(1-2\lambda x)=0\\
-y(1-4\lambda y)=0\\
-\lambda(6-x^2-2y^2)=0\\
-x\ge0,\;y\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-Resolviendo:
-\[
-x=2,\quad y=1,\quad \lambda=\tfrac14.
-\]
-
-Condiciones suficientes:
-
-$f(x,y)=x+y$ es lineal (cóncava y convexa) y
-\[
-Hf=
-\begin{pmatrix}
-2 & 0\\
-0 & 4
-\end{pmatrix}
-\]
-es definida positiva.
-
-Concluimos que el problema presenta en $(2,1)$ un máximo global.
-
-%-------------------------------------------------
-\subsubsection*{Ejemplo 35}
-
-La función de producción de una empresa es de tipo Cobb--Douglas:
-\[
-f(K,L)=K^\alpha L^\beta,
-\qquad \alpha>0,\;0<\beta<1,
-\]
-donde $K>0$ es capital y $L>0$ es trabajo. Los precios son $p_K$ y $p_L$.
-
-Se desea minimizar el costo con producción al menos $Q_0>0$:
-\[
-\begin{cases}
-\min C(K,L)=p_K K+p_L L\\
-\text{s.a. } K^\alpha L^\beta\ge Q_0\\
-K\ge0,\;L\ge0
-\end{cases}
-\]
-
-Función de Lagrange:
-\[
-\mathcal{L}(K,L,\lambda)=p_KK+p_LL+\lambda(Q_0-K^\alpha L^\beta)
-\]
-
-Condiciones necesarias:
-\[
-\begin{cases}
-p_K-\lambda\alpha K^{\alpha-1}L^\beta\ge0\\
-p_L-\lambda\beta K^\alpha L^{\beta-1}\ge0\\
-Q_0-K^\alpha L^\beta\le0\\
-K[p_K-\lambda\alpha K^{\alpha-1}L^\beta]=0\\
-L[p_L-\lambda\beta K^\alpha L^{\beta-1}]=0\\
-\lambda(Q_0-K^\alpha L^\beta)=0\\
-K\ge0,\;L\ge0,\;\lambda\ge0
-\end{cases}
-\]
-
-Para $K>0$, $L>0$ se obtiene:
-\[
-\frac{p_K}{\alpha K^{\alpha-1}L^\beta}
-=
-\frac{p_L}{\beta K^\alpha L^{\beta-1}}
-\Rightarrow
-K=\frac{\alpha p_L}{\beta p_K}L.
-\]
-
-Reemplazando en la restricción:
-\[
-L^*=
-Q_0^{\frac{1}{\alpha+\beta}}
-\left(\frac{\beta p_K}{\alpha p_L}\right)^{\frac{\alpha}{\alpha+\beta}},
-\quad
-K^*=
-Q_0^{\frac{1}{\alpha+\beta}}
-\left(\frac{\alpha p_L}{\beta p_K}\right)^{\frac{\beta}{\alpha+\beta}}.
-\]
-
-Condiciones suficientes:
-\begin{itemize}
-\item La función de costos es lineal $\Rightarrow$ convexa.
-\item La función de producción Cobb--Douglas es cuasicóncava.
-\end{itemize}
-
-Luego, el problema presenta un mínimo global.
-
-Por el teorema de la envolvente:
-\[
-\frac{\partial C_{\min}}{\partial p_K}=K^*>0,
-\quad
-\frac{\partial C_{\min}}{\partial p_L}=L^*>0,
-\quad
-\frac{\partial C_{\min}}{\partial Q_0}=\lambda^*>0.
-\]
-
-Un aumento en $p_K$, $p_L$ o $Q_0$ incrementa el costo mínimo.
+\end{Ejer}
