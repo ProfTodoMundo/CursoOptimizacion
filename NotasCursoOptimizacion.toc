@@ -5,3 +5,24 @@
 \contentsline {subsection}{\numberline {1.3}Cient\'ificos prominentes}{1}{subsection.1.3}%
 \contentsline {section}{\numberline {2}Fundamentos}{3}{section.2}%
 \contentsline {section}{\numberline {3}Introducci\'on}{7}{section.3}%
+\contentsline {section}{\numberline {4}Programaci\'on Lineal}{41}{section.4}%
+\contentsline {section}{\numberline {5}Department Time Constraints}{44}{section.5}%
+\contentsline {section}{\numberline {6}Graphical Solution}{45}{section.6}%
+\contentsline {section}{\numberline {7}Definition: Linear Programming Problem}{45}{section.7}%
+\contentsline {section}{\numberline {8}Feasible Region and Optimal Solution}{45}{section.8}%
+\contentsline {section}{\numberline {9}Canonical Linear Programming Problem}{45}{section.9}%
+\contentsline {section}{\numberline {10}Standard Maximum Problem}{46}{section.10}%
+\contentsline {section}{\numberline {11}Standard Minimum Problem}{46}{section.11}%
+\contentsline {section}{\numberline {12}Extreme Points and Optimality}{46}{section.12}%
+\contentsline {section}{\numberline {13}Resource Allocation Model}{46}{section.13}%
+\contentsline {section}{\numberline {14}Ejem 1: The Diet Problem}{47}{section.14}%
+\contentsline {section}{\numberline {15}Ejem 2: The Transportation Problem}{47}{section.15}%
+\contentsline {section}{\numberline {16}Linear Program in Matrix Form}{48}{section.16}%
+\contentsline {section}{\numberline {17}Basic Terminology}{49}{section.17}%
+\contentsline {section}{\numberline {18}Equivalent Forms}{49}{section.18}%
+\contentsline {section}{\numberline {19}Geometry of Linear Programming}{49}{section.19}%
+\contentsline {section}{\numberline {20}Corollaries}{50}{section.20}%
+\contentsline {section}{\numberline {21}Standard Maximum and Minimum Problems}{50}{section.21}%
+\contentsline {subsection}{\numberline {21.1}What is a Linear Programming (LP) Problem?}{54}{subsection.21.1}%
+\contentsline {subsection}{\numberline {21.2}Modeling LP Problems}{56}{subsection.21.2}%
+\contentsline {section}{\numberline {22}Graficar}{58}{section.22}%

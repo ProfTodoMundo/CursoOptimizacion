@@ -1,0 +1,1315 @@
+\documentclass[12pt]{article}
+
+\usepackage[spanish,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+\title{Colección de Problemas de Programación Lineal}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 1: Compañía de Pinturas}
+
+La compañía de pinturas \textbf{Manchita} produce tres tipos de pintura adicionando a una pintura base cuatro productos químicos ($Q_1$ a $Q_4$). 
+
+Se desea determinar la cantidad de toneladas de cada tipo de pintura que debe producirse para maximizar la ganancia total.
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{c|ccc|c}
+\toprule
+ & \multicolumn{3}{c|}{Kg de aditivo por tonelada} & Disponible \\
+Aditivo & Interior & Exterior & Especial & (kg) \\
+\midrule
+$Q_1$ & 1 & 2 & 2 & 2 \\
+$Q_2$ & 2 & 1 & 1 & 1 \\
+$Q_3$ & 1 & 5 & 1 & 3 \\
+$Q_4$ & 0 & 0 & 1 & 0.8 \\
+\midrule
+Ganancia & 15000 & 25000 & 19000 & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 2: Producción en Máquinas}
+
+Una empresa produce tres productos procesados en tres máquinas.
+
+\begin{center}
+\begin{tabular}{c|ccc|c}
+\toprule
+ & \multicolumn{3}{c|}{Tiempo por unidad (min)} & Capacidad \\
+Máquina & Prod.1 & Prod.2 & Prod.3 & (min/día) \\
+\midrule
+$M_1$ & 2 & 3 & 2 & 440 \\
+$M_2$ & 4 & - & 3 & 470 \\
+$M_3$ & 2 & 5 & - & 430 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 3: Mezcla de Café}
+
+Una casa empacadora recibe diariamente 700 kg de café tipo C y 800 kg tipo K.
+
+Mezcla A:
+\[
+2 \text{ partes C} + 1 \text{ parte K}
+\]
+Ganancia: 22 céntimos/kg.
+
+Mezcla B:
+\[
+1 \text{ parte C} + 2 \text{ partes K}
+\]
+Ganancia: 26 céntimos/kg.
+
+Determinar las cantidades que maximizan la ganancia.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 4: Trenes y Camiones}
+
+Un artesano fabrica trenes y camiones.
+
+\begin{center}
+\begin{tabular}{c|ccc}
+\toprule
+ & Tornillos & Bloques & Ruedas \\
+\midrule
+Tren & 10 & 15 & 18 \\
+Camión & 20 & 10 & 6 \\
+\midrule
+Disponibles & 8000 & 6000 & 6300 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Beneficios:
+\[
+1.6 \text{ €/tren}, \quad 1.4 \text{ €/camión}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 5: Calentadores y Aires}
+
+Producción diaria con restricciones de horas:
+
+\begin{itemize}
+\item Calentador: 2h partes + 1h ensamblaje
+\item Aire acondicionado: 1h partes + 2h ensamblaje
+\end{itemize}
+
+Disponibilidad:
+\[
+8 \text{h partes}, \quad 10 \text{h ensamblaje}
+\]
+
+Ganancias:
+\[
+30 \text{ por calentador}, \quad 50 \text{ por aire}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 6: Vino y Vinagre}
+
+Restricciones:
+
+\[
+2V \leq G + 4
+\]
+\[
+3G + 4V \leq 18
+\]
+
+Beneficio:
+\[
+8V + 2G
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 7: Tapicería}
+
+Tipo A:
+\[
+10m \text{ tela}, \quad 12h
+\]
+
+Tipo B:
+\[
+15m \text{ tela}, \quad 16h
+\]
+
+Disponibilidad:
+\[
+300m \text{ tela}, \quad 336h
+\]
+
+Ganancias:
+\[
+1500A + 2100B
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 8: Gadgets y Gewgaws}
+
+Modelo:
+
+\[
+\max z = 5x_1 + 4x_2
+\]
+
+Sujeto a:
+
+\[
+x_1 + 2x_2 \leq 120
+\]
+\[
+x_1 + x_2 \leq 70
+\]
+\[
+2x_1 + x_2 \leq 100
+\]
+\[
+x_1, x_2 \geq 0
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 9: Modelo Simple}
+
+\[
+\max 3x_1 + x_2
+\]
+
+Sujeto a:
+
+\[
+x_1 + x_2 \leq 7
+\]
+\[
+x_1 \geq 0
+\]
+\[
+x_2 \geq 0
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 10: Dieta de Cerdos}
+
+\begin{center}
+\begin{tabular}{c|ccc|c}
+\toprule
+ & Corn & Silage & Alfalfa & Requerimiento \\
+\midrule
+Carbs & 0.9 & 0.2 & 0.4 & 2 \\
+Protein & 3 & 8 & 6 & 18 \\
+Vitamins & 1 & 2 & 4 & 15 \\
+Cost & 7 & 6 & 5 & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 11: Modelo Dieta G1 y G2}
+
+\begin{center}
+\begin{tabular}{c|ccc|c}
+\toprule
+ & Starch & Proteins & Vitamins & Cost \\
+\midrule
+G1 & 5 & 4 & 2 & 0.6 \\
+G2 & 7 & 2 & 1 & 0.35 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Requerimientos diarios:
+\[
+8 \text{ starch}, \quad 15 \text{ proteins}, \quad 3 \text{ vitamins}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 12: Giapetto}
+
+Modelo:
+
+\[
+\max Z = \text{Ingresos} - \text{Costos}
+\]
+
+Restricciones:
+\[
+2F + C \leq 100
+\]
+\[
+F + C \leq 80
+\]
+\[
+C \leq 40
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problema 13: Industria de Dos Productos}
+
+\[
+\max \text{Profit} = 3x_1 + 4x_2
+\]
+
+Sujeto a:
+
+\[
+2x_1 + 3x_2 \leq 16
+\]
+\[
+4x_1 + 2x_2 \leq 16
+\]
+\[
+x_1, x_2 \geq 0
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Department Time Constraints}
+
+Time used in making $x_1$ and $x_2$ units of two products must not exceed the total daily time available in the two shops.
+
+\[
+2x_1 + 3x_2 \le 16 \qquad \text{(Machine shop constraint)}
+\]
+\[
+4x_1 + 2x_2 \le 16 \qquad \text{(Assembly shop constraint)}
+\]
+
+Nonnegativity constraints:
+\[
+x_1 \ge 0, \quad x_2 \ge 0.
+\]
+
+The problem in mathematical form:
+
+\[
+\textbf{Maximize} \quad Z = 3x_1 + 4x_2
+\]
+
+subject to
+\[
+2x_1 + 3x_2 \le 16
+\]
+\[
+4x_1 + 2x_2 \le 16
+\]
+\[
+x_1, x_2 \ge 0.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Graphical Solution}
+
+Consider
+
+\[
+\max Z = x + 2y
+\]
+
+subject to
+
+\[
+x \ge 0, \quad y \ge 0,
+\]
+\[
+x \le 6, \quad y \le 7,
+\]
+\[
+x + y \le 12.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Definition: Linear Programming Problem}
+
+A linear programming problem (LP) is an optimization problem where:
+
+\begin{enumerate}
+\item We maximize or minimize a linear function of decision variables (objective function).
+\item The decision variables satisfy a set of linear constraints.
+\item Each variable may have sign restrictions ($x_j \ge 0$ or unrestricted).
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Feasible Region and Optimal Solution}
+
+\textbf{Definition.}  
+The feasible region of an LP is the set of all points that satisfy all constraints and sign restrictions.
+
+\textbf{Definition.}  
+For a maximization problem, an optimal solution is a feasible point with the largest objective value.  
+For a minimization problem, it is the feasible point with the smallest objective value.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Canonical Linear Programming Problem}
+
+\textbf{Definition (Canonical Form).}
+
+\begin{enumerate}
+\item $x_j \ge 0$, $j = 1,\dots,N$
+\item $Ax = b$
+\item Minimize $c^T x$
+\end{enumerate}
+
+Matrix form:
+
+\[
+\min c^T x
+\]
+\[
+Ax = b
+\]
+\[
+x \ge 0
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Standard Maximum Problem}
+
+Find $x \in \mathbb{R}^n$ to maximize
+
+\[
+c^T x = c_1x_1 + \cdots + c_n x_n
+\]
+
+subject to
+
+\[
+Ax \le b
+\]
+\[
+x \ge 0
+\]
+
+where
+
+\[
+A =
+\begin{pmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{m1} & \cdots & a_{mn}
+\end{pmatrix}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Standard Minimum Problem}
+
+Find $y \in \mathbb{R}^m$ to minimize
+
+\[
+y^T b
+\]
+
+subject to
+
+\[
+y^T A \ge c^T
+\]
+\[
+y \ge 0
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Extreme Points and Optimality}
+
+\textbf{Observation 1.}  
+The optimal solution occurs at an extreme point of the feasible region.
+
+\textbf{Observation 2.}  
+A point is optimal if and only if the negative gradient of the objective function lies in the cone spanned by the gradients of the active constraints.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resource Allocation Model}
+
+Let:
+
+\[
+\max \sum_{j=1}^n c_j x_j
+\]
+
+subject to
+
+\[
+\sum_{j=1}^n a_{ij} x_j \le b_i, \quad i = 1,\dots,m
+\]
+
+\[
+x_j \ge 0
+\]
+
+Matrix form:
+
+\[
+\max z = c^T x
+\]
+\[
+Ax \le b
+\]
+\[
+x \ge 0
+\]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example 1: The Diet Problem}
+
+There are $m$ different types of food $F_1,\dots,F_m$ that supply $n$ nutrients
+$N_1,\dots,N_n$.
+
+Let:
+\begin{itemize}
+\item $b_i$ = price per unit of food $F_i$,
+\item $a_{ij}$ = amount of nutrient $N_j$ in one unit of $F_i$,
+\item $c_j$ = minimum daily requirement of nutrient $N_j$,
+\item $y_i$ = units of food $F_i$ purchased per day.
+\end{itemize}
+
+Cost per day:
+
+\[
+b_1 y_1 + b_2 y_2 + \dots + b_m y_m
+\tag{1}
+\]
+
+Nutrient requirement:
+
+\[
+a_{1j}y_1 + a_{2j}y_2 + \dots + a_{mj}y_m \ge c_j,
+\quad j = 1,\dots,n.
+\tag{2}
+\]
+
+Nonnegativity:
+
+\[
+y_i \ge 0, \quad i=1,\dots,m.
+\tag{3}
+\]
+
+Thus, minimize (1) subject to (2)–(3).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example 2: The Transportation Problem}
+
+There are $I$ production plants and $J$ markets.
+
+Let:
+\begin{itemize}
+\item $s_i$ = supply at plant $P_i$,
+\item $r_j$ = demand at market $M_j$,
+\item $b_{ij}$ = transportation cost from $P_i$ to $M_j$,
+\item $y_{ij}$ = amount shipped from $P_i$ to $M_j$.
+\end{itemize}
+
+Total transportation cost:
+
+\[
+\sum_{i=1}^{I} \sum_{j=1}^{J} y_{ij} b_{ij}.
+\tag{4}
+\]
+
+Supply constraints:
+
+\[
+\sum_{j=1}^{J} y_{ij} \le s_i,
+\quad i=1,\dots,I.
+\tag{5}
+\]
+
+Demand constraints:
+
+\[
+\sum_{i=1}^{I} y_{ij} \ge r_j,
+\quad j=1,\dots,J.
+\tag{6}
+\]
+
+Nonnegativity:
+
+\[
+y_{ij} \ge 0.
+\tag{7}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Linear Program in Matrix Form}
+
+Standard form:
+
+\[
+\min \sum_{j=1}^{n} c_j x_j
+\]
+
+subject to
+
+\[
+\sum_{j=1}^{n} a_{ij} x_j = b_i,
+\quad i=1,\dots,m,
+\]
+
+\[
+x_j \ge 0.
+\]
+
+Matrix representation:
+
+\[
+\min c^T x
+\quad \text{subject to}
+\quad
+Ax = b,
+\quad
+x \ge 0.
+\tag{LP-1}
+\]
+
+Where
+
+\[
+x =
+\begin{pmatrix}
+x_1 \\ \vdots \\ x_n
+\end{pmatrix},
+\quad
+b =
+\begin{pmatrix}
+b_1 \\ \vdots \\ b_m
+\end{pmatrix},
+\quad
+c =
+\begin{pmatrix}
+c_1 \\ \vdots \\ c_n
+\end{pmatrix},
+\]
+
+\[
+A =
+\begin{pmatrix}
+a_{11} & \dots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{m1} & \dots & a_{mn}
+\end{pmatrix}.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basic Terminology}
+
+\textbf{Definition 1.}  
+If $x$ satisfies $Ax=b$, $x\ge 0$, then $x$ is \emph{feasible}.
+
+\textbf{Definition 2.}  
+An LP is feasible if it has a feasible solution.
+
+\textbf{Definition 3.}  
+$x^*$ is optimal if
+
+\[
+c^T x^* = \min \{c^T x : Ax=b, x\ge 0\}.
+\]
+
+\textbf{Definition 4.}  
+An LP is unbounded if the objective function can decrease without bound over feasible solutions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Equivalent Forms}
+
+1. Maximization as minimization:
+
+\[
+\max c^T x \quad \Longleftrightarrow \quad \min -c^T x.
+\]
+
+2. Equality as inequalities:
+
+\[
+a_i^T x = b_i
+\quad \Longleftrightarrow \quad
+\begin{cases}
+a_i^T x \le b_i, \\
+-a_i^T x \le -b_i.
+\end{cases}
+\tag{LP-2}
+\]
+
+3. Slack variables:
+
+\[
+a_i^T x \le b_i
+\quad \Longleftrightarrow \quad
+a_i^T x + s_i = b_i,
+\quad s_i \ge 0.
+\]
+
+4. Non-positivity:
+
+If $x_j \le 0$, replace $x_j = -y_j$, $y_j \ge 0$.
+
+5. Unrestricted variable:
+
+\[
+x_j = x_j^+ - x_j^-,
+\quad x_j^+, x_j^- \ge 0.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Geometry of Linear Programming}
+
+Let
+
+\[
+P = \{x : Ax=b, x \ge 0\}.
+\]
+
+\textbf{Definition 5.}  
+$x$ is a vertex of $P$ if there does not exist $y \neq 0$ such that
+$x+y \in P$ and $x-y \in P$.
+
+\textbf{Theorem 1.}  
+If $\min \{c^T x : x\in P\}$ is finite, then there exists a vertex solution $x^*$ with
+$c^T x^* \le c^T x$ for all $x \in P$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Corollaries}
+
+If $\min\{c^T x : Ax=b, x\ge 0\}$ is finite, then there exists an optimal solution which is a vertex.
+
+If $P=\{x:Ax=b, x\ge 0\}\neq \emptyset$, then $P$ has a vertex.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Standard Maximum and Minimum Problems}
+
+\subsection*{Standard Maximum}
+
+\[
+\max c^T x
+\]
+
+subject to
+
+\[
+Ax \le b,
+\quad
+x \ge 0.
+\]
+
+\subsection*{Standard Minimum}
+
+\[
+\min y^T b
+\]
+
+subject to
+
+\[
+y^T A \ge c^T,
+\quad
+y \ge 0.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% BLOQUE 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Problema 1: Compañía de Pinturas Manchita}
+
+La compañía de pinturas \textbf{Manchita} produce tres tipos de pintura adicionando a una pintura base cuatro productos o aditivos químicos ($Q_1$ a $Q_4$). Se tiene abundante pintura base disponible y su costo ya fue cubierto.
+
+La compañía desea determinar la cantidad de toneladas de cada tipo de pintura que debe producir de manera que maximice la ganancia total. Las únicas restricciones se deben a la disponibilidad de los aditivos químicos requeridos.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Aditivo} & \multicolumn{3}{c|}{\textbf{Kg requeridos por tonelada}} & \textbf{Disponible (kg)} \\
+\cline{2-4}
+ & Pintura interior & Pintura exterior & Pintura especial & \\
+\hline
+$Q_1$ & 1 & 2 & 2 & 2 \\
+$Q_2$ & 2 & 1 & 1 & 1 \\
+$Q_3$ & 1 & 5 & 1 & 3 \\
+$Q_4$ & 0 & 0 & 1 & 0.8 \\
+\hline
+\textbf{Ganancia por tonelada} & 15000 & 25000 & 19000 & \\
+\hline
+\end{tabular}
+\end{center}
+
+---
+
+\section*{Problema 2: Producción en Tres Máquinas}
+
+Una empresa produce tres productos procesados en tres máquinas diferentes. El tiempo requerido para fabricar una unidad de cada producto y la capacidad diaria de las máquinas se muestran en la tabla:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Máquina} & Producto 1 & Producto 2 & Producto 3 & \textbf{Capacidad (min/día)} \\
+\hline
+$M_1$ & 2 & 3 & 2 & 440 \\
+$M_2$ & 4 & - & 3 & 470 \\
+$M_3$ & 2 & 5 & - & 430 \\
+\hline
+\end{tabular}
+\end{center}
+
+---
+
+\section*{Problema 3: Mezclas de Café}
+
+Una casa empacadora recibe diariamente 700 kg de café tipo C y 800 kg de café tipo K. Produce dos mezclas:
+
+\begin{itemize}
+\item Tipo A: 2 partes de café tipo C y 1 parte de café tipo K. Ganancia de 22 céntimos por kilo.
+\item Tipo B: 1 parte de café tipo C y 2 partes de café tipo K. Ganancia de 26 céntimos por kilo.
+\end{itemize}
+
+Determinar la cantidad de cada mezcla que debe prepararse para maximizar la ganancia.
+
+---
+
+\section*{Problema 4: Trenes y Camiones}
+
+Un artesano fabrica trenes y camiones de juguete utilizando tornillos, bloques y ruedas.
+
+Disponibilidad semanal:
+\[
+8000 \text{ tornillos}, \quad 6000 \text{ bloques}, \quad 6300 \text{ ruedas}
+\]
+
+Beneficios:
+\[
+\text{Tren: } 1.6 \text{ euros/unidad} \qquad
+\text{Camión: } 1.4 \text{ euros/unidad}
+\]
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & Tornillos & Bloques & Ruedas \\
+\hline
+Tren & 10 & 15 & 18 \\
+Camión & 20 & 10 & 6 \\
+\hline
+\end{tabular}
+\end{center}
+
+---
+
+\section*{Example 1.1: Heaters and Air Conditioners}
+
+An appliance company manufactures heaters and air conditioners.
+
+\begin{itemize}
+\item Heater: 2 hours (parts division), 1 hour (assembly division)
+\item Air conditioner: 1 hour (parts division), 2 hours (assembly division)
+\end{itemize}
+
+Disponibilidad:
+\[
+\text{Parts division: } 8 \text{ hours/day}
+\]
+\[
+\text{Assembly division: } 10 \text{ hours/day}
+\]
+
+Profit:
+\[
+\$30 \text{ per heater}, \quad \$50 \text{ per air conditioner}
+\]
+
+---
+
+\section*{Industria Vinícola}
+
+Una industria produce vino y vinagre.
+
+Restricciones:
+\[
+2(\text{vino}) \leq (\text{vinagre}) + 4
+\]
+\[
+3(\text{vinagre}) + 4(\text{vino}) \leq 18
+\]
+
+Beneficio:
+\[
+8€ \text{ por vino}, \quad 2€ \text{ por vinagre}
+\]
+
+---
+
+\section*{Ejercicio No. 0: Tapicería}
+
+Tipos de sillones: A y B.
+
+Requerimientos:
+
+\begin{itemize}
+\item Tipo A: 10 m de tela, 12 horas
+\item Tipo B: 15 m de tela, 16 horas
+\end{itemize}
+
+Disponibilidad semanal:
+\[
+300 \text{ m tela}, \quad 336 \text{ horas}
+\]
+
+Utilidad:
+\[
+\$1500 \text{ (A)}, \quad \$2100 \text{ (B)}
+\]
+
+---
+
+\section*{Gadgets and Gewgaws}
+
+Maximizar:
+\[
+\max z = 5x_1 + 4x_2
+\]
+
+sujeto a:
+
+\[
+x_1 + 2x_2 \leq 120
+\]
+\[
+x_1 + x_2 \leq 70
+\]
+\[
+2x_1 + x_2 \leq 100
+\]
+\[
+x_1, x_2 \geq 0
+\]
+
+---
+
+\section*{Ejemplo 1.1}
+
+Maximizar:
+\[
+3x_1 + x_2
+\]
+
+Sujeto a:
+\[
+x_1 + x_2 \leq 7
+\]
+\[
+x_1 \geq 0, \quad x_2 \geq 0
+\]
+
+---
+
+\section*{Pig Diet Problem}
+
+Tabla nutricional:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Corn & Silage & Alfalfa & Requerimiento diario \\
+\hline
+Carbs & 0.9 & 0.2 & 0.4 & 2 \\
+Protein & 3 & 8 & 6 & 18 \\
+Vitamins & 1 & 2 & 4 & 15 \\
+Cost & 7 & 6 & 5 & \\
+\hline
+\end{tabular}
+\end{center}
+
+---
+
+\section*{Diet Model (G1 y G2)}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Starch & Proteins & Vitamins & Cost (\$/kg) \\
+\hline
+G1 & 5 & 4 & 2 & 0.6 \\
+G2 & 7 & 2 & 1 & 0.35 \\
+\hline
+\end{tabular}
+\end{center}
+
+Requerimientos diarios:
+\[
+\text{Starch} = 8, \quad \text{Proteins} = 15, \quad \text{Vitamins} = 3
+\]
+
+---
+
+\section*{Giapetto's Woodcarving}
+
+Variables:
+\[
+x_1 = \text{soldiers}, \quad x_2 = \text{trains}
+\]
+
+Maximizar utilidad semanal considerando:
+
+\begin{itemize}
+\item Recursos de acabado y carpintería
+\item 100 horas de acabado
+\item 80 horas de carpintería
+\item Máximo 40 soldados por semana
+\end{itemize}
+
+---
+
+\section*{General Linear Programming Problem}
+
+Maximizar:
+\[
+\text{Max Profit} = 3x_1 + 4x_2
+\]
+
+Sujeto a:
+\[
+2x_1 + 3x_2 \leq 16
+\]
+\[
+4x_1 + 2x_2 \leq 16
+\]
+\[
+x_1, x_2 \geq 0
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% SECCIÓN 1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{What is a Linear Programming (LP) Problem?}
+
+\begin{definition}[Linear Function]
+A function $f(x_1,x_2,\ldots,x_n)$ of the variables 
+$x_1,x_2,\ldots,x_n$ is a \textbf{linear function} if
+
+\[
+f(x_1,x_2,\ldots,x_n)=c_1x_1+c_2x_2+\cdots+c_nx_n
+\]
+
+where $c_1,c_2,\ldots,c_n$ are constants.
+\end{definition}
+
+\begin{example}
+$f(x_1,x_2)=2x_1+x_2$ is linear, while 
+$f(x_1,x_2)=x_1^2x_2$ is not linear.
+\end{example}
+
+\begin{definition}[Linear Inequalities]
+For any linear function $f(x_1,x_2,\ldots,x_n)$ and any real number $b$,
+the inequalities
+
+\[
+f(x_1,x_2,\ldots,x_n)\le b
+\quad \text{and} \quad
+f(x_1,x_2,\ldots,x_n)\ge b
+\]
+
+are called \textbf{linear inequalities}.
+\end{definition}
+
+\begin{example}
+$2x_1+3x_2\le 3$ is a linear inequality, while 
+$x_1x_2+\sqrt{x_2}\ge 3$ is not linear.
+\end{example}
+
+\begin{definition}[Linear Programming Problem]
+A \textbf{linear programming (LP) problem} is an optimization problem in which:
+
+\begin{enumerate}
+\item We attempt to maximize (profit) or minimize (cost) a linear function
+(called the \textit{objective function}) of the decision variables.
+
+\item The decision variables must satisfy a set of constraints, and each
+constraint must be a linear equation or linear inequality.
+
+\item A \textbf{sign restriction} is associated with each variable.
+For any variable $x_i$, either $x_i \ge 0$ or $x_i$ is unrestricted in sign.
+\end{enumerate}
+
+The general structure is:
+
+\[
+\max \text{ (or min)} \quad z=f(x_1,x_2,\ldots,x_n)
+\]
+
+\[
+\text{s.t.} \quad \text{Constraints}
+\]
+
+\[
+\text{Sign restrictions}
+\]
+\end{definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% EJEMPLO 1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{example}[Example 1.3]
+Furnco manufactures desks and chairs.
+
+Let:
+\[
+x_1 = \text{number of desks produced}
+\]
+\[
+x_2 = \text{number of chairs produced}
+\]
+
+Each desk contributes \$40 profit and each chair \$25.
+Each desk uses 4 units of wood and each chair 3 units.
+At most 20 units of wood are available.
+At least twice as many chairs as desks must be produced.
+
+The LP formulation is:
+
+\[
+\max \quad z = 40x_1 + 25x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+4x_1 + 3x_2 \le 20
+\]
+\[
+x_2 \ge 2x_1
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+Optimal solution:
+\[
+x_1=2,\quad x_2=4,\quad z=180.
+\]
+\end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% LP ASSUMPTIONS %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{LP Assumptions}
+
+\subsubsection*{1. Proportionality and Additivity}
+
+The objective function and constraints must be linear.
+
+\begin{itemize}
+\item Contributions are proportional to variable values.
+\item Contributions are independent of other variables.
+\end{itemize}
+
+\subsubsection*{2. Divisibility Assumption}
+
+Decision variables can take fractional values.
+
+If variables must be integers, the problem becomes an
+\textbf{integer programming problem}.
+
+\subsubsection*{3. Certainty Assumption}
+
+All parameters (objective coefficients, RHS values, constraint coefficients)
+are known with certainty.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% SECCIÓN 1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Modeling LP Problems}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Example 1.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{example}[Giapetto's Woodcarving]
+
+Let:
+\[
+x_1 = \text{number of soldiers produced per week}
+\]
+\[
+x_2 = \text{number of trains produced per week}
+\]
+
+\[
+\max \quad z = 3x_1 + 2x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+2x_1 + x_2 \le 100
+\]
+\[
+x_1 + x_2 \le 80
+\]
+\[
+x_1 \le 40
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+\end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Example 1.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{example}[Farmer Jones]
+
+\textbf{Method 1: Acres as variables}
+
+\[
+x_1 = \text{acres of wheat}
+\]
+\[
+x_2 = \text{acres of corn}
+\]
+
+\[
+\max \quad z = 100x_1 + 30x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+x_1 + x_2 \le 7
+\]
+\[
+10x_2 \ge 30
+\]
+\[
+10x_1 + 4x_2 \le 40
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+\textbf{Method 2: Bushels as variables}
+
+\[
+x_1 = \text{bushels of wheat}
+\]
+\[
+x_2 = \text{bushels of corn}
+\]
+
+\[
+\max \quad z = 4x_1 + 3x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+\frac{1}{25}x_1 + \frac{1}{10}x_2 \le 7
+\]
+\[
+\frac{x_2}{10} \ge 3
+\]
+\[
+\frac{1}{25}x_1 + \frac{1}{10}x_2 \le 40
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+\end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Example 1.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{example}[Village Butcher Shop]
+
+Let:
+\[
+x_1 = \text{pounds of ground beef}
+\]
+\[
+x_2 = \text{pounds of ground pork}
+\]
+
+\[
+\min \quad z = 80x_1 + 60x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+0.20x_1 + 0.32x_2 \le 0.25
+\]
+\[
+x_1 + x_2 = 1
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+\end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Example 1.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{example}[Psychologist Experiment]
+
+Let:
+\[
+x = \text{number of mice}
+\]
+\[
+y = \text{number of rats}
+\]
+
+\[
+\max \quad z = x + y
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+10x + 20y \le 800
+\]
+\[
+20x + 10y \le 640
+\]
+\[
+x,y \ge 0
+\]
+
+\end{example}
+
+
+
+
+\end{document}

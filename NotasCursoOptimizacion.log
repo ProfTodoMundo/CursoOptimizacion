@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.11.14)  10 FEB 2026 11:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.11.14)  3 MAR 2026 11:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -714,7 +714,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [2]
 
-[3
+LaTeX Info: Redefining \. on input line 141.
+LaTeX Info: Redefining \% on input line 141.
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.4521pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.4521pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.4521pt}.
+
+LaTeX Info: Redefining \. on input line 141.
+LaTeX Info: Redefining \% on input line 141.
+[3]
+
+[4
 
 ] (./Cap0_Presentacion.tex
 LaTeX Info: Redefining \. on input line 59.
@@ -751,6 +764,13 @@ l.90 \end{Teo}
 
 LaTeX Info: Redefining \. on input line 149.
 LaTeX Info: Redefining \% on input line 149.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.149 \item[iv) ]
+                  Si $A_{1}>0$, $A_{2}>0,\dots$,$A_{n}>0$ y $det(A)=0$, ento...
 [4]
 Overfull \hbox (8.03964pt too wide) in paragraph at lines 175--176
 []$\OML/cmm/m/it/12 f$ \OT1/cmr/m/it/12 es es-tric-ta-men-te con-ve-xa en $\OML
@@ -920,13 +940,121 @@ LaTeX Info: Redefining \% on input line 2631.
 
 LaTeX Info: Redefining \. on input line 159.
 LaTeX Info: Redefining \% on input line 159.
-[40] (./NotasCursoOptimizacion.bbl
+[40] (./Cap2_ProgramacionLineal.tex
+
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+[41]
+
+LaTeX Info: Redefining \. on input line 159.
+LaTeX Info: Redefining \% on input line 159.
+[42{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+LaTeX Info: Redefining \. on input line 235.
+LaTeX Info: Redefining \% on input line 235.
+[43]
+
+LaTeX Info: Redefining \. on input line 310.
+LaTeX Info: Redefining \% on input line 310.
+[44]
+
+LaTeX Info: Redefining \. on input line 373.
+LaTeX Info: Redefining \% on input line 373.
+[45]
+
+LaTeX Info: Redefining \. on input line 441.
+LaTeX Info: Redefining \% on input line 441.
+[46]
+
+LaTeX Info: Redefining \. on input line 512.
+LaTeX Info: Redefining \% on input line 512.
+[47]
+
+LaTeX Info: Redefining \. on input line 603.
+LaTeX Info: Redefining \% on input line 603.
+[48]
+
+LaTeX Info: Redefining \. on input line 682.
+LaTeX Info: Redefining \% on input line 682.
+[49]
+Overfull \hbox (75.89789pt too wide) in paragraph at lines 723--737
+ [] 
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 744.
+LaTeX Info: Redefining \% on input line 744.
+[50]
+
+LaTeX Info: Redefining \. on input line 807.
+LaTeX Info: Redefining \% on input line 807.
+[51]
+
+LaTeX Warning: Command \texteuro invalid in math mode on input line 838.
+
+
+LaTeX Warning: Command \texteuro invalid in math mode on input line 838.
+
+
+LaTeX Warning: Command \texteuro invalid in math mode on input line 838.
+
+
+LaTeX Warning: Command \texteuro invalid in math mode on input line 838.
+
+Missing character: There is no ¿ in font cmr12!
+Missing character: There is no ¿ in font cmr12!
+
+
+LaTeX Info: Redefining \. on input line 877.
+LaTeX Info: Redefining \% on input line 877.
+[52]
+
+LaTeX Info: Redefining \. on input line 951.
+LaTeX Info: Redefining \% on input line 951.
+[53]
+Overfull \hbox (8.94193pt too wide) in paragraph at lines 989--991
+[][]\OT1/cmr/bx/n/12 Definici^^Son 16 \OT1/cmr/m/n/12 (Li-near Fun-ction)\OT1/c
+mr/bx/n/12 . []\OT1/cmr/m/it/12 A fun-ction $\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 
+(\OML/cmm/m/it/12 x[]; x[]; [] ; x[]\OT1/cmr/m/n/12 )$ \OT1/cmr/m/it/12 of the 
+va-ria-bles $\OML/cmm/m/it/12 x[]; x[]; [] ; x[]$
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 1032.
+LaTeX Info: Redefining \% on input line 1032.
+LaTeX Info: Redefining \. on input line 1032.
+LaTeX Info: Redefining \% on input line 1032.
+[54]
+
+LaTeX Info: Redefining \. on input line 1115.
+LaTeX Info: Redefining \% on input line 1115.
+LaTeX Info: Redefining \. on input line 1115.
+LaTeX Info: Redefining \% on input line 1115.
+[55]
+
+LaTeX Info: Redefining \. on input line 1211.
+LaTeX Info: Redefining \% on input line 1211.
+LaTeX Info: Redefining \. on input line 1211.
+LaTeX Info: Redefining \% on input line 1211.
+[56]
+
+LaTeX Info: Redefining \. on input line 1305.
+LaTeX Info: Redefining \% on input line 1305.
+LaTeX Info: Redefining \. on input line 1305.
+LaTeX Info: Redefining \% on input line 1305.
+[57])
+
+LaTeX Info: Redefining \. on input line 169.
+LaTeX Info: Redefining \% on input line 169.
+[58] (./NotasCursoOptimizacion.bbl
 
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
-[41]
+[59]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
 41.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
@@ -940,7 +1068,7 @@ LaTeX Info: Redefining \. on input line 179.
 LaTeX Info: Redefining \% on input line 179.
 LaTeX Info: Redefining \. on input line 179.
 LaTeX Info: Redefining \% on input line 179.
-[42] (./NotasCursoOptimizacion.aux
+[60] (./NotasCursoOptimizacion.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -950,16 +1078,16 @@ L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `NotasCursoOptimizacion.out' has not changed.
 
-(rerunfilecheck)             Checksum: 1445BAEB6E689ED9851727D0019355FE;863.
+(rerunfilecheck)             Checksum: 46DDA628840E8225A5FE12B2BD2FACDE;4714.
  ) 
 Here is how much of TeX's memory you used:
- 16417 strings out of 473197
- 261906 string characters out of 5718604
- 697375 words of memory out of 5000000
- 39292 multiletter control sequences out of 15000+600000
- 569311 words of font info for 73 fonts, out of 8000000 for 9000
+ 16530 strings out of 473197
+ 263183 string characters out of 5718604
+ 697380 words of memory out of 5000000
+ 39329 multiletter control sequences out of 15000+600000
+ 570702 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,14n,79p,1153b,853s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,79p,1153b,868s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
@@ -974,11 +1102,13 @@ sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on NotasCursoOptimizacion.pdf (45 pages, 309772 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfti1200.pfb>
+Output written on NotasCursoOptimizacion.pdf (64 pages, 378501 bytes).
 PDF statistics:
- 429 PDF objects out of 1000 (max. 8388607)
- 346 compressed objects within 4 object streams
- 140 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 667 PDF objects out of 1000 (max. 8388607)
+ 559 compressed objects within 6 object streams
+ 208 named destinations out of 1000 (max. 500000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
