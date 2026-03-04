@@ -9,23 +9,7 @@
 \contentsline {subsection}{\numberline {2.2}Optimizaci\'on}{7}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Ejercicios}{8}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Programaci\'on Lineal}{18}{section.3}%
-\contentsline {section}{\numberline {4}Department Time Constraints}{21}{section.4}%
-\contentsline {section}{\numberline {5}Graphical Solution}{22}{section.5}%
-\contentsline {section}{\numberline {6}Definition: Linear Programming Problem}{22}{section.6}%
-\contentsline {section}{\numberline {7}Feasible Region and Optimal Solution}{22}{section.7}%
-\contentsline {section}{\numberline {8}Canonical Linear Programming Problem}{22}{section.8}%
-\contentsline {section}{\numberline {9}Standard Maximum Problem}{23}{section.9}%
-\contentsline {section}{\numberline {10}Standard Minimum Problem}{23}{section.10}%
-\contentsline {section}{\numberline {11}Extreme Points and Optimality}{23}{section.11}%
-\contentsline {section}{\numberline {12}Resource Allocation Model}{23}{section.12}%
-\contentsline {section}{\numberline {13}Ejem 1: The Diet Problem}{24}{section.13}%
-\contentsline {section}{\numberline {14}Ejem 2: The Transportation Problem}{24}{section.14}%
-\contentsline {section}{\numberline {15}Linear Program in Matrix Form}{25}{section.15}%
-\contentsline {section}{\numberline {16}Basic Terminology}{26}{section.16}%
-\contentsline {section}{\numberline {17}Equivalent Forms}{26}{section.17}%
-\contentsline {section}{\numberline {18}Geometry of Linear Programming}{26}{section.18}%
-\contentsline {section}{\numberline {19}Corollaries}{27}{section.19}%
-\contentsline {section}{\numberline {20}Standard Maximum and Minimum Problems}{27}{section.20}%
-\contentsline {subsection}{\numberline {20.1}What is a Linear Programming (LP) Problem?}{31}{subsection.20.1}%
-\contentsline {subsection}{\numberline {20.2}Modeling LP Problems}{33}{subsection.20.2}%
-\contentsline {section}{\numberline {21}Graficar}{35}{section.21}%
+\contentsline {section}{\numberline {4}Graficar}{18}{section.4}%
+\contentsline {section}{\numberline {5}Definiciones}{18}{section.5}%
+\contentsline {subsection}{\numberline {5.1}What is a Linear Programming (LP) Problem?}{22}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Ejemplos}{24}{section.6}%
