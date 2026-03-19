@@ -187,7 +187,7 @@ x \ge 0
 \]
 \end{Def}
 
-\subsection*{Standard Maximum Problem}
+\subsubsection*{Standard Maximum Problem}
 
 Find $x \in \mathbb{R}^n$ to maximize
 
@@ -215,7 +215,7 @@ a_{m1} & \cdots & a_{mn}
 \end{pmatrix}
 \]
 
-\subsection*{Standard Minimum Problem}
+\subsubsection*{Standard Minimum Problem}
 
 Find $y \in \mathbb{R}^m$ to minimize
 
@@ -233,7 +233,7 @@ y \ge 0
 \]
 
 
-\subsection*{Extreme Points and Optimality}
+\subsubsection*{Extreme Points and Optimality}
 
 \begin{Obs}  
 The optimal solution occurs at an extreme point of the feasible region.
@@ -243,7 +243,7 @@ The optimal solution occurs at an extreme point of the feasible region.
 A point is optimal if and only if the negative gradient of the objective function lies in the cone spanned by the gradients of the active constraints.
 \end{Obs}
 
-\subsection*{Resource Allocation Model}
+\subsubsection*{Resource Allocation Model}
 
 Let:
 
@@ -274,7 +274,7 @@ x \ge 0
 \]
 
 
-\subsection*{Basic Terminology}
+\subsubsection*{Basic Terminology}
 
 \begin{Def}  
 If $x$ satisfies $Ax=b$, $x\ge 0$, then $x$ is \emph{feasible}.
@@ -297,7 +297,7 @@ c^T x^* = \min \{c^T x : Ax=b, x\ge 0\}.
 An LP is unbounded if the objective function can decrease without bound over feasible solutions.
 \end{Def}
 
-\subsection*{Equivalent Forms}
+\subsubsection*{Equivalent Forms}
 
 \begin{enumerate}
 
@@ -340,7 +340,7 @@ x_j = x_j^+ - x_j^-,
 \]
 \end{enumerate}
 
-\subsection*{Geometry of Linear Programming}
+\subsubsection*{Geometry of Linear Programming}
 
 Let
 
@@ -368,7 +368,7 @@ If $P=\{x:Ax=b, x\ge 0\}\neq \emptyset$, then $P$ has a vertex.
 \end{Coro}
 
 
-\subsection*{Standard Maximum and Minimum Problems}
+\subsubsection*{Standard Maximum and Minimum Problems}
 
 \textbf{Standard Maximum}
 
@@ -412,10 +412,10 @@ f(x_1,x_2,\ldots,x_n)=c_1x_1+c_2x_2+\cdots+c_nx_n
 where $c_1,c_2,\ldots,c_n$ are constants.
 \end{Def}
 
-\begin{Ejem}
+\begin{Ejer}
 $f(x_1,x_2)=2x_1+x_2$ is linear, while 
 $f(x_1,x_2)=x_1^2x_2$ is not linear.
-\end{Ejem}
+\end{Ejer}
 
 \begin{Def}[Linear Inequalities]
 For any linear function $f(x_1,x_2,\ldots,x_n)$ and any real number $b$,
@@ -430,10 +430,10 @@ f(x_1,x_2,\ldots,x_n)\ge b
 are called \textbf{linear inequalities}.
 \end{Def}
 
-\begin{Ejem}
+\begin{Ejer}
 $2x_1+3x_2\le 3$ is a linear inequality, while 
 $x_1x_2+\sqrt{x_2}\ge 3$ is not linear.
-\end{Ejem}
+\end{Ejer}
 
 \begin{Def}[Linear Programming Problem]
 A \textbf{linear programming (LP) problem} is an optimization problem in which:
@@ -550,9 +550,1040 @@ a_{m1} & \dots & a_{mn}
 
 \newpage
 
-\subsection{Ejemplos}
+\textbf{Regi\'on de soluciones factibles no acotada}
 
-\begin{Ejem}[Compa\~n\'ia de Pinturas]
+\textbf{Ejerplo 2.4} En la tabla 2.4 se calculan los valores de $z$ en algunos puntos factibles del problema
+
+\[
+P
+\begin{cases}
+\text{m\'ax } z = 2x + 2y,\\
+x - y \ge -1,\\
+-\frac{1}{2}x + y \le 2,\\
+x,y \ge 0.
+\end{cases}
+\]
+
+y en la figura 2.4 se muestra la gr\'afica del mismo. La soluci\'on \'optima no est\'a acotada, es decir,
+
+\[
+z \rightarrow \infty
+\]
+
+Las dos restricciones no acotan la regi\'on de soluciones factibles.
+
+\[
+\begin{array}{c|c}
+\text{Punto extremo} & \text{Valor de la funci\'on objetivo} \\
+\hline
+A=(0,0) & z=\frac{5}{2}(0)+0=0 \\
+B=(2,0) & z=\frac{5}{2}(2)+0=5 \\
+C=\left(\frac{20}{19},\frac{45}{19}\right) & z=\frac{5}{2}\left(\frac{20}{19}\right)+\frac{45}{19}=5 \\
+D=(0,3) & z=\frac{5}{2}(0)+3=3
+\end{array}
+\]
+
+Tabla 2.3: Evaluaci\'on en los puntos extremos de la regi\'on de soluciones factibles del Ejerplo 2.3.
+
+\textbf{Figura 2.4:} La soluci\'on \'optima no est\'a acotada.
+
+\textbf{Observaci\'on 2.1} Si la funci\'on objetivo se minimizara, la regi\'on de soluciones factibles ser\'ia la misma y su soluci\'on \'optima s\'i estar\'ia acotada y ser\'ia
+
+\[
+z_{min}=0 \quad \text{con} \quad x^{*}=0,\; y^{*}=0.
+\]
+
+\textbf{Ejerplo 2.5} Si se calcula $z$ en cada punto extremo de la regi\'on de soluciones factibles del problema
+
+\[
+P
+\begin{cases}
+\text{m\'ax } z = -x + 2y,\\
+x - y \ge -1,\\
+-\frac{1}{2}x + y \le 2,\\
+x,y \ge 0,
+\end{cases}
+\]
+
+que se ilustra en la figura 2.5 se obtiene la tabla 2.5. La regi\'on de soluciones factibles es no acotada, pero la funci\'on objetivo s\'i est\'a acotada y tiene una infinidad de soluciones.
+
+\[
+\begin{array}{c|c}
+\text{Punto factible} & \text{Valor de la funci\'on objetivo} \\
+\hline
+A=(0,0) & z=2(0)+2(0)=0 \\
+B=(0,1) & z=2(0)+2(1)=2 \\
+C=(2,3) & z=2(2)+2(3)=10 \\
+D=(4,3) & z=2(4)+2(3)=14 \\
+E=(5,4) & z=2(5)+2(4)=18
+\end{array}
+\]
+
+Tabla 2.4: Valores de $z$ en algunos puntos factibles del problema del Ejerplo 2.4.
+
+\textbf{Figura 2.5:} La soluci\'on \'optima s\'i existe a pesar de que la regi\'on de soluciones factibles no es acotada.
+
+\[
+\begin{array}{c|c}
+\text{Punto factible} & \text{Valor de la funci\'on objetivo} \\
+\hline
+A=(0,0) & z=-0+2(0)=0 \\
+B=(0,1) & z=-0+2(1)=2 \\
+C=(2,3) & z=-2+2(3)=4 \\
+D=(4,4) & z=-4+2(4)=4 \\
+E=(6,5) & z=-6+2(5)=4
+\end{array}
+\]
+
+Tabla 2.5: $z$ en diferentes puntos factibles de la regi\'on de soluciones factibles del problema del Ejerplo 2.5.
+
+\textbf{Ejerplo 2.6} En el problema
+
+\[
+P
+\begin{cases}
+\text{m\'ax } z = -3x + 2y,\\
+x \le 3,\\
+x - y \le 0,\\
+x,y \ge 0,
+\end{cases}
+\]
+
+que se muestra en la figura 2.6 la regi\'on de soluciones factibles y la funci\'on objetivo son no acotadas.
+
+\textbf{Figura 2.6:} Ni la regi\'on de soluciones factibles ni la funci\'on objetivo est\'an acotadas.
+
+\textbf{Regi\'on de soluciones factibles consistente de un solo punto}
+
+\textbf{Ejerplo 2.7} En el caso del problema (figura 2.7)
+
+\[
+P
+\begin{cases}
+\text{m\'ax } z = x,\\
+x + y = 3,\\
+x - y = 1,\\
+x,y \ge 0,
+\end{cases}
+\]
+
+como la regi\'on de soluciones factibles consta de un solo punto, ese punto maximiza a la funci\'on $z$.
+
+Entonces
+
+\[
+z_{max}=2 \quad \text{con} \quad x^{*}=2,\; y^{*}=1.
+\]
+
+\textbf{Observaci\'on 2.2} Para el caso en que $z$ se minimizara, el \'optimo ser\'ia el mismo punto $(x^{*},y^{*})=(2,1)$.
+
+
+\textbf{Figura 2.7:} La regi\'on de soluciones factibles consta de un s\'olo punto.
+
+\textbf{Regi\'on de soluciones factibles vac\'ia}
+
+\textbf{Ejerplo 2.8} Para el problema
+
+\[
+P
+\begin{cases}
+\text{m\'ax } z = x + y, \\
+x - y \ge 0, \\
+3x - y \le -3, \\
+x,y \ge 0,
+\end{cases}
+\]
+
+de la figura 2.8 la regi\'on de soluciones factibles es vac\'ia, y por lo tanto no podemos hablar de un m\'aximo ni m\'inimo para $z$.
+
+\textbf{Ejerplo 2.9} Para el problema
+
+\[
+P
+\begin{cases}
+\text{m\'ax } z = 3x - 2y, \\
+x + y \le 1, \\
+2x + 2y \ge 4, \\
+x,y \ge 0,
+\end{cases}
+\]
+
+de la figura 2.9 la regi\'on de soluciones factibles es vac\'ia. No hay soluci\'on \'optima.
+
+\textbf{Figura 2.8:} Existen soluciones pero no son factibles.
+
+\textbf{Figura 2.9:} No existen soluciones en absoluto.
+
+\begin{Ejer}
+
+\textbf{Problema de mezcla alimenticia}
+
+Se desea formular un problema de programaci\'on lineal para minimizar el costo de producci\'on de alimento para vacas, ovejas y pollos, sujeto a restricciones de disponibilidad y requerimientos nutricionales.
+
+\textbf{Variables de decisi\'on}
+
+Sea:
+\[
+x_{ij} = \text{toneladas del ingrediente } i \text{ utilizadas en el alimento } j
+\]
+
+donde:
+\begin{itemize}
+    \item $i=1$: ma\'iz
+    \item $i=2$: piedra caliza
+    \item $i=3$: frijol de soya
+    \item $i=4$: comida de pescado
+\end{itemize}
+
+y:
+\begin{itemize}
+    \item $j=1$: vacas
+    \item $j=2$: ovejas
+    \item $j=3$: pollos
+\end{itemize}
+
+\textbf{Funci\'on objetivo}
+
+Minimizar el costo total:
+\[
+\begin{aligned}
+\min Z =\;& 200(x_{11}+x_{12}+x_{13}) \\
+&+120(x_{21}+x_{22}+x_{23}) \\
+&+240(x_{31}+x_{32}+x_{33}) \\
+&+120(x_{41}+x_{42}+x_{43})
+\end{aligned}
+\]
+
+\textbf{Restricciones de producci\'on}
+
+\[
+x_{11}+x_{21}+x_{31}+x_{41} = 10
+\]
+\[
+x_{12}+x_{22}+x_{32}+x_{42} = 6
+\]
+\[
+x_{13}+x_{23}+x_{33}+x_{43} = 8
+\]
+
+\textbf{Restricciones de disponibilidad}
+
+\[
+x_{11}+x_{12}+x_{13} \leq 6
+\]
+\[
+x_{21}+x_{22}+x_{23} \leq 10
+\]
+\[
+x_{31}+x_{32}+x_{33} \leq 4
+\]
+\[
+x_{41}+x_{42}+x_{43} \leq 5
+\]
+
+\textbf{Restricciones nutricionales}
+
+\textbf{Alimento para vacas (10 toneladas)}
+
+Vitaminas:
+\[
+60 \leq 8x_{11}+6x_{21}+10x_{31}+4x_{41} \leq 80
+\]
+
+Prote\'ina:
+\[
+10x_{11}+5x_{21}+12x_{31}+8x_{41} \geq 60
+\]
+
+Calcio:
+\[
+6x_{11}+10x_{21}+6x_{31}+6x_{41} \geq 70
+\]
+
+Grasa cruda:
+\[
+40 \leq 8x_{11}+6x_{21}+6x_{31}+9x_{41} \leq 80
+\]
+
+\textbf{Alimento para ovejas (6 toneladas)}
+
+Vitaminas:
+\[
+8x_{12}+6x_{22}+10x_{32}+4x_{42} \geq 36
+\]
+
+Prote\'ina:
+\[
+10x_{12}+5x_{22}+12x_{32}+8x_{42} \geq 36
+\]
+
+Calcio:
+\[
+6x_{12}+10x_{22}+6x_{32}+6x_{42} \geq 36
+\]
+
+Grasa cruda:
+\[
+24 \leq 8x_{12}+6x_{22}+6x_{32}+9x_{42} \leq 36
+\]
+
+\textbf{Alimento para pollos (8 toneladas)}
+
+Vitaminas:
+\[
+32 \leq 8x_{13}+6x_{23}+10x_{33}+4x_{43} \leq 48
+\]
+
+Prote\'ina:
+\[
+10x_{13}+5x_{23}+12x_{33}+8x_{43} \geq 48
+\]
+
+Calcio:
+\[
+6x_{13}+10x_{23}+6x_{33}+6x_{43} \geq 48
+\]
+
+Grasa cruda:
+\[
+32 \leq 8x_{13}+6x_{23}+6x_{33}+9x_{43} \leq 48
+\]
+
+
+\[
+x_{ij} \geq 0 \quad \forall i,j
+\]
+
+\textbf{An\'alisis de factibilidad}
+
+Se analiza el caso del alimento para pollos:
+
+\begin{itemize}
+    \item La restricci\'on de grasa cruda m\'axima (6) implica que no se pueden usar ingredientes con grasa mayor a 6, por lo que se excluyen ma\'iz (8) y comida de pescado (9).
+    
+    \item Los ingredientes restantes son piedra caliza (6) y frijol de soya (6).
+    
+    \item Sin embargo, la restricci\'on de vitaminas m\'aximas (6) impide usar frijol de soya (10), por lo que solo queda piedra caliza.
+    
+    \item La piedra caliza tiene prote\'ina igual a 5, lo cual no satisface la restricci\'on m\'inima de prote\'ina (6).
+\end{itemize}
+
+Por lo tanto, se obtiene una contradicci\'on, y el problema no tiene soluci\'on factible.
+
+\[
+\boxed{\text{El modelo es infactible}}
+\]
+\end{Ejer}
+
+
+
+\begin{Ejer}
+
+Un inversionista dispone de \$100,000 y de dos tipos de inversi\'on, a saber, $A$ y $B$; la inversi\'on $A$ produce $5\%$ y la tipo $B$ $8\%$. Se desea maximizar las ganancias obtenidas, pero se tienen las siguientes restricciones:
+
+\begin{itemize}
+\item[(a)] Debe invertir al menos $25\%$ en las inversiones tipo $A$.
+\item[(b)] No m\'as del $50\%$ de sus fondos deben colocarse en $B$.
+\item[(c)] La cantidad invertida en $B$ no debe ser mayor que una y media veces la cantidad invertida en $A$.
+\end{itemize}
+
+Para poder plantear el modelo matem\'atico de un problema de programaci\'on lineal, distinguiremos las variables (que llamaremos variables de decisi\'on), el objetivo (lo que se pretende) y las restricciones del problema.
+
+\textbf{Variables de decisi\'on.} Denotaremos con $x$ la cantidad a invertir en $A$ (en miles de pesos) y con $y$ la cantidad a invertir en $B$ (tambi\'en en miles de pesos).
+
+\textbf{Funci\'on objetivo.} Maximizar ganancias,
+
+\[
+\max z = 50x + 80y.
+\]
+
+\textbf{Restricciones.}
+
+\[
+x \ge 25, \qquad (a)
+\]
+
+\[
+y \le 50, \qquad (b)
+\]
+
+\[
+y \le \frac{3}{2}x, \qquad (c)
+\]
+
+adem\'as, puesto que el inversionista dispone \'unicamente de \$100,000.00, tenemos la restricci\'on
+
+\[
+x + y \le 100, \qquad (d)
+\]
+
+y tambi\'en las restricciones de no negatividad para $x$ y $y$,
+
+\[
+x,y \ge 0.
+\]
+
+El problema queda planteado como un problema de programaci\'on lineal de la siguiente manera:
+
+\[
+P
+\begin{cases}
+\max z = 50x + 80y \\
+x \ge 25,\\
+y \le 50,\\
+-\frac{3}{2}x + y \le 0,\\
+x + y \le 100,\\
+x,y \ge 0.
+\end{cases}
+\]
+\end{Ejer}
+
+\begin{Ejer} Un fabricante de gabinetes desea construir dos tipos de gabinetes para exportar (uno moderno y uno provenzal). Suponemos que existe un mercado ilimitado donde puede vender cualquier cantidad de cada uno. El proceso de construcci\'on requiere la utilizaci\'on de cuatro talleres: cortado, pulido, pintado y acabado. El fabricante puede utilizar: (a) $8$ horas m\'aximo el taller de cortado, (b) $15$ horas m\'aximo el taller de pulido, (c) $8$ horas m\'aximo el taller de pintado y (d) $32$ horas m\'aximo el taller de acabado, por periodo.
+
+Para construir un gabinete moderno necesita: (a) $2/5$ de hora en cortado, (b) $1$ hora en pulido, (c) $1/3$ de hora en pintura y (d) $8/3$ de hora en acabado. Para un provenzal utiliza: (a) $3/5$ de hora en cortado, (b) $3/2$ de hora en pulido, (c) $1$ hora en pintado y (d) $2$ horas en acabado.
+
+La ganancia neta que obtiene es de \$150 en cualquier gabinete. Determinar qu\'e cantidad de cada tipo de gabinetes tiene que fabricar para obtener la ganancia m\'axima.
+
+\textbf{Variables de decisi\'on.} Sea $x$ la cantidad de gabinetes de tipo moderno a fabricar y sea $y$ la cantidad de gabinetes de tipo provenzal a fabricar.
+
+\textbf{Funci\'on objetivo.} Maximizar ganancia,
+
+\[
+\max z = 150x + 150y.
+\]
+
+\textbf{Restricciones.}
+
+\[
+\frac{2}{5}x + \frac{3}{5}y \le 8, \qquad (a)
+\]
+
+\[
+x + \frac{3}{2}y \le 15, \qquad (b)
+\]
+
+\[
+\frac{1}{3}x + y \le 8, \qquad (c)
+\]
+
+\[
+\frac{8}{3}x + 2y \le 32, \qquad (d)
+\]
+
+\[
+x,y \ge 0.
+\]
+
+El problema queda planteado como
+
+\[
+P
+\begin{cases}
+\max z = 150x + 150y\\
+\frac{2}{5}x + \frac{3}{5}y \le 8,\\
+x + \frac{3}{2}y \le 15,\\
+\frac{1}{3}x + y \le 8,\\
+\frac{8}{3}x + 2y \le 32,\\
+x,y \ge 0.
+\end{cases}
+\]
+\end{Ejer}
+
+\begin{Ejer}
+El complejo industrial de Ciudad Sahag\'un encarg\'o a su departamento de producci\'on de l\'amina que minimice el desperdicio de sobrante de l\'amina que resulta del corte de \'esta para la fabricaci\'on de piezas de cami\'on. Los tama\~nos necesarios para la carrocer\'ia son:
+
+\begin{itemize}
+\item $30 \times 60$ para puertas,
+\item $30 \times 70$ para techo y cofre,
+\item $30 \times 50$ para salpicadera.
+\end{itemize}
+
+Las cantidades necesarias para cada tama\~no de corte son (a) $10\,000$, (b) $15\,000$ y (c) $5\,000$ por mes, respectivamente. Considerando que se tienen placas de $30\times180$ cm los posibles cortes dan distintos tama\~nos de sobrantes.
+
+Deducimos que existe un n\'umero finito de tipos de corte para obtener las medidas requeridas.
+
+\textbf{Variables de decisi\'on.} Sea $x_i$ el n\'umero de l\'aminas a cortar del tipo $i$, para $i=1,\dots,7$.
+
+\textbf{Funci\'on objetivo.} Minimizar desperdicio,
+
+\[
+\min w = 0x_1 + 40x_2 + 10x_3 + 0x_4 + 30x_5 + 20x_6 + 10x_7.
+\]
+
+\textbf{Restricciones}
+
+\[
+3x_1 + x_4 + x_6 + 2x_7 \ge 10000, \qquad (a)
+\]
+
+\[
+2x_2 + x_3 + x_4 \ge 15000, \qquad (b)
+\]
+
+\[
+2x_3 + x_4 + 3x_5 + 2x_6 + x_7 \ge 5000, \qquad (c)
+\]
+
+\[
+x_i \ge 0, \qquad i=1,\dots,7.
+\]
+
+El problema queda planteado como
+
+\[
+P
+\begin{cases}
+\min w = 0x_1 + 40x_2 + 10x_3 + 0x_4 + 30x_5 + 20x_6 + 10x_7 \\
+3x_1 + x_4 + x_6 + 2x_7 \ge 10000 \\
+2x_2 + x_3 + x_4 \ge 15000 \\
+2x_3 + x_4 + 3x_5 + 2x_6 + x_7 \ge 5000 \\
+x_i \ge 0, \quad i=1,\dots,7
+\end{cases}
+\]
+\end{Ejer}
+
+\begin{Ejer}
+Se tienen $m$ proyectos y $m$ compa\~n\'ias; $c_{ij}$ es el costo de el proyecto $i$ desarrollado por la compa\~n\'ia $j$. Se desea asignar un solo proyecto a cada compa\~n\'ia a costo m\'inimo.
+
+\textbf{Variables de decisi\'on.} La variable $x_{ij}$ establece si el proyecto $i$ fue asignado a la compa\~n\'ia $j$ para $i,j=1,\dots,m$ y tomar\'a los valores:
+
+\[
+x_{ij}=
+\begin{cases}
+0, & \text{si no se asigna el proyecto } i \text{ a la compa\~n\'ia } j,\\
+1, & \text{si se asigna el proyecto } i \text{ a la compa\~n\'ia } j.
+\end{cases}
+\]
+
+\textbf{Funci\'on objetivo.} Minimizar costo,
+
+\[
+\min w = \sum_{i=1}^{m}\sum_{j=1}^{m} c_{ij}x_{ij}.
+\]
+
+\textbf{Restricciones.}
+
+Para asignarle un proyecto a cada compa\~n\'ia:
+
+\[
+\sum_{j=1}^{m} x_{ij} = 1, \qquad \forall i=1,\dots,m.
+\]
+
+Para asignarle una compa\~n\'ia a cada proyecto:
+
+\[
+\sum_{i=1}^{m} x_{ij} = 1, \qquad \forall j=1,\dots,m.
+\]
+
+Por lo tanto el problema de asignaci\'on es el siguiente:
+
+\[
+P
+\begin{cases}
+\min w = \sum_{i=1}^{m}\sum_{j=1}^{m} c_{ij}x_{ij}\\
+\sum_{j=1}^{m} x_{ij} = 1, \quad \forall i=1,\dots,m\\
+\sum_{i=1}^{m} x_{ij} = 1, \quad \forall j=1,\dots,m\\
+x_{ij} \ge 0
+\end{cases}
+\]
+\end{Ejer}
+
+\begin{Ejer}
+
+Se tienen $n$ bodegas, cada una con una disponibilidad $d_i$ y $m$ almacenes, cada uno con una demanda $D_j$. Se desea transportar el producto de las bodegas a los almacenes con costo $c_{ij}$ (costo del transporte de la bodega $i$ al almac\'en $j$) m\'inimo. De tal manera que cada bodega no mande m\'as de lo que dispone y satisfaga la demanda de cada uno de los almacenes.
+
+\textbf{Variables de decisi\'on.} Sea $x_{ij}$ la cantidad del producto a transportar de la bodega $i$ al almac\'en $j$ para $i = 1,\dots,n$ y $j = 1,\dots,m$.
+
+\textbf{Funci\'on objetivo.} Minimizar el costo de env\'io,
+
+\[
+\min z = \sum_{i=1}^{n}\sum_{j=1}^{m} c_{ij}x_{ij}.
+\]
+
+\textbf{Restricciones.}  
+(a) Disponibilidad de cada bodega y  
+(b) demanda de cada almac\'en:
+
+\[
+\sum_{j} x_{ij} = d_i, \quad i = 1,\dots,n
+\]
+
+\[
+\sum_{i} x_{ij} = D_j, \quad j = 1,\dots,m
+\]
+
+\[
+x_{ij} \ge 0
+\]
+
+Entonces el problema de transporte queda planteado de la siguiente manera:
+
+\[
+P
+\begin{cases}
+\min z = \sum_{i=1}^{n}\sum_{j=1}^{m} c_{ij}x_{ij} \\
+\sum_j x_{ij} = d_i, \quad \forall i \\
+\sum_i x_{ij} = D_j, \quad \forall j \\
+x_{ij} \ge 0
+\end{cases}
+\]
+\end{Ejer}
+
+\begin{Ejer}
+
+
+Consid\'erese una red de conductores (rutas, tubos, cables el\'ectricos) cada uno con una capacidad $q_{ij}$ m\'axima (l\'imite superior de la cantidad de flujo que puede pasar por el conductor por unidad de tiempo). Buscamos enviar la cantidad m\'as grande de flujo de un punto origen $o$ a un punto destino $d$, sabiendo que el flujo es conservativo; es decir, la cantidad de flujo que sale del origen es la misma que llega al destino y la que entra en cada punto intermedio es la misma que sale de \'el. La cantidad de flujo que pasa en cada arco debe ser menor o igual que la capacidad de ese arco.
+
+\textbf{Variables de decisi\'on.} Denotemos por $x_{ij}$ la cantidad de flujo que va de $i$ a $j$.
+
+\textbf{Funci\'on objetivo.} Maximizar la cantidad de flujo que va de $o$ a $d$,
+
+\[
+\max z = \sum_j x_{oj} = \sum_i x_{id}
+\]
+
+\textbf{Restricciones.}
+
+Conservaci\'on del flujo en nodos intermedios:
+
+\[
+\sum_i x_{ik} - \sum_j x_{kj} = 0
+\]
+
+Capacidad en los arcos:
+
+\[
+x_{ij} \le q_{ij}
+\]
+
+\[
+x_{ij} \ge 0
+\]
+
+El problema de flujo m\'aximo se plantea entonces como:
+
+\[
+P
+\begin{cases}
+\max z = \sum_j x_{oj} = \sum_i x_{id} \\
+\sum_i x_{ik} - \sum_j x_{kj} = 0, \quad \forall k \ne o,d \\
+x_{ij} \le q_{ij} \\
+x_{ij} \ge 0
+\end{cases}
+\]
+\end{Ejer}
+
+\begin{Ejer}
+
+Consid\'erese el problema anterior para el caso en que se tiene la red de la figura 1.2 con $o$, $d$ y cuatro v\'ertices.
+
+(Figura 1.2: Red de conductores)
+
+El modelo queda:
+
+\[
+\max z = x_{o1} + x_{o2}
+\]
+
+sujeto a
+
+\[
+x_{o1} - x_{13} - x_{14} = 0
+\]
+
+\[
+x_{o2} - x_{24} = 0
+\]
+
+\[
+x_{13} - x_{3d} = 0
+\]
+
+\[
+x_{14} + x_{24} - x_{4d} = 0
+\]
+
+\[
+x_{o1} \le 5
+\]
+
+\[
+x_{o2} \le 2
+\]
+
+\[
+x_{13} \le 4
+\]
+
+\[
+x_{14} \le 4
+\]
+
+\[
+x_{24} \le 4
+\]
+
+\[
+x_{3d} \le 3
+\]
+
+\[
+x_{4d} \le 8
+\]
+
+\[
+x_{ij} \ge 0
+\]
+\end{Ejer}
+
+\begin{Ejer}
+
+Una compa\~n\'ia de muebles manufactura cuatro modelos de escritorios. Cada escritorio es construido primero en el departamento de carpinter\'ia y despu\'es en el departamento de acabado, donde es barnizado, encerado y pulido. El n\'umero de horas hombre de labor que se requiere en cada departamento est\'a dado por:
+
+\[
+\begin{array}{c|cccc}
+ & \text{Escritorio 1} & \text{Escritorio 2} & \text{Escritorio 3} & \text{Escritorio 4} \\
+\hline
+\text{Depto. carpinter\'ia} & 4 & 9 & 7 & 10 \\
+\text{Depto. acabado} & 1 & 1 & 3 & 40
+\end{array}
+\]
+
+Por limitaciones en la capacidad de la planta, no m\'as de 6000 horas-hombre pueden ser utilizadas en la carpinter\'ia y 4000 en el acabado en los siguientes seis meses.
+
+Las utilidades de la venta de cada escritorio son:
+
+\[
+\begin{array}{c|cccc}
+\text{Escritorio} & 1 & 2 & 3 & 4 \\
+\hline
+\text{Utilidad} & 12 & 20 & 18 & 40
+\end{array}
+\]
+
+Formularlo como problema lineal.
+
+\item Una compa\~n\'ia constructora dispone de 100 lotes en los cuales va a construir casas de cinco tipos: econ\'omico, r\'ustico, colonial, moderno y provenzal. Se tienen dos tipos de mano de obra: alba\~niles y carpinteros.
+
+\[
+\begin{array}{c|cc}
+\text{Tipo de casa} & \text{D\'ias alba\~niles} & \text{D\'ias carpinteros} \\
+\hline
+\text{Econ\'omico} & 1 & 4 \\
+\text{R\'ustico} & 2 & 7 \\
+\text{Colonial} & 2 & 6 \\
+\text{Moderno} & 1 & 5 \\
+\text{Provenzal} & 1 & 3
+\end{array}
+\]
+
+Las ganancias son:  
+2000, 3000, 2500, 1700 y 2000 respectivamente.
+
+Se requiere adem\'as construir al menos 10 casas de cada tipo.
+\end{Ejer}
+
+\begin{Ejer}
+ Una compa\~n\'ia desea comprar tres tipos de m\'aquinas $X,Y,Z$.  
+Recursos disponibles: \$400,000 y $1500\,m^2$.
+
+\[
+\begin{array}{c|ccc}
+\text{Tipo m\'aquina} & \text{Costo} & \text{\'area} & \text{Producci\'on diaria} \\
+\hline
+X & 8000 & 30 & 79 \\
+Y & 13000 & 60 & 90 \\
+Z & 15000 & 60 & 126
+\end{array}
+\]
+
+\end{Ejer}
+
+\begin{Ejer}
+La divisi\'on de televisores de Philips S.A. desea maximizar utilidades por televisores de color y blanco-negro.
+
+Utilidades:
+\[
+\text{Color} = 2000, \quad \text{Blanco y negro} = 1250
+\]
+
+Disponibilidad de horas-hombre:
+
+\[
+\begin{array}{c|c}
+\text{Producci\'on de partes} & 500 \\
+\text{Ensamble} & 2500 \\
+\text{Inspecci\'on} & 600
+\end{array}
+\]
+
+Requerimientos por televisor:
+
+Color:
+\[
+4 \text{ partes},\quad 5 \text{ ensamble},\quad 3 \text{ inspecci\'on}
+\]
+
+Blanco y negro:
+\[
+5 \text{ partes},\quad 2 \text{ ensamble},\quad 1 \text{ inspecci\'on}
+\]
+
+Capacidades m\'aximas:
+\[
+4000 \text{ blanco y negro}, \quad 1000 \text{ color}
+\]
+
+Plantear como problema de programaci\'on lineal.
+\end{Ejer}
+
+\begin{Ejer}
+Un ranchero est\'a criando puercos y desea determinar la cantidad de cada tipo disponible de alimento que puede servirle para cumplir los requerimientos nutritivos a un costo m\'inimo. El n\'umero de cada tipo de ingredientes nutritivos b\'asicos contenidos dentro de una libra de cada alimento est\'a dado en la siguiente tabla, junto con el requerimiento nutritivo m\'inimo diario que requiere un puerco y el costo de cada alimento.
+
+\[
+\begin{array}{l|ccc|c}
+\text{Ingredientes nutritivos} & \text{Libra de ma\'iz} & \text{Libra de alimento procesado} & \text{Libra de alfalfa} & \text{Requerimiento m\'inimo diario} \\
+\hline
+\text{Carbohidratos} & 9 & 2 & 4 & 20 \\
+\text{Prote\'inas} & 3 & 8 & 6 & 18 \\
+\text{Vitaminas} & 1 & 2 & 6 & 15 \\
+\text{Costo (c)} & 7 & 6 & 5 &
+\end{array}
+\]
+
+Formule el modelo de programaci\'on lineal para este problema.
+\end{Ejer}
+
+\begin{Ejer}
+ Una ama de casa le pide al carnicero que le muela varios cortes de carne para hacer una mezcla con igual parte de prote\'inas y grasas. El carnicero, siendo concienzudo, desea hacerlo con el menor costo total. Formular este problema como un problema lineal para determinar la mezcla para un kilogramo de carne.
+
+\[
+\begin{array}{c|ccccccc}
+\multicolumn{8}{c}{\text{Tipos de cortes}} \\
+ & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+\hline
+\% \text{Prote\'ina} & 19 & 20 & 16 & 17 & 19 & 16 & 17 \\
+\% \text{Grasa} & 16 & 18 & 25 & 23 & 11 & 28 & 20 \\
+\text{Costo por kilogramo} & 0.69 & 0.98 & 1.39 & 1.29 & 1.19 & 1.50 & 1.65
+\end{array}
+\]
+\end{Ejer}
+
+\begin{Ejer}
+Una empresa fabrica dos productos $A$ y $B$. El producto $A$ est\'a formado por 1 componente $X$ y 2 componentes $Y$. El producto $B$ est\'a formado por 3 componentes $X$ y 1 componente $Y$. Los tiempos est\'andar de fabricaci\'on son:
+
+\[
+\begin{array}{l|ccc}
+\text{Componente} & \text{M\'aquina 1} & \text{M\'aquina 2} & \text{Ensamble} \\
+\hline
+X & 2\ \text{horas/pieza} & 3\ \text{horas/pieza} & 4\ \text{horas/pieza} \\
+Y & 2\ \text{horas/pieza} & 1\ \text{hora/pieza} & 5\ \text{horas/pieza} \\
+\hline
+\text{Tiempo disponible} & 80\ \text{horas/semana} & 90\ \text{horas/semana} & 120\ \text{horas/semana}
+\end{array}
+\]
+
+Las utilidades unitarias son: \$150 para el producto $A$ y \$180 para el producto $B$. Determine el programa de producci\'on que maximiza las utilidades por semana de la empresa.
+\end{Ejer}
+
+\begin{Ejer}
+Un molino agr\'icola produce alimento para vacas, ovejas y pollos. Esto se hace mezclando los siguientes ingredientes principales: ma\'iz, piedra caliza, frijol de soya y comida de pescado. Estos ingredientes contienen los siguientes nutrientes: vitaminas, prote\'inas, calcio y grasa cruda. A continuaci\'on se resumen el contenido de los nutrientes en cada kilogramo de los ingredientes.
+
+\[
+\begin{array}{l|cccc}
+\text{Ingrediente} & \text{Vitaminas} & \text{Prote\'ina} & \text{Calcio} & \text{Grasa cruda} \\
+\hline
+\text{Ma\'iz} & 8 & 10 & 6 & 8 \\
+\text{Piedra caliza} & 6 & 5 & 10 & 6 \\
+\text{Frijol de soya} & 10 & 12 & 6 & 6 \\
+\text{Comida de pescado} & 4 & 8 & 6 & 9
+\end{array}
+\]
+
+Se hace un pedido al molino para que produzca 10, 6 y 8 toneladas (m\'etricas) de alimento para vacas, ovejas y pollos, respectivamente. Debido a la escasez de los ingredientes, s\'olo se dispone de una cantidad limitada de ellos a saber, 6 toneladas de ma\'iz, 10 toneladas de piedra caliza, 4 toneladas de frijol de soya y 5 toneladas de comida de pescado. El precio por kilogramo de estos ingredientes es \$0.20, \$0.12, \$0.24 y \$0.12, respectivamente.
+
+A continuaci\'on se resumen las unidades m\'inima y m\'axima que se permiten de los distintos nutrientes por cada kilogramo de alimento para vacas, ovejas y pollos.
+
+\[
+\begin{array}{l|cc|cc|cc|cc}
+ & \multicolumn{2}{c}{\text{Vitaminas}} & \multicolumn{2}{c}{\text{Prote\'inas}} & \multicolumn{2}{c}{\text{Calcio}} & \multicolumn{2}{c}{\text{Grasa cruda}} \\
+\text{Producto} & \min & \max & \min & \max & \min & \max & \min & \max \\
+\hline
+\text{Alimento para vacas} & 6 & 8 & 6 & \infty & 7 & \infty & 4 & 8 \\
+\text{Alimento para ovejas} & 6 & \infty & 6 & \infty & 6 & \infty & 4 & 6 \\
+\text{Alimento para pollos} & 4 & 6 & 6 & \infty & 6 & \infty & 4 & 6
+\end{array}
+\]
+
+Formule este problema de mezcla alimenticia de tal manera que el costo total sea m\'inimo.
+\end{Ejer}
+
+\begin{Ejer}
+ El personal t\'ecnico de un hospital desea elaborar un sistema computarizado para planear men\'us. Para empezar, deciden planear el men\'u del almuerzo. El men\'u se divide en tres grandes categor\'ias: vegetales, carne y postre. Se desea incluir en el men\'u al menos el equivalente a una porci\'on de cada categor\'ia.
+
+A continuaci\'on se resume el costo por raci\'on de algunos de los art\'iculos sugeridos, as\'i como su contenido de carbohidratos, vitaminas, prote\'inas y grasas.
+
+\[
+\begin{array}{l|cccc|c}
+ & \text{Carbohidratos} & \text{Vitaminas} & \text{Prote\'inas} & \text{Grasa} & \text{Costo (\$/raci\'on)} \\
+\hline
+\multicolumn{6}{c}{\text{Vegetales}} \\
+\text{Ch\'icharos} & 1 & 3 & 1 & 0 & 0.10 \\
+\text{Ejotes} & 1 & 5 & 2 & 0 & 0.12 \\
+\text{Quimbomb\'o} & 1 & 5 & 1 & 0 & 0.13 \\
+\text{Ma\'iz} & 2 & 6 & 1 & 2 & 0.09 \\
+\text{Macarrones} & 4 & 2 & 1 & 1 & 0.10 \\
+\text{Arroz} & 5 & 1 & 1 & 1 & 0.07 \\
+\hline
+\multicolumn{6}{c}{\text{Carnes}} \\
+\text{Pollo} & 2 & 1 & 3 & 1 & 0.70 \\
+\text{Res} & 3 & 8 & 5 & 2 & 1.20 \\
+\text{Pescado} & 3 & 6 & 6 & 1 & 0.63 \\
+\hline
+\multicolumn{6}{c}{\text{Postres}} \\
+\text{Naranja} & 1 & 3 & 1 & 0 & 0.28 \\
+\text{Manzana} & 1 & 2 & 0 & 0 & 0.42 \\
+\text{Bud\'in} & 1 & 0 & 0 & 0 & 0.15 \\
+\text{Gelatina} & 1 & 0 & 0 & 0 & 0.12
+\end{array}
+\]
+
+Sup\'ongase que los requerimientos m\'inimos por comida de carbohidratos, vitaminas, prote\'inas y grasas son 5, 10, 10 y 2, respectivamente.
+
+\begin{itemize}
+\item[(a)] Formule el problema de planeaci\'on de men\'u como un problema lineal.
+\item[(b)] Muchos problemas pr\'acticos se han omitido en el men\'u anterior. Explique c\'omo se podr\'ian incorporar a un sistema de planeaci\'on de men\'us.
+\end{itemize}
+\end{Ejer}
+
+\begin{Ejer}
+Una empresa que fabrica calcoman\'ias redondas obtiene hojas de pl\'astico rectangulares de dimensiones $30\text{ cm} \times 15\text{ cm}$. Se requieren dos tama\~nos de calcoman\'ias: di\'ametro $5$ cm y $15$ cm. Diariamente se necesitan 20,000 peque\~nas y 5,000 grandes. Cada hoja cuesta \$50.
+
+Formular el problema para minimizar el n\'umero de hojas usadas.
+\end{Ejer}
+
+\begin{Ejer}
+En un sal\'on de banquetes se tienen programados banquetes durante los siguientes 5 d\'ias. Los requisitos de manteles por banquete son:
+
+\[
+\begin{array}{c|ccccc}
+\text{Banquete} & 1 & 2 & 3 & 4 & 5 \\
+\text{N\'umero de manteles} & 80 & 60 & 100 & 130 & 200
+\end{array}
+\]
+
+El costo de compra de un mantel es \$40 y el costo de lavander\'ia urgente es \$10 por mantel. Formular el modelo para minimizar el costo total.
+
+\end{Ejer}
+
+\begin{Ejer}
+Una productora nacional de fertilizantes quiere programar su producci\'on trimestral.
+
+\[
+\begin{array}{c|c}
+\text{Periodo} & \text{Toneladas de fertilizante} \\
+\hline
+1^{er} \text{ trimestre} & 100000 \\
+2^{do} \text{ trimestre} & 120000 \\
+3^{er} \text{ trimestre} & 110000 \\
+4^{to} \text{ trimestre} & 90000
+\end{array}
+\]
+
+Capacidad normal: 95,000 toneladas por trimestre.
+
+Producci\'on extra: hasta 30,000 toneladas adicionales por trimestre.
+
+Costo extra: \$300 por tonelada.  
+Costo almacenamiento: \$500 por tonelada por trimestre.  
+Costo normal: \$700 por tonelada.
+
+Formular el modelo lineal.
+
+\end{Ejer}
+
+\begin{Ejer}
+Una peque\~na ciudad de 15,000 habitantes requiere en promedio 200,000 galones de agua diariamente.
+
+El tratamiento requiere dos compuestos qu\'imicos: suavizador y purificador.
+
+Producto A contiene 3 libras de suavizador y 3 libras de purificador.  
+Producto B contiene 4 y 9 libras respectivamente.
+
+Se requieren al menos 150 y 100 libras de estos compuestos diariamente.
+
+Costo: \$8 por unidad de A y \$10 por unidad de B.
+
+Formular el modelo lineal.
+\end{Ejer}
+
+\begin{Ejer}
+Sup\'ongase que en el poblado de Tixtla, Gro., la Nacional Financiera pretende hacer inversiones cuantiosas en el cultivo de aguacate, lima, mango y zapote. Se persiguen dos objetivos, uno el de reducir el desempleo rural y el otro el de aumentar las exportaciones que vendr\'an a equilibrar la balanza de pagos de la naci\'on. Se sabe que la producci\'on promedio de cada \'arbol est\'a dada por la siguiente tabla:
+
+\[
+\begin{array}{|c|c|c|c|}
+\hline
+\text{Tipo de \'arbol} & \text{Producci\'on promedio anual (unidades)} & \text{en Kg} & \text{Observaci\'on} \\
+\hline
+Aguacate & 350 & 150 & \text{una vez al a\~no} \\
+Lima & 230 & 200 & \text{una vez al a\~no} \\
+Mango & 150 & 50 & \text{una vez al a\~no} \\
+Zapote & 400 & 150 & \text{una vez al a\~no} \\
+\hline
+\end{array}
+\]
+
+El precio promedio en el mercado mundial a precios de 1974 fue de \$10 por Kg de aguacate, \$4 por Kg de lima, \$15 por Kg de mango y \$7 por Kg de zapote. Existe una extensi\'on de 250,000 m$^2$ de tierra de propiedad federal propia para el cultivo de esos productos. Sup\'ongase que t\'ecnicos de la Secretar\'ia de Agricultura han determinado que las siguientes extensiones m\'inimas son necesarias para el cultivo de esos productos:
+
+\[
+\begin{array}{|c|c|}
+\hline
+\text{Tipo de \'arbol} & \text{Extensi\'on m\'inima de cultivo por \'arbol} \\
+\hline
+Aguacate & 4\,m^2 \\
+Lima & 5\,m^2 \\
+Mango & 3\,m^2 \\
+Zapote & 6\,m^2 \\
+\hline
+\end{array}
+\]
+
+Afortunadamente no existe problema de agua, pues hay varios manantiales dentro de la propiedad. El costo por sembrar un \'arbol de aguacate es de \$2, \$0.50 por \'arbol de lima, \$1 de mango y \$1.50 de zapote; estos costos ya est\'an incluyendo la compra del \'arbol m\'as su cuidado y mantenimiento. Cada \'arbol empieza a ser productivo aproximadamente a los 3 a\~nos de ser plantado. Cada \'arbol de aguacate requiere de cuidados equivalentes a 36 horas-hombre-a\~no; 72 horas-hombre-a\~no por \'arbol de lima; 50 horas-hombre-a\~no de mango y 100 horas-hombre-a\~no por zapote.
+
+La Nacional Financiera pretende hacer una inversi\'on de 20 millones de pesos, pensando exportar toda su producci\'on a partir del tercer a\~no. El desempleo en Tixtla se ha calculado en 500 personas y el Gobierno Federal ha delineado que este proyecto emplee al menos 200 personas en forma continua.
+
+Bajo estas circunstancias, ¿cu\'antos \'arboles de cada fruta deber\'an sembrarse con objeto de maximizar el valor de la futura exportaci\'on anual? Sup\'ongase tambi\'en que durante todo el a\~no se deben trabajar jornadas de 8 horas (por d\'ia).
+\end{Ejer}
+
+\begin{Ejer}
+Una excursionista planea salir de campamento. Hay 5 art\'iculos que desea llevar consigo, pero entre todos sobrepasan las 60 libras que considera que puede cargar. Para auxiliarse en la selecci\'on, ha asignado un valor a cada art\'iculo en orden ascendente de importancia:
+
+\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\text{Art\'iculo} & 1 & 2 & 3 & 4 & 5 \\
+\hline
+\text{Peso (lb)} & 52 & 23 & 35 & 15 & 7 \\
+\hline
+\text{Valor} & 100 & 60 & 70 & 15 & 15 \\
+\hline
+\end{array}
+\]
+
+¿Qu\'e art\'iculos deber\'a llevar para maximizar el valor total, sin sobrepasar la restricci\'on de peso? Plantear el problema de programaci\'on lineal.
+\end{Ejer}
+
+
+
+%===========================================
+\subsection{Ejercicios de Tarea}
+%===========================================
+
+%<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+\subsection{Ejerplos}
+%<<>>==<<>><<>>==<<>><<>>==<<>><<>>==<<>>
+
+\begin{Ejer}[Compa\~n\'ia de Pinturas]
 
 La compa\~n\'ia de pinturas \textbf{Manchita} produce tres tipos de pintura adicionando a una pintura base cuatro productos qu\'imicos ($Q_1$ a $Q_4$). 
 
@@ -574,9 +1605,9 @@ Ganancia & 15000 & 25000 & 19000 & \\
 
 \end{tabular}}
 \end{center}
-\end{Ejem}
+\end{Ejer}
 
-\begin{Ejem}[Producci\'on en M\'aquinas]
+\begin{Ejer}[Producci\'on en M\'aquinas]
 
 Una empresa produce tres productos procesados en tres m\'aquinas.
 
@@ -592,10 +1623,10 @@ $M_3$ & 2 & 5 & - & 430 \\
 
 \end{tabular}
 \end{center}
-\end{Ejem}
+\end{Ejer}
 
 
-\begin{Ejem}[Mezcla de Caf\'e]
+\begin{Ejer}[Mezcla de Caf\'e]
 
 Una casa empacadora recibe diariamente 700 kg de caf\'e tipo C y 800 kg tipo K.
 
@@ -609,12 +1640,10 @@ Mezcla B:
 \[
 1 \text{ parte C} + 2 \text{ partes K}
 \]
-Ganancia: 26 c\'entimos/kg.
+Ganancia: 26 c\'entimos/kg. Determinar las cantidades que maximizan la ganancia.
+\end{Ejer}
 
-Determinar las cantidades que maximizan la ganancia.
-\end{Ejem}
-
-\begin{Ejem}[Trenes y Camiones]
+\begin{Ejer}[Trenes y Camiones]
 
 Un artesano fabrica trenes y camiones.
 
@@ -635,261 +1664,10 @@ Beneficios:
 \[
 1.6 \text{ €/tren}, \quad 1.4 \text{ €/cami\'on}
 \]
-\end{Ejem}
+\end{Ejer}
 
 
-\begin{Ejem}[Problema 5: Calentadores y Aires]
-
-Producci\'on diaria con restricciones de horas:
-
-\begin{itemize}
-\item Calentador: 2h partes + 1h ensamblaje
-\item Aire acondicionado: 1h partes + 2h ensamblaje
-\end{itemize}
-
-Disponibilidad:
-\[
-8 \text{h partes}, \quad 10 \text{h ensamblaje}
-\]
-
-Ganancias:
-\[
-30 \text{ por calentador}, \quad 50 \text{ por aire}
-\]
-\end{Ejem}
-
-\begin{Ejem}[Vino y Vinagre]
-
-Restricciones:
-
-\[
-2V \leq G + 4
-\]
-\[
-3G + 4V \leq 18
-\]
-
-Beneficio:
-\[
-8V + 2G
-\]
-\end{Ejem}
-
-
-\begin{Ejem}[Tapicer\'ia]
-
-Tipo A:
-\[
-10m \text{ tela}, \quad 12h
-\]
-
-Tipo B:
-\[
-15m \text{ tela}, \quad 16h
-\]
-
-Disponibilidad:
-\[
-300m \text{ tela}, \quad 336h
-\]
-
-Ganancias:
-\[
-1500A + 2100B
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Gadgets y Gewgaws]
-
-Modelo:
-
-\[
-\max z = 5x_1 + 4x_2
-\]
-
-Sujeto a:
-
-\[
-x_1 + 2x_2 \leq 120
-\]
-\[
-x_1 + x_2 \leq 70
-\]
-\[
-2x_1 + x_2 \leq 100
-\]
-\[
-x_1, x_2 \geq 0
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Modelo Simple]
-
-\[
-\max 3x_1 + x_2
-\]
-
-Sujeto a:
-
-\[
-x_1 + x_2 \leq 7
-\]
-\[
-x_1 \geq 0
-\]
-\[
-x_2 \geq 0
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Problema 10: Dieta de Cerdos]
-
-\begin{center}
-\begin{tabular}{c|ccc|c}
-
- & Corn & Silage & Alfalfa & Requerimiento \\
-
-Carbs & 0.9 & 0.2 & 0.4 & 2 \\
-Protein & 3 & 8 & 6 & 18 \\
-Vitamins & 1 & 2 & 4 & 15 \\
-Cost & 7 & 6 & 5 & \\
-
-\end{tabular}
-\end{center}
-
-\end{Ejem}
-
-
-\begin{Ejem}[Modelo Dieta G1 y G2]
-
-\begin{center}
-\begin{tabular}{c|ccc|c}
-
- & Starch & Proteins & Vitamins & Cost \\
-
-G1 & 5 & 4 & 2 & 0.6 \\
-G2 & 7 & 2 & 1 & 0.35 \\
-
-\end{tabular}
-\end{center}
-
-Requerimientos diarios:
-\[
-8 \text{ starch}, \quad 15 \text{ proteins}, \quad 3 \text{ vitamins}
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Problema 12: Giapetto]
-
-Modelo:
-
-\[
-\max Z = \text{Ingresos} - \text{Costos}
-\]
-
-Restricciones:
-\[
-2F + C \leq 100
-\]
-\[
-F + C \leq 80
-\]
-\[
-C \leq 40
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Problema 13: Industria de Dos Productos]
-
-\[
-\max \text{Profit} = 3x_1 + 4x_2
-\]
-
-Sujeto a:
-
-\[
-2x_1 + 3x_2 \leq 16
-\]
-\[
-4x_1 + 2x_2 \leq 16
-\]
-\[
-x_1, x_2 \geq 0
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Department Time Constraints]
-
-Time used in making $x_1$ and $x_2$ units of two products must not exceed the total daily time available in the two shops.
-
-\[
-2x_1 + 3x_2 \le 16 \qquad \text{(Machine shop constraint)}
-\]
-\[
-4x_1 + 2x_2 \le 16 \qquad \text{(Assembly shop constraint)}
-\]
-
-Nonnegativity constraints:
-\[
-x_1 \ge 0, \quad x_2 \ge 0.
-\]
-
-The problem in mathematical form:
-
-\[
-\textbf{Maximize} \quad Z = 3x_1 + 4x_2
-\]
-
-subject to
-\[
-2x_1 + 3x_2 \le 16
-\]
-\[
-4x_1 + 2x_2 \le 16
-\]
-\[
-x_1, x_2 \ge 0.
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Graphical Solution]
-
-Consider
-
-\[
-\max Z = x + 2y
-\]
-
-subject to
-
-\[
-x \ge 0, \quad y \ge 0,
-\]
-\[
-x \le 6, \quad y \le 7,
-\]
-\[
-x + y \le 12.
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[The Diet Problem]
+\begin{Ejer}[The Diet Problem]
 
 There are $m$ different types of food $F_1,\dots,F_m$ that supply $n$ nutrients
 $N_1,\dots,N_n$.
@@ -925,10 +1703,10 @@ y_i \ge 0, \quad i=1,\dots,m.
 \]
 
 Thus, minimize (1) subject to (2)–(3).
-\end{Ejem}
+\end{Ejer}
 
 
-\begin{Ejem}[The Transportation Problem]
+\begin{Ejer}[The Transportation Problem]
 
 There are $I$ production plants and $J$ markets.
 
@@ -969,36 +1747,10 @@ Nonnegativity:
 y_{ij} \ge 0.
 \tag{7}
 \]
-\end{Ejem}
+\end{Ejer}
 
 
-\begin{Ejem}[Compa\~n\'ia de Pinturas Manchita]
-
-La compa\~n\'ia de pinturas \textbf{Manchita} produce tres tipos de pintura adicionando a una pintura base cuatro productos o aditivos qu\'imicos ($Q_1$ a $Q_4$). Se tiene abundante pintura base disponible y su costo ya fue cubierto.
-
-La compa\~n\'ia desea determinar la cantidad de toneladas de cada tipo de pintura que debe producir de manera que maximice la ganancia total. Las \'unicas restricciones se deben a la disponibilidad de los aditivos qu\'imicos requeridos.
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Aditivo} & \multicolumn{3}{c|}{\textbf{Kg requeridos por tonelada}} & \textbf{Disponible (kg)} \\
-\cline{2-4}
- & Pintura interior & Pintura exterior & Pintura especial & \\
-\hline
-$Q_1$ & 1 & 2 & 2 & 2 \\
-$Q_2$ & 2 & 1 & 1 & 1 \\
-$Q_3$ & 1 & 5 & 1 & 3 \\
-$Q_4$ & 0 & 0 & 1 & 0.8 \\
-\hline
-\textbf{Ganancia por tonelada} & 15000 & 25000 & 19000 & \\
-\hline
-\end{tabular}
-\end{center}
-
-\end{Ejem}
-
-
-\begin{Ejem}[Producci\'on en Tres M\'aquinas]
+\begin{Ejer}[Producci\'on en Tres M\'aquinas]
 
 Una empresa produce tres productos procesados en tres m\'aquinas diferentes. El tiempo requerido para fabricar una unidad de cada producto y la capacidad diaria de las m\'aquinas se muestran en la tabla:
 
@@ -1013,10 +1765,10 @@ $M_3$ & 2 & 5 & - & 430 \\
 \hline
 \end{tabular}
 \end{center}
-\end{Ejem}
+\end{Ejer}
 
 
-\begin{Ejem}[Mezclas de Caf\'e]
+\begin{Ejer}[Mezclas de Caf\'e]
 
 Una casa empacadora recibe diariamente 700 kg de caf\'e tipo C y 800 kg de caf\'e tipo K. Produce dos mezclas:
 
@@ -1026,418 +1778,8 @@ Una casa empacadora recibe diariamente 700 kg de caf\'e tipo C y 800 kg de caf\'
 \end{itemize}
 
 Determinar la cantidad de cada mezcla que debe prepararse para maximizar la ganancia.
-\end{Ejem}
+\end{Ejer}
 
-
-\begin{Ejem}[Trenes y Camiones]
-
-Un artesano fabrica trenes y camiones de juguete utilizando tornillos, bloques y ruedas.
-
-Disponibilidad semanal:
-\[
-8000 \text{ tornillos}, \quad 6000 \text{ bloques}, \quad 6300 \text{ ruedas}
-\]
-
-Beneficios:
-\[
-\text{Tren: } 1.6 \text{ euros/unidad} \qquad
-\text{Cami\'on: } 1.4 \text{ euros/unidad}
-\]
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
- & Tornillos & Bloques & Ruedas \\
-\hline
-Tren & 10 & 15 & 18 \\
-Cami\'on & 20 & 10 & 6 \\
-\hline
-\end{tabular}
-\end{center}
-
-\end{Ejem}
-
-
-\begin{Ejem}[Heaters and Air Conditioners]
-
-An appliance company manufactures heaters and air conditioners.
-
-\begin{itemize}
-\item Heater: 2 hours (parts division), 1 hour (assembly division)
-\item Air conditioner: 1 hour (parts division), 2 hours (assembly division)
-\end{itemize}
-
-Disponibilidad:
-\[
-\text{Parts division: } 8 \text{ hours/day}
-\]
-\[
-\text{Assembly division: } 10 \text{ hours/day}
-\]
-
-Profit:
-\[
-\$30 \text{ per heater}, \quad \$50 \text{ per air conditioner}
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Industria Vin\'icola]
-
-Una industria produce vino y vinagre.
-
-Restricciones:
-\[
-2(\text{vino}) \leq (\text{vinagre}) + 4
-\]
-\[
-3(\text{vinagre}) + 4(\text{vino}) \leq 18
-\]
-
-Beneficio:
-\[
-8€ \text{ por vino}, \quad 2€ \text{ por vinagre}
-\]
-\end{Ejem}
-
-
-\begin{Ejem}[Tapicer\'ia]
-
-Tipos de sillones: A y B.
-
-Requerimientos:
-
-\begin{itemize}
-\item Tipo A: 10 m de tela, 12 horas
-\item Tipo B: 15 m de tela, 16 horas
-\end{itemize}
-
-Disponibilidad semanal:
-\[
-300 \text{ m tela}, \quad 336 \text{ horas}
-\]
-
-Utilidad:
-\[
-\$1500 \text{ (A)}, \quad \$2100 \text{ (B)}
-\]
-\end{Ejem}
-
-
-\begin{Ejem}[Gadgets and Gewgaws]
-
-Maximizar:
-\[
-\max z = 5x_1 + 4x_2
-\]
-
-sujeto a:
-
-\[
-x_1 + 2x_2 \leq 120
-\]
-\[
-x_1 + x_2 \leq 70
-\]
-\[
-2x_1 + x_2 \leq 100
-\]
-\[
-x_1, x_2 \geq 0
-\]
-\end{Ejem}
-
-
-\begin{Ejem}[Ejemplo sencillo]
-
-Maximizar:
-\[
-3x_1 + x_2
-\]
-
-Sujeto a:
-\[
-x_1 + x_2 \leq 7
-\]
-\[
-x_1 \geq 0, \quad x_2 \geq 0
-\]
-\end{Ejem}
-
-
-\begin{Ejem}[Pig Diet Problem]
-
-Tabla nutricional:
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
- & Corn & Silage & Alfalfa & Requerimiento diario \\
-\hline
-Carbs & 0.9 & 0.2 & 0.4 & 2 \\
-Protein & 3 & 8 & 6 & 18 \\
-Vitamins & 1 & 2 & 4 & 15 \\
-Cost & 7 & 6 & 5 & \\
-\hline
-\end{tabular}
-\end{center}
-\end{Ejem}
-
-
-\begin{Ejem}[Diet Model (G1 y G2)]
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
- & Starch & Proteins & Vitamins & Cost (\$/kg) \\
-\hline
-G1 & 5 & 4 & 2 & 0.6 \\
-G2 & 7 & 2 & 1 & 0.35 \\
-\hline
-\end{tabular}
-\end{center}
-
-Requerimientos diarios:
-\[
-\text{Starch} = 8, \quad \text{Proteins} = 15, \quad \text{Vitamins} = 3
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Giapetto's Woodcarving]
-
-Variables:
-\[
-x_1 = \text{soldiers}, \quad x_2 = \text{trains}
-\]
-
-Maximizar utilidad semanal considerando:
-
-\begin{itemize}
-\item Recursos de acabado y carpinter\'ia
-\item 100 horas de acabado
-\item 80 horas de carpinter\'ia
-\item M\'aximo 40 soldados por semana
-\end{itemize}
-
-\end{Ejem}
-
-
-\begin{Ejem}[General Linear Programming Problem]
-
-Maximizar:
-\[
-\text{Max Profit} = 3x_1 + 4x_2
-\]
-
-Sujeto a:
-\[
-2x_1 + 3x_2 \leq 16
-\]
-\[
-4x_1 + 2x_2 \leq 16
-\]
-\[
-x_1, x_2 \geq 0
-\]
-\end{Ejem}
-
-
-\begin{Ejem}[Furnco manufactures desks and chairs]
-
-Let:
-\[
-x_1 = \text{number of desks produced}
-\]
-\[
-x_2 = \text{number of chairs produced}
-\]
-
-Each desk contributes \$40 profit and each chair \$25.
-Each desk uses 4 units of wood and each chair 3 units.
-At most 20 units of wood are available.
-At least twice as many chairs as desks must be produced.
-
-The LP formulation is:
-
-\[
-\max \quad z = 40x_1 + 25x_2
-\]
-
-\[
-\text{s.t.}
-\]
-\[
-4x_1 + 3x_2 \le 20
-\]
-\[
-x_2 \ge 2x_1
-\]
-\[
-x_1,x_2 \ge 0
-\]
-
-Optimal solution:
-\[
-x_1=2,\quad x_2=4,\quad z=180.
-\]
-\end{Ejem}
-
-
-\begin{Ejem}[Giapetto's Woodcarving]
-
-Let:
-\[
-x_1 = \text{number of soldiers produced per week}
-\]
-\[
-x_2 = \text{number of trains produced per week}
-\]
-
-\[
-\max \quad z = 3x_1 + 2x_2
-\]
-
-\[
-\text{s.t.}
-\]
-\[
-2x_1 + x_2 \le 100
-\]
-\[
-x_1 + x_2 \le 80
-\]
-\[
-x_1 \le 40
-\]
-\[
-x_1,x_2 \ge 0
-\]
-
-\end{Ejem}
-
-\begin{Ejem}[Farmer Jones]
-
-\textbf{Method 1: Acres as variables}
-
-\[
-x_1 = \text{acres of wheat}
-\]
-\[
-x_2 = \text{acres of corn}
-\]
-
-\[
-\max \quad z = 100x_1 + 30x_2
-\]
-
-\[
-\text{s.t.}
-\]
-\[
-x_1 + x_2 \le 7
-\]
-\[
-10x_2 \ge 30
-\]
-\[
-10x_1 + 4x_2 \le 40
-\]
-\[
-x_1,x_2 \ge 0
-\]
-
-\textbf{Method 2: Bushels as variables}
-
-\[
-x_1 = \text{bushels of wheat}
-\]
-\[
-x_2 = \text{bushels of corn}
-\]
-
-\[
-\max \quad z = 4x_1 + 3x_2
-\]
-
-\[
-\text{s.t.}
-\]
-\[
-\frac{1}{25}x_1 + \frac{1}{10}x_2 \le 7
-\]
-\[
-\frac{x_2}{10} \ge 3
-\]
-\[
-\frac{1}{25}x_1 + \frac{1}{10}x_2 \le 40
-\]
-\[
-x_1,x_2 \ge 0
-\]
-
-\end{Ejem}
-
-\begin{Ejem}[Village Butcher Shop]
-
-Let:
-\[
-x_1 = \text{pounds of ground beef}
-\]
-\[
-x_2 = \text{pounds of ground pork}
-\]
-
-\[
-\min \quad z = 80x_1 + 60x_2
-\]
-
-\[
-\text{s.t.}
-\]
-\[
-0.20x_1 + 0.32x_2 \le 0.25
-\]
-\[
-x_1 + x_2 = 1
-\]
-\[
-x_1,x_2 \ge 0
-\]
-
-\end{Ejem}
-
-
-\begin{Ejem}[Psychologist Experiment]
-
-Let:
-\[
-x = \text{number of mice}
-\]
-\[
-y = \text{number of rats}
-\]
-
-\[
-\max \quad z = x + y
-\]
-
-\[
-\text{s.t.}
-\]
-\[
-10x + 20y \le 800
-\]
-\[
-20x + 10y \le 640
-\]
-\[
-x,y \ge 0
-\]
-
-\end{Ejem}
 
 
 \begin{Ejer}
@@ -1891,856 +2233,8 @@ Cada planta tiene 20 d\'ias de producci\'on disponibles en febrero y 23 en marzo
 
 
 
-\subsection{Notas PL}
-
-
-\begin{itemize}
-
-\item \textbf{Ejemplo 1.1} Un inversionista dispone de \$100,000 y de dos tipos de inversi\'on, a saber, $A$ y $B$; la inversi\'on $A$ produce $5\%$ y la tipo $B$ $8\%$. Se desea maximizar las ganancias obtenidas, pero se tienen las siguientes restricciones:
-
-\begin{itemize}
-\item[(a)] Debe invertir al menos $25\%$ en las inversiones tipo $A$.
-\item[(b)] No m\'as del $50\%$ de sus fondos deben colocarse en $B$.
-\item[(c)] La cantidad invertida en $B$ no debe ser mayor que una y media veces la cantidad invertida en $A$.
-\end{itemize}
-
-Para poder plantear el modelo matem\'atico de un problema de programaci\'on lineal, distinguiremos las variables (que llamaremos variables de decisi\'on), el objetivo (lo que se pretende) y las restricciones del problema.
-
-\textbf{Variables de decisi\'on.} Denotaremos con $x$ la cantidad a invertir en $A$ (en miles de pesos) y con $y$ la cantidad a invertir en $B$ (tambi\'en en miles de pesos).
-
-\textbf{Funci\'on objetivo.} Maximizar ganancias,
-
-\[
-\max z = 50x + 80y.
-\]
-
-\textbf{Restricciones.}
-
-\[
-x \ge 25, \qquad (a)
-\]
-
-\[
-y \le 50, \qquad (b)
-\]
-
-\[
-y \le \frac{3}{2}x, \qquad (c)
-\]
-
-adem\'as, puesto que el inversionista dispone \'unicamente de \$100,000.00, tenemos la restricci\'on
-
-\[
-x + y \le 100, \qquad (d)
-\]
-
-y tambi\'en las restricciones de no negatividad para $x$ y $y$,
-
-\[
-x,y \ge 0.
-\]
-
-El problema queda planteado como un problema de programaci\'on lineal de la siguiente manera:
-
-\[
-P
-\begin{cases}
-\max z = 50x + 80y \\
-x \ge 25,\\
-y \le 50,\\
--\frac{3}{2}x + y \le 0,\\
-x + y \le 100,\\
-x,y \ge 0.
-\end{cases}
-\]
-
-\item \textbf{Ejemplo 1.2} Un fabricante de gabinetes desea construir dos tipos de gabinetes para exportar (uno moderno y uno provenzal). Suponemos que existe un mercado ilimitado donde puede vender cualquier cantidad de cada uno. El proceso de construcci\'on requiere la utilizaci\'on de cuatro talleres: cortado, pulido, pintado y acabado. El fabricante puede utilizar: (a) $8$ horas m\'aximo el taller de cortado, (b) $15$ horas m\'aximo el taller de pulido, (c) $8$ horas m\'aximo el taller de pintado y (d) $32$ horas m\'aximo el taller de acabado, por periodo.
-
-Para construir un gabinete moderno necesita: (a) $2/5$ de hora en cortado, (b) $1$ hora en pulido, (c) $1/3$ de hora en pintura y (d) $8/3$ de hora en acabado. Para un provenzal utiliza: (a) $3/5$ de hora en cortado, (b) $3/2$ de hora en pulido, (c) $1$ hora en pintado y (d) $2$ horas en acabado.
-
-La ganancia neta que obtiene es de \$150 en cualquier gabinete. Determinar qu\'e cantidad de cada tipo de gabinetes tiene que fabricar para obtener la ganancia m\'axima.
-
-\textbf{Variables de decisi\'on.} Sea $x$ la cantidad de gabinetes de tipo moderno a fabricar y sea $y$ la cantidad de gabinetes de tipo provenzal a fabricar.
-
-\textbf{Funci\'on objetivo.} Maximizar ganancia,
-
-\[
-\max z = 150x + 150y.
-\]
-
-\textbf{Restricciones.}
-
-\[
-\frac{2}{5}x + \frac{3}{5}y \le 8, \qquad (a)
-\]
-
-\[
-x + \frac{3}{2}y \le 15, \qquad (b)
-\]
-
-\[
-\frac{1}{3}x + y \le 8, \qquad (c)
-\]
-
-\[
-\frac{8}{3}x + 2y \le 32, \qquad (d)
-\]
-
-\[
-x,y \ge 0.
-\]
-
-El problema queda planteado como
-
-\[
-P
-\begin{cases}
-\max z = 150x + 150y\\
-\frac{2}{5}x + \frac{3}{5}y \le 8,\\
-x + \frac{3}{2}y \le 15,\\
-\frac{1}{3}x + y \le 8,\\
-\frac{8}{3}x + 2y \le 32,\\
-x,y \ge 0.
-\end{cases}
-\]
-
-\item \textbf{Ejemplo 1.3} El complejo industrial de Ciudad Sahag\'un encarg\'o a su departamento de producci\'on de l\'amina que minimice el desperdicio de sobrante de l\'amina que resulta del corte de \'esta para la fabricaci\'on de piezas de cami\'on. Los tama\~nos necesarios para la carrocer\'ia son:
-
-\begin{itemize}
-\item $30 \times 60$ para puertas,
-\item $30 \times 70$ para techo y cofre,
-\item $30 \times 50$ para salpicadera.
-\end{itemize}
-
-Las cantidades necesarias para cada tama\~no de corte son (a) $10\,000$, (b) $15\,000$ y (c) $5\,000$ por mes, respectivamente. Considerando que se tienen placas de $30\times180$ cm los posibles cortes dan distintos tama\~nos de sobrantes.
-
-Deducimos que existe un n\'umero finito de tipos de corte para obtener las medidas requeridas.
-
-\textbf{Variables de decisi\'on.} Sea $x_i$ el n\'umero de l\'aminas a cortar del tipo $i$, para $i=1,\dots,7$.
-
-\textbf{Funci\'on objetivo.} Minimizar desperdicio,
-
-\[
-\min w = 0x_1 + 40x_2 + 10x_3 + 0x_4 + 30x_5 + 20x_6 + 10x_7.
-\]
-
-\textbf{Restricciones}
-
-\[
-3x_1 + x_4 + x_6 + 2x_7 \ge 10000, \qquad (a)
-\]
-
-\[
-2x_2 + x_3 + x_4 \ge 15000, \qquad (b)
-\]
-
-\[
-2x_3 + x_4 + 3x_5 + 2x_6 + x_7 \ge 5000, \qquad (c)
-\]
-
-\[
-x_i \ge 0, \qquad i=1,\dots,7.
-\]
-
-El problema queda planteado como
-
-\[
-P
-\begin{cases}
-\min w = 0x_1 + 40x_2 + 10x_3 + 0x_4 + 30x_5 + 20x_6 + 10x_7 \\
-3x_1 + x_4 + x_6 + 2x_7 \ge 10000 \\
-2x_2 + x_3 + x_4 \ge 15000 \\
-2x_3 + x_4 + 3x_5 + 2x_6 + x_7 \ge 5000 \\
-x_i \ge 0, \quad i=1,\dots,7
-\end{cases}
-\]
-
-\item \textbf{Ejemplo 1.4 (Problema de asignaci\'on)} Se tienen $m$ proyectos y $m$ compa\~n\'ias; $c_{ij}$ es el costo de el proyecto $i$ desarrollado por la compa\~n\'ia $j$. Se desea asignar un solo proyecto a cada compa\~n\'ia a costo m\'inimo.
-
-\textbf{Variables de decisi\'on.} La variable $x_{ij}$ establece si el proyecto $i$ fue asignado a la compa\~n\'ia $j$ para $i,j=1,\dots,m$ y tomar\'a los valores:
-
-\[
-x_{ij}=
-\begin{cases}
-0, & \text{si no se asigna el proyecto } i \text{ a la compa\~n\'ia } j,\\
-1, & \text{si se asigna el proyecto } i \text{ a la compa\~n\'ia } j.
-\end{cases}
-\]
-
-\textbf{Funci\'on objetivo.} Minimizar costo,
-
-\[
-\min w = \sum_{i=1}^{m}\sum_{j=1}^{m} c_{ij}x_{ij}.
-\]
-
-\textbf{Restricciones.}
-
-Para asignarle un proyecto a cada compa\~n\'ia:
-
-\[
-\sum_{j=1}^{m} x_{ij} = 1, \qquad \forall i=1,\dots,m.
-\]
-
-Para asignarle una compa\~n\'ia a cada proyecto:
-
-\[
-\sum_{i=1}^{m} x_{ij} = 1, \qquad \forall j=1,\dots,m.
-\]
-
-Por lo tanto el problema de asignaci\'on es el siguiente:
-
-\[
-P
-\begin{cases}
-\min w = \sum_{i=1}^{m}\sum_{j=1}^{m} c_{ij}x_{ij}\\
-\sum_{j=1}^{m} x_{ij} = 1, \quad \forall i=1,\dots,m\\
-\sum_{i=1}^{m} x_{ij} = 1, \quad \forall j=1,\dots,m\\
-x_{ij} \ge 0
-\end{cases}
-\]
-
-\end{itemize}
-
-
-\begin{itemize}
-
-\item \textbf{Ejemplo 1.5 (Problema de transporte)}  
-Se tienen $n$ bodegas, cada una con una disponibilidad $d_i$ y $m$ almacenes, cada uno con una demanda $D_j$. Se desea transportar el producto de las bodegas a los almacenes con costo $c_{ij}$ (costo del transporte de la bodega $i$ al almac\'en $j$) m\'inimo. De tal manera que cada bodega no mande m\'as de lo que dispone y satisfaga la demanda de cada uno de los almacenes.
-
-\textbf{Variables de decisi\'on.} Sea $x_{ij}$ la cantidad del producto a transportar de la bodega $i$ al almac\'en $j$ para $i = 1,\dots,n$ y $j = 1,\dots,m$.
-
-\textbf{Funci\'on objetivo.} Minimizar el costo de env\'io,
-
-\[
-\min z = \sum_{i=1}^{n}\sum_{j=1}^{m} c_{ij}x_{ij}.
-\]
-
-\textbf{Restricciones.}  
-(a) Disponibilidad de cada bodega y  
-(b) demanda de cada almac\'en:
-
-\[
-\sum_{j} x_{ij} = d_i, \quad i = 1,\dots,n
-\]
-
-\[
-\sum_{i} x_{ij} = D_j, \quad j = 1,\dots,m
-\]
-
-\[
-x_{ij} \ge 0
-\]
-
-Entonces el problema de transporte queda planteado de la siguiente manera:
-
-\[
-P
-\begin{cases}
-\min z = \sum_{i=1}^{n}\sum_{j=1}^{m} c_{ij}x_{ij} \\
-\sum_j x_{ij} = d_i, \quad \forall i \\
-\sum_i x_{ij} = D_j, \quad \forall j \\
-x_{ij} \ge 0
-\end{cases}
-\]
-
-\item \textbf{Ejemplo 1.6 (Problema de flujo m\'aximo)}  
-
-Consid\'erese una red de conductores (rutas, tubos, cables el\'ectricos) cada uno con una capacidad $q_{ij}$ m\'axima (l\'imite superior de la cantidad de flujo que puede pasar por el conductor por unidad de tiempo). Buscamos enviar la cantidad m\'as grande de flujo de un punto origen $o$ a un punto destino $d$, sabiendo que el flujo es conservativo; es decir, la cantidad de flujo que sale del origen es la misma que llega al destino y la que entra en cada punto intermedio es la misma que sale de \'el. La cantidad de flujo que pasa en cada arco debe ser menor o igual que la capacidad de ese arco.
-
-\textbf{Variables de decisi\'on.} Denotemos por $x_{ij}$ la cantidad de flujo que va de $i$ a $j$.
-
-\textbf{Funci\'on objetivo.} Maximizar la cantidad de flujo que va de $o$ a $d$,
-
-\[
-\max z = \sum_j x_{oj} = \sum_i x_{id}
-\]
-
-\textbf{Restricciones.}
-
-Conservaci\'on del flujo en nodos intermedios:
-
-\[
-\sum_i x_{ik} - \sum_j x_{kj} = 0
-\]
-
-Capacidad en los arcos:
-
-\[
-x_{ij} \le q_{ij}
-\]
-
-\[
-x_{ij} \ge 0
-\]
-
-El problema de flujo m\'aximo se plantea entonces como:
-
-\[
-P
-\begin{cases}
-\max z = \sum_j x_{oj} = \sum_i x_{id} \\
-\sum_i x_{ik} - \sum_j x_{kj} = 0, \quad \forall k \ne o,d \\
-x_{ij} \le q_{ij} \\
-x_{ij} \ge 0
-\end{cases}
-\]
-
-\item \textbf{Ejemplo 1.7}  
-Consid\'erese el problema anterior para el caso en que se tiene la red de la figura 1.2 con $o$, $d$ y cuatro v\'ertices.
-
-(Figura 1.2: Red de conductores)
-
-El modelo queda:
-
-\[
-\max z = x_{o1} + x_{o2}
-\]
-
-sujeto a
-
-\[
-x_{o1} - x_{13} - x_{14} = 0
-\]
-
-\[
-x_{o2} - x_{24} = 0
-\]
-
-\[
-x_{13} - x_{3d} = 0
-\]
-
-\[
-x_{14} + x_{24} - x_{4d} = 0
-\]
-
-\[
-x_{o1} \le 5
-\]
-
-\[
-x_{o2} \le 2
-\]
-
-\[
-x_{13} \le 4
-\]
-
-\[
-x_{14} \le 4
-\]
-
-\[
-x_{24} \le 4
-\]
-
-\[
-x_{3d} \le 3
-\]
-
-\[
-x_{4d} \le 8
-\]
-
-\[
-x_{ij} \ge 0
-\]
-
-\item \textbf{Ejercicios del cap\'itulo 1}
-
-\begin{enumerate}
-
-\item Una compa\~n\'ia de muebles manufactura cuatro modelos de escritorios. Cada escritorio es construido primero en el departamento de carpinter\'ia y despu\'es en el departamento de acabado, donde es barnizado, encerado y pulido. El n\'umero de horas hombre de labor que se requiere en cada departamento est\'a dado por:
-
-\[
-\begin{array}{c|cccc}
- & \text{Escritorio 1} & \text{Escritorio 2} & \text{Escritorio 3} & \text{Escritorio 4} \\
-\hline
-\text{Depto. carpinter\'ia} & 4 & 9 & 7 & 10 \\
-\text{Depto. acabado} & 1 & 1 & 3 & 40
-\end{array}
-\]
-
-Por limitaciones en la capacidad de la planta, no m\'as de 6000 horas-hombre pueden ser utilizadas en la carpinter\'ia y 4000 en el acabado en los siguientes seis meses.
-
-Las utilidades de la venta de cada escritorio son:
-
-\[
-\begin{array}{c|cccc}
-\text{Escritorio} & 1 & 2 & 3 & 4 \\
-\hline
-\text{Utilidad} & 12 & 20 & 18 & 40
-\end{array}
-\]
-
-Formularlo como problema lineal.
-
-\item Una compa\~n\'ia constructora dispone de 100 lotes en los cuales va a construir casas de cinco tipos: econ\'omico, r\'ustico, colonial, moderno y provenzal. Se tienen dos tipos de mano de obra: alba\~niles y carpinteros.
-
-\[
-\begin{array}{c|cc}
-\text{Tipo de casa} & \text{D\'ias alba\~niles} & \text{D\'ias carpinteros} \\
-\hline
-\text{Econ\'omico} & 1 & 4 \\
-\text{R\'ustico} & 2 & 7 \\
-\text{Colonial} & 2 & 6 \\
-\text{Moderno} & 1 & 5 \\
-\text{Provenzal} & 1 & 3
-\end{array}
-\]
-
-Las ganancias son:  
-2000, 3000, 2500, 1700 y 2000 respectivamente.
-
-Se requiere adem\'as construir al menos 10 casas de cada tipo.
-
-\item Una compa\~n\'ia desea comprar tres tipos de m\'aquinas $X,Y,Z$.  
-Recursos disponibles: \$400,000 y $1500\,m^2$.
-
-\[
-\begin{array}{c|ccc}
-\text{Tipo m\'aquina} & \text{Costo} & \text{\'area} & \text{Producci\'on diaria} \\
-\hline
-X & 8000 & 30 & 79 \\
-Y & 13000 & 60 & 90 \\
-Z & 15000 & 60 & 126
-\end{array}
-\]
-
-\item La divisi\'on de televisores de Philips S.A. desea maximizar utilidades por televisores de color y blanco-negro.
-
-Utilidades:
-\[
-\text{Color} = 2000, \quad \text{Blanco y negro} = 1250
-\]
-
-Disponibilidad de horas-hombre:
-
-\[
-\begin{array}{c|c}
-\text{Producci\'on de partes} & 500 \\
-\text{Ensamble} & 2500 \\
-\text{Inspecci\'on} & 600
-\end{array}
-\]
-
-Requerimientos por televisor:
-
-Color:
-\[
-4 \text{ partes},\quad 5 \text{ ensamble},\quad 3 \text{ inspecci\'on}
-\]
-
-Blanco y negro:
-\[
-5 \text{ partes},\quad 2 \text{ ensamble},\quad 1 \text{ inspecci\'on}
-\]
-
-Capacidades m\'aximas:
-\[
-4000 \text{ blanco y negro}, \quad 1000 \text{ color}
-\]
-
-Plantear como problema de programaci\'on lineal.
-
-\end{enumerate}
-
-\end{itemize}
-\begin{itemize}
-
-\item \textbf{5.} Un ranchero est\'a criando puercos y desea determinar la cantidad de cada tipo disponible de alimento que puede servirle para cumplir los requerimientos nutritivos a un costo m\'inimo. El n\'umero de cada tipo de ingredientes nutritivos b\'asicos contenidos dentro de una libra de cada alimento est\'a dado en la siguiente tabla, junto con el requerimiento nutritivo m\'inimo diario que requiere un puerco y el costo de cada alimento.
-
-\[
-\begin{array}{l|ccc|c}
-\text{Ingredientes nutritivos} & \text{Libra de ma\'iz} & \text{Libra de alimento procesado} & \text{Libra de alfalfa} & \text{Requerimiento m\'inimo diario} \\
-\hline
-\text{Carbohidratos} & 9 & 2 & 4 & 20 \\
-\text{Prote\'inas} & 3 & 8 & 6 & 18 \\
-\text{Vitaminas} & 1 & 2 & 6 & 15 \\
-\text{Costo (c)} & 7 & 6 & 5 &
-\end{array}
-\]
-
-Formule el modelo de programaci\'on lineal para este problema.
-
-\item \textbf{6.} Una ama de casa le pide al carnicero que le muela varios cortes de carne para hacer una mezcla con igual parte de prote\'inas y grasas. El carnicero, siendo concienzudo, desea hacerlo con el menor costo total. Formular este problema como un problema lineal para determinar la mezcla para un kilogramo de carne.
-
-\[
-\begin{array}{c|ccccccc}
-\multicolumn{8}{c}{\text{Tipos de cortes}} \\
- & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
-\hline
-\% \text{Prote\'ina} & 19 & 20 & 16 & 17 & 19 & 16 & 17 \\
-\% \text{Grasa} & 16 & 18 & 25 & 23 & 11 & 28 & 20 \\
-\text{Costo por kilogramo} & 0.69 & 0.98 & 1.39 & 1.29 & 1.19 & 1.50 & 1.65
-\end{array}
-\]
-
-\item \textbf{7.} Una empresa fabrica dos productos $A$ y $B$. El producto $A$ est\'a formado por 1 componente $X$ y 2 componentes $Y$. El producto $B$ est\'a formado por 3 componentes $X$ y 1 componente $Y$. Los tiempos est\'andar de fabricaci\'on son:
-
-\[
-\begin{array}{l|ccc}
-\text{Componente} & \text{M\'aquina 1} & \text{M\'aquina 2} & \text{Ensamble} \\
-\hline
-X & 2\ \text{horas/pieza} & 3\ \text{horas/pieza} & 4\ \text{horas/pieza} \\
-Y & 2\ \text{horas/pieza} & 1\ \text{hora/pieza} & 5\ \text{horas/pieza} \\
-\hline
-\text{Tiempo disponible} & 80\ \text{horas/semana} & 90\ \text{horas/semana} & 120\ \text{horas/semana}
-\end{array}
-\]
-
-Las utilidades unitarias son: \$150 para el producto $A$ y \$180 para el producto $B$. Determine el programa de producci\'on que maximiza las utilidades por semana de la empresa.
-
-\item \textbf{8.} Un molino agr\'icola produce alimento para vacas, ovejas y pollos. Esto se hace mezclando los siguientes ingredientes principales: ma\'iz, piedra caliza, frijol de soya y comida de pescado. Estos ingredientes contienen los siguientes nutrientes: vitaminas, prote\'inas, calcio y grasa cruda. A continuaci\'on se resumen el contenido de los nutrientes en cada kilogramo de los ingredientes.
-
-\[
-\begin{array}{l|cccc}
-\text{Ingrediente} & \text{Vitaminas} & \text{Prote\'ina} & \text{Calcio} & \text{Grasa cruda} \\
-\hline
-\text{Ma\'iz} & 8 & 10 & 6 & 8 \\
-\text{Piedra caliza} & 6 & 5 & 10 & 6 \\
-\text{Frijol de soya} & 10 & 12 & 6 & 6 \\
-\text{Comida de pescado} & 4 & 8 & 6 & 9
-\end{array}
-\]
-
-Se hace un pedido al molino para que produzca 10, 6 y 8 toneladas (m\'etricas) de alimento para vacas, ovejas y pollos, respectivamente. Debido a la escasez de los ingredientes, s\'olo se dispone de una cantidad limitada de ellos a saber, 6 toneladas de ma\'iz, 10 toneladas de piedra caliza, 4 toneladas de frijol de soya y 5 toneladas de comida de pescado. El precio por kilogramo de estos ingredientes es \$0.20, \$0.12, \$0.24 y \$0.12, respectivamente.
-
-A continuaci\'on se resumen las unidades m\'inima y m\'axima que se permiten de los distintos nutrientes por cada kilogramo de alimento para vacas, ovejas y pollos.
-
-\[
-\begin{array}{l|cc|cc|cc|cc}
- & \multicolumn{2}{c}{\text{Vitaminas}} & \multicolumn{2}{c}{\text{Prote\'inas}} & \multicolumn{2}{c}{\text{Calcio}} & \multicolumn{2}{c}{\text{Grasa cruda}} \\
-\text{Producto} & \min & \max & \min & \max & \min & \max & \min & \max \\
-\hline
-\text{Alimento para vacas} & 6 & 8 & 6 & \infty & 7 & \infty & 4 & 8 \\
-\text{Alimento para ovejas} & 6 & \infty & 6 & \infty & 6 & \infty & 4 & 6 \\
-\text{Alimento para pollos} & 4 & 6 & 6 & \infty & 6 & \infty & 4 & 6
-\end{array}
-\]
-
-Formule este problema de mezcla alimenticia de tal manera que el costo total sea m\'inimo.
-
-\item \textbf{9.} El personal t\'ecnico de un hospital desea elaborar un sistema computarizado para planear men\'us. Para empezar, deciden planear el men\'u del almuerzo. El men\'u se divide en tres grandes categor\'ias: vegetales, carne y postre. Se desea incluir en el men\'u al menos el equivalente a una porci\'on de cada categor\'ia.
-
-A continuaci\'on se resume el costo por raci\'on de algunos de los art\'iculos sugeridos, as\'i como su contenido de carbohidratos, vitaminas, prote\'inas y grasas.
-
-\[
-\begin{array}{l|cccc|c}
- & \text{Carbohidratos} & \text{Vitaminas} & \text{Prote\'inas} & \text{Grasa} & \text{Costo (\$/raci\'on)} \\
-\hline
-\multicolumn{6}{c}{\text{Vegetales}} \\
-\text{Ch\'icharos} & 1 & 3 & 1 & 0 & 0.10 \\
-\text{Ejotes} & 1 & 5 & 2 & 0 & 0.12 \\
-\text{Quimbomb\'o} & 1 & 5 & 1 & 0 & 0.13 \\
-\text{Ma\'iz} & 2 & 6 & 1 & 2 & 0.09 \\
-\text{Macarrones} & 4 & 2 & 1 & 1 & 0.10 \\
-\text{Arroz} & 5 & 1 & 1 & 1 & 0.07 \\
-\hline
-\multicolumn{6}{c}{\text{Carnes}} \\
-\text{Pollo} & 2 & 1 & 3 & 1 & 0.70 \\
-\text{Res} & 3 & 8 & 5 & 2 & 1.20 \\
-\text{Pescado} & 3 & 6 & 6 & 1 & 0.63 \\
-\hline
-\multicolumn{6}{c}{\text{Postres}} \\
-\text{Naranja} & 1 & 3 & 1 & 0 & 0.28 \\
-\text{Manzana} & 1 & 2 & 0 & 0 & 0.42 \\
-\text{Bud\'in} & 1 & 0 & 0 & 0 & 0.15 \\
-\text{Gelatina} & 1 & 0 & 0 & 0 & 0.12
-\end{array}
-\]
-
-Sup\'ongase que los requerimientos m\'inimos por comida de carbohidratos, vitaminas, prote\'inas y grasas son 5, 10, 10 y 2, respectivamente.
-
-\begin{itemize}
-\item[(a)] Formule el problema de planeaci\'on de men\'u como un problema lineal.
-\item[(b)] Muchos problemas pr\'acticos se han omitido en el men\'u anterior. Explique c\'omo se podr\'ian incorporar a un sistema de planeaci\'on de men\'us.
-\end{itemize}
-
-\item \textbf{10.} Una empresa que fabrica calcoman\'ias redondas obtiene hojas de pl\'astico rectangulares de dimensiones $30\text{ cm} \times 15\text{ cm}$. Se requieren dos tama\~nos de calcoman\'ias: di\'ametro $5$ cm y $15$ cm. Diariamente se necesitan 20,000 peque\~nas y 5,000 grandes. Cada hoja cuesta \$50.
-
-Formular el problema para minimizar el n\'umero de hojas usadas.
-
-\item \textbf{11.} En un sal\'on de banquetes se tienen programados banquetes durante los siguientes 5 d\'ias. Los requisitos de manteles por banquete son:
-
-\[
-\begin{array}{c|ccccc}
-\text{Banquete} & 1 & 2 & 3 & 4 & 5 \\
-\text{N\'umero de manteles} & 80 & 60 & 100 & 130 & 200
-\end{array}
-\]
-
-El costo de compra de un mantel es \$40 y el costo de lavander\'ia urgente es \$10 por mantel. Formular el modelo para minimizar el costo total.
-
-\item \textbf{12.} Una productora nacional de fertilizantes quiere programar su producci\'on trimestral.
-
-\[
-\begin{array}{c|c}
-\text{Periodo} & \text{Toneladas de fertilizante} \\
-\hline
-1^{er} \text{ trimestre} & 100000 \\
-2^{do} \text{ trimestre} & 120000 \\
-3^{er} \text{ trimestre} & 110000 \\
-4^{to} \text{ trimestre} & 90000
-\end{array}
-\]
-
-Capacidad normal: 95,000 toneladas por trimestre.
-
-Producci\'on extra: hasta 30,000 toneladas adicionales por trimestre.
-
-Costo extra: \$300 por tonelada.  
-Costo almacenamiento: \$500 por tonelada por trimestre.  
-Costo normal: \$700 por tonelada.
-
-Formular el modelo lineal.
-
-\item \textbf{13.} Una peque\~na ciudad de 15,000 habitantes requiere en promedio 200,000 galones de agua diariamente.
-
-El tratamiento requiere dos compuestos qu\'imicos: suavizador y purificador.
-
-Producto A contiene 3 libras de suavizador y 3 libras de purificador.  
-Producto B contiene 4 y 9 libras respectivamente.
-
-Se requieren al menos 150 y 100 libras de estos compuestos diariamente.
-
-Costo: \$8 por unidad de A y \$10 por unidad de B.
-
-Formular el modelo lineal.
-
-\end{itemize}
-\begin{itemize}
-
-\item \textbf{14.} Sup\'ongase que en el poblado de Tixtla, Gro., la Nacional Financiera pretende hacer inversiones cuantiosas en el cultivo de aguacate, lima, mango y zapote. Se persiguen dos objetivos, uno el de reducir el desempleo rural y el otro el de aumentar las exportaciones que vendr\'an a equilibrar la balanza de pagos de la naci\'on. Se sabe que la producci\'on promedio de cada \'arbol est\'a dada por la siguiente tabla:
-
-\[
-\begin{array}{|c|c|c|c|}
-\hline
-\text{Tipo de \'arbol} & \text{Producci\'on promedio anual (unidades)} & \text{en Kg} & \text{Observaci\'on} \\
-\hline
-Aguacate & 350 & 150 & \text{una vez al a\~no} \\
-Lima & 230 & 200 & \text{una vez al a\~no} \\
-Mango & 150 & 50 & \text{una vez al a\~no} \\
-Zapote & 400 & 150 & \text{una vez al a\~no} \\
-\hline
-\end{array}
-\]
-
-El precio promedio en el mercado mundial a precios de 1974 fue de \$10 por Kg de aguacate, \$4 por Kg de lima, \$15 por Kg de mango y \$7 por Kg de zapote. Existe una extensi\'on de 250,000 m$^2$ de tierra de propiedad federal propia para el cultivo de esos productos. Sup\'ongase que t\'ecnicos de la Secretar\'ia de Agricultura han determinado que las siguientes extensiones m\'inimas son necesarias para el cultivo de esos productos:
-
-\[
-\begin{array}{|c|c|}
-\hline
-\text{Tipo de \'arbol} & \text{Extensi\'on m\'inima de cultivo por \'arbol} \\
-\hline
-Aguacate & 4\,m^2 \\
-Lima & 5\,m^2 \\
-Mango & 3\,m^2 \\
-Zapote & 6\,m^2 \\
-\hline
-\end{array}
-\]
-
-Afortunadamente no existe problema de agua, pues hay varios manantiales dentro de la propiedad. El costo por sembrar un \'arbol de aguacate es de \$2, \$0.50 por \'arbol de lima, \$1 de mango y \$1.50 de zapote; estos costos ya est\'an incluyendo la compra del \'arbol m\'as su cuidado y mantenimiento. Cada \'arbol empieza a ser productivo aproximadamente a los 3 a\~nos de ser plantado. Cada \'arbol de aguacate requiere de cuidados equivalentes a 36 horas-hombre-a\~no; 72 horas-hombre-a\~no por \'arbol de lima; 50 horas-hombre-a\~no de mango y 100 horas-hombre-a\~no por zapote.
-
-La Nacional Financiera pretende hacer una inversi\'on de 20 millones de pesos, pensando exportar toda su producci\'on a partir del tercer a\~no. El desempleo en Tixtla se ha calculado en 500 personas y el Gobierno Federal ha delineado que este proyecto emplee al menos 200 personas en forma continua.
-
-Bajo estas circunstancias, ¿cu\'antos \'arboles de cada fruta deber\'an sembrarse con objeto de maximizar el valor de la futura exportaci\'on anual? Sup\'ongase tambi\'en que durante todo el a\~no se deben trabajar jornadas de 8 horas (por d\'ia).
-
-\item \textbf{15.} Una excursionista planea salir de campamento. Hay 5 art\'iculos que desea llevar consigo, pero entre todos sobrepasan las 60 libras que considera que puede cargar. Para auxiliarse en la selecci\'on, ha asignado un valor a cada art\'iculo en orden ascendente de importancia:
-
-\[
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-\text{Art\'iculo} & 1 & 2 & 3 & 4 & 5 \\
-\hline
-\text{Peso (lb)} & 52 & 23 & 35 & 15 & 7 \\
-\hline
-\text{Valor} & 100 & 60 & 70 & 15 & 15 \\
-\hline
-\end{array}
-\]
-
-¿Qu\'e art\'iculos deber\'a llevar para maximizar el valor total, sin sobrepasar la restricci\'on de peso? Plantear el problema de programaci\'on lineal.
-
-\end{itemize}
-\begin{itemize}
-
-\item \textbf{Figura 2.3:} En el ejemplo 2.3 todos los puntos de la recta $5x + 2y = 10$ son soluciones \'optimas.
-
-Todos los puntos de la recta $5x + 2y = 10$ son soluciones \'optimas de $P$, es decir, $P$ tiene soluciones \'optimas m\'ultiples.
-
-\subsection*{2.3. Regi\'on de soluciones factibles no acotada}
-
-\textbf{Ejemplo 2.4} En la tabla 2.4 se calculan los valores de $z$ en algunos puntos factibles del problema
-
-\[
-P
-\begin{cases}
-\text{m\'ax } z = 2x + 2y,\\
-x - y \ge -1,\\
--\frac{1}{2}x + y \le 2,\\
-x,y \ge 0.
-\end{cases}
-\]
-
-y en la figura 2.4 se muestra la gr\'afica del mismo. La soluci\'on \'optima no est\'a acotada, es decir,
-
-\[
-z \rightarrow \infty
-\]
-
-Las dos restricciones no acotan la regi\'on de soluciones factibles.
-
-\[
-\begin{array}{c|c}
-\text{Punto extremo} & \text{Valor de la funci\'on objetivo} \\
-\hline
-A=(0,0) & z=\frac{5}{2}(0)+0=0 \\
-B=(2,0) & z=\frac{5}{2}(2)+0=5 \\
-C=\left(\frac{20}{19},\frac{45}{19}\right) & z=\frac{5}{2}\left(\frac{20}{19}\right)+\frac{45}{19}=5 \\
-D=(0,3) & z=\frac{5}{2}(0)+3=3
-\end{array}
-\]
-
-Tabla 2.3: Evaluaci\'on en los puntos extremos de la regi\'on de soluciones factibles del ejemplo 2.3.
-
-\item \textbf{Figura 2.4:} La soluci\'on \'optima no est\'a acotada.
-
-\textbf{Observaci\'on 2.1} Si la funci\'on objetivo se minimizara, la regi\'on de soluciones factibles ser\'ia la misma y su soluci\'on \'optima s\'i estar\'ia acotada y ser\'ia
-
-\[
-z_{min}=0 \quad \text{con} \quad x^{*}=0,\; y^{*}=0.
-\]
-
-\textbf{Ejemplo 2.5} Si se calcula $z$ en cada punto extremo de la regi\'on de soluciones factibles del problema
-
-\[
-P
-\begin{cases}
-\text{m\'ax } z = -x + 2y,\\
-x - y \ge -1,\\
--\frac{1}{2}x + y \le 2,\\
-x,y \ge 0,
-\end{cases}
-\]
-
-que se ilustra en la figura 2.5 se obtiene la tabla 2.5. La regi\'on de soluciones factibles es no acotada, pero la funci\'on objetivo s\'i est\'a acotada y tiene una infinidad de soluciones.
-
-\[
-\begin{array}{c|c}
-\text{Punto factible} & \text{Valor de la funci\'on objetivo} \\
-\hline
-A=(0,0) & z=2(0)+2(0)=0 \\
-B=(0,1) & z=2(0)+2(1)=2 \\
-C=(2,3) & z=2(2)+2(3)=10 \\
-D=(4,3) & z=2(4)+2(3)=14 \\
-E=(5,4) & z=2(5)+2(4)=18
-\end{array}
-\]
-
-Tabla 2.4: Valores de $z$ en algunos puntos factibles del problema del ejemplo 2.4.
-
-\item \textbf{Figura 2.5:} La soluci\'on \'optima s\'i existe a pesar de que la regi\'on de soluciones factibles no es acotada.
-
-\[
-\begin{array}{c|c}
-\text{Punto factible} & \text{Valor de la funci\'on objetivo} \\
-\hline
-A=(0,0) & z=-0+2(0)=0 \\
-B=(0,1) & z=-0+2(1)=2 \\
-C=(2,3) & z=-2+2(3)=4 \\
-D=(4,4) & z=-4+2(4)=4 \\
-E=(6,5) & z=-6+2(5)=4
-\end{array}
-\]
-
-Tabla 2.5: $z$ en diferentes puntos factibles de la regi\'on de soluciones factibles del problema del ejemplo 2.5.
-
-\textbf{Ejemplo 2.6} En el problema
-
-\[
-P
-\begin{cases}
-\text{m\'ax } z = -3x + 2y,\\
-x \le 3,\\
-x - y \le 0,\\
-x,y \ge 0,
-\end{cases}
-\]
-
-que se muestra en la figura 2.6 la regi\'on de soluciones factibles y la funci\'on objetivo son no acotadas.
-
-\item \textbf{Figura 2.6:} Ni la regi\'on de soluciones factibles ni la funci\'on objetivo est\'an acotadas.
-
-\subsection*{2.4. Regi\'on de soluciones factibles consistente de un solo punto}
-
-\textbf{Ejemplo 2.7} En el caso del problema (figura 2.7)
-
-\[
-P
-\begin{cases}
-\text{m\'ax } z = x,\\
-x + y = 3,\\
-x - y = 1,\\
-x,y \ge 0,
-\end{cases}
-\]
-
-como la regi\'on de soluciones factibles consta de un solo punto, ese punto maximiza a la funci\'on $z$.
-
-Entonces
-
-\[
-z_{max}=2 \quad \text{con} \quad x^{*}=2,\; y^{*}=1.
-\]
-
-\textbf{Observaci\'on 2.2} Para el caso en que $z$ se minimizara, el \'optimo ser\'ia el mismo punto $(x^{*},y^{*})=(2,1)$.
-
-\end{itemize}
-
-
-\begin{itemize}
-
-\item \textbf{Figura 2.7:} La regi\'on de soluciones factibles consta de un s\'olo punto.
-
-\subsection*{2.5. Regi\'on de soluciones factibles vac\'ia}
-
-\textbf{Ejemplo 2.8} Para el problema
-
-\[
-P
-\begin{cases}
-\text{m\'ax } z = x + y, \\
-x - y \ge 0, \\
-3x - y \le -3, \\
-x,y \ge 0,
-\end{cases}
-\]
-
-de la figura 2.8 la regi\'on de soluciones factibles es vac\'ia, y por lo tanto no podemos hablar de un m\'aximo ni m\'inimo para $z$.
-
-\textbf{Ejemplo 2.9} Para el problema
-
-\[
-P
-\begin{cases}
-\text{m\'ax } z = 3x - 2y, \\
-x + y \le 1, \\
-2x + 2y \ge 4, \\
-x,y \ge 0,
-\end{cases}
-\]
-
-de la figura 2.9 la regi\'on de soluciones factibles es vac\'ia. No hay soluci\'on \'optima.
-
-\item \textbf{Figura 2.8:} Existen soluciones pero no son factibles.
-
-\textbf{Figura 2.9:} No existen soluciones en absoluto.
-
-\item \textbf{Ejercicios del cap\'itulo 2}
-
-\textbf{1.} Representar geom\'etricamente los siguientes sistemas de ecuaciones dados en forma matricial $(Ax \le b)$:
+\begin{Ejer}
+Representar geom\'etricamente los siguientes sistemas de ecuaciones dados en forma matricial $(Ax \le b)$:
 
 \[
 a)\quad 
@@ -2830,8 +2324,9 @@ b=
 0
 \end{pmatrix}
 \]
+\end{Ejer}
 
-\item \textbf{2.} Sean $U$ el plano completo, $A$ el semiplano lugar geom\'etrico de $-2x_1 + x_2 < 3$,  
+\begin{Ejer} Sean $U$ el plano completo, $A$ el semiplano lugar geom\'etrico de $-2x_1 + x_2 < 3$,  
 $B$ el semiplano lugar geom\'etrico de $-2x_1 + x_2 > 3$,  
 $C$ el semiplano lugar geom\'etrico de $-2x_1 + x_2 \le 3$,  
 $D$ el semiplano lugar geom\'etrico de $-2x_1 + x_2 \ge 3$  
@@ -2859,9 +2354,13 @@ m)&\; B \cup L
 
 ¿Se pueden hallar otras relaciones?
 
-\item \textbf{3.} De los conjuntos convexos construidos en el ejercicio 2, ¿cu\'ales tienen un \'area finita y cu\'ales una infinita?
+\end{Ejer}
 
-\item \textbf{4.} Un revendedor trata de decidir cu\'antas unidades de los art\'iculos $A$ y $B$ debe tener en existencia. Sea $x$ el n\'umero de unidades de $A$ y $y$ el n\'umero de unidades de $B$.  
+\begin{Ejer}  De los conjuntos convexos construidos en el ejercicio 2, ¿cu\'ales tienen un \'area finita y cu\'ales una infinita?
+
+\end{Ejer}
+
+\begin{Ejer} Un revendedor trata de decidir cu\'antas unidades de los art\'iculos $A$ y $B$ debe tener en existencia. Sea $x$ el n\'umero de unidades de $A$ y $y$ el n\'umero de unidades de $B$.  
 $A$ cuesta \$4 por unidad y $B$ cuesta \$3 por unidad.
 
 \begin{enumerate}
@@ -2871,8 +2370,9 @@ $A$ cuesta \$4 por unidad y $B$ cuesta \$3 por unidad.
 \item[d)] El revendedor decide invertir en el art\'iculo $B$ cuando menos el doble de las existencias del art\'iculo $A$. Modificar el conjunto del inciso anterior.
 \item[e)] Finalmente, el revendedor decide invertir \$900 en las compras del art\'iculo $B$. ¿Qu\'e posibilidades se dejan?
 \end{enumerate}
+\end{Ejer}
 
-\item \textbf{5.} Suponiendo que los requerimientos nutricionales m\'inimos de los seres humanos est\'an dados por la tabla
+\begin{Ejer} Suponiendo que los requerimientos nutricionales m\'inimos de los seres humanos est\'an dados por la tabla
 
 \[
 \begin{array}{c|cc}
@@ -2896,8 +2396,9 @@ Establecer si son ciertas o no las siguientes aseveraciones:
 \item[d)] Se satisfacen las necesidades de un adulto y de un beb\'e s\'olo si se satisfacen las de un ni\~no.
 \item[e)] Es posible satisfacer las necesidades de un adulto sin satisfacer las de un beb\'e.
 \end{enumerate}
+\end{Ejer}
 
-\item \textbf{6.} En los siguientes conjuntos de desigualdades cuando menos una es redundante. Hallar en cada caso las redundantes.
+\begin{Ejer}  En los siguientes conjuntos de desigualdades cuando menos una es redundante. Hallar en cada caso las redundantes.
 
 \[
 a)\;
@@ -2919,7 +2420,9 @@ x_1 + x_2 \ge -10 \\
 \end{cases}
 \]
 
-\item \textbf{7.} Resolver gr\'aficamente el problema
+\end{Ejer}
+
+\begin{Ejer}  Resolver gr\'aficamente el problema
 
 \[
 \begin{cases}
@@ -2930,7 +2433,9 @@ x_1,x_2 \text{ s.r.s.}
 \end{cases}
 \]
 
-\item \textbf{8.} Considerar el problema
+\end{Ejer}
+
+\begin{Ejer}  Considerar el problema
 
 \[
 \begin{cases}
@@ -2943,7 +2448,9 @@ x_1,x_2 \ge 0
 
 Demostrar en forma gr\'afica que en la soluci\'on \'optima las variables $x_1,x_2$ pueden aumentar en forma indefinida en tanto que el valor de la funci\'on objetivo se mantiene constante.
 
-\item \textbf{9.} Graficar y resolver el problema
+\end{Ejer}
+
+\begin{Ejer}  Graficar y resolver el problema
 
 \[
 \begin{cases}
@@ -2964,173 +2471,8 @@ En los siguientes casos indicar si la regi\'on de soluciones factibles consta de
 \item[c)] Cambiar la primera restricci\'on por $x_1 + x_2 \ge 7$.
 \end{enumerate}
 
-\end{itemize}
-
-\newpage
-
-\begin{Ejer}
-
-\subsection*{Problema de mezcla alimenticia}
-
-Se desea formular un problema de programaci\'on lineal para minimizar el costo de producci\'on de alimento para vacas, ovejas y pollos, sujeto a restricciones de disponibilidad y requerimientos nutricionales.
-
-\subsection*{Variables de decisi\'on}
-
-Sea:
-\[
-x_{ij} = \text{toneladas del ingrediente } i \text{ utilizadas en el alimento } j
-\]
-
-donde:
-\begin{itemize}
-    \item $i=1$: ma\'iz
-    \item $i=2$: piedra caliza
-    \item $i=3$: frijol de soya
-    \item $i=4$: comida de pescado
-\end{itemize}
-
-y:
-\begin{itemize}
-    \item $j=1$: vacas
-    \item $j=2$: ovejas
-    \item $j=3$: pollos
-\end{itemize}
-
-\subsection*{Funci\'on objetivo}
-
-Minimizar el costo total:
-\[
-\begin{aligned}
-\min Z =\;& 200(x_{11}+x_{12}+x_{13}) \\
-&+120(x_{21}+x_{22}+x_{23}) \\
-&+240(x_{31}+x_{32}+x_{33}) \\
-&+120(x_{41}+x_{42}+x_{43})
-\end{aligned}
-\]
-
-\subsection*{Restricciones de producci\'on}
-
-\[
-x_{11}+x_{21}+x_{31}+x_{41} = 10
-\]
-\[
-x_{12}+x_{22}+x_{32}+x_{42} = 6
-\]
-\[
-x_{13}+x_{23}+x_{33}+x_{43} = 8
-\]
-
-\subsection*{Restricciones de disponibilidad}
-
-\[
-x_{11}+x_{12}+x_{13} \leq 6
-\]
-\[
-x_{21}+x_{22}+x_{23} \leq 10
-\]
-\[
-x_{31}+x_{32}+x_{33} \leq 4
-\]
-\[
-x_{41}+x_{42}+x_{43} \leq 5
-\]
-
-\subsection*{Restricciones nutricionales}
-
-\subsubsection*{Alimento para vacas (10 toneladas)}
-
-Vitaminas:
-\[
-60 \leq 8x_{11}+6x_{21}+10x_{31}+4x_{41} \leq 80
-\]
-
-Prote\'ina:
-\[
-10x_{11}+5x_{21}+12x_{31}+8x_{41} \geq 60
-\]
-
-Calcio:
-\[
-6x_{11}+10x_{21}+6x_{31}+6x_{41} \geq 70
-\]
-
-Grasa cruda:
-\[
-40 \leq 8x_{11}+6x_{21}+6x_{31}+9x_{41} \leq 80
-\]
-
-\subsubsection*{Alimento para ovejas (6 toneladas)}
-
-Vitaminas:
-\[
-8x_{12}+6x_{22}+10x_{32}+4x_{42} \geq 36
-\]
-
-Prote\'ina:
-\[
-10x_{12}+5x_{22}+12x_{32}+8x_{42} \geq 36
-\]
-
-Calcio:
-\[
-6x_{12}+10x_{22}+6x_{32}+6x_{42} \geq 36
-\]
-
-Grasa cruda:
-\[
-24 \leq 8x_{12}+6x_{22}+6x_{32}+9x_{42} \leq 36
-\]
-
-\subsubsection*{Alimento para pollos (8 toneladas)}
-
-Vitaminas:
-\[
-32 \leq 8x_{13}+6x_{23}+10x_{33}+4x_{43} \leq 48
-\]
-
-Prote\'ina:
-\[
-10x_{13}+5x_{23}+12x_{33}+8x_{43} \geq 48
-\]
-
-Calcio:
-\[
-6x_{13}+10x_{23}+6x_{33}+6x_{43} \geq 48
-\]
-
-Grasa cruda:
-\[
-32 \leq 8x_{13}+6x_{23}+6x_{33}+9x_{43} \leq 48
-\]
-
-\subsection*{No negatividad}
-
-\[
-x_{ij} \geq 0 \quad \forall i,j
-\]
-
-\subsection*{An\'alisis de factibilidad}
-
-Se analiza el caso del alimento para pollos:
-
-\begin{itemize}
-    \item La restricci\'on de grasa cruda m\'axima (6) implica que no se pueden usar ingredientes con grasa mayor a 6, por lo que se excluyen ma\'iz (8) y comida de pescado (9).
-    
-    \item Los ingredientes restantes son piedra caliza (6) y frijol de soya (6).
-    
-    \item Sin embargo, la restricci\'on de vitaminas m\'aximas (6) impide usar frijol de soya (10), por lo que solo queda piedra caliza.
-    
-    \item La piedra caliza tiene prote\'ina igual a 5, lo cual no satisface la restricci\'on m\'inima de prote\'ina (6).
-\end{itemize}
-
-Por lo tanto, se obtiene una contradicci\'on, y el problema no tiene soluci\'on factible.
-
-\[
-\boxed{\text{El modelo es infactible}}
-\]
 \end{Ejer}
 
-\newpage
 \begin{Ejer}
 Una compa\~n\'ia fabrica dos tipos de productos, el tipo $A$ y el tipo $B$. Un producto $A$ se vende en \$27 y requiere materia prima por un costo de \$10. El costo de mano de obra de cada producto $A$ es de \$14. Por otro lado, un producto $B$ se vende en \$21 y requiere materia prima por un costo de \$9. El costo de mano de obra de cada producto $B$ es de \$10. La manufactura de los productos $A$ y $B$ requiere dos tipos de labor: carpinter\'ia y acabado. Cada producto $A$ requiere 2 horas de acabado y 1 de carpinter\'ia, mientras que un producto $B$ requiere 1 hora de acabado y 1 hora de carpinter\'ia. Cada semana la compa\~n\'ia dispone de 100 horas para acabado y 80 horas para carpinter\'ia. Mientras que la demanda de productos $B$ es ilimitada, se estima que la compa\~n\'ia vende a lo m\'as 40 productos $A$ por semana. La compa\~n\'ia desea hacer un plan de producci\'on semanal que maximice la ganancia.
 \end{Ejer}
@@ -3185,9 +2527,6 @@ Pay (1 rebanada) & 500 & 0 & 4 & 5 \\
 
 \end{Ejer}
 
-%===========================================
-\subsection{Ejercicios de Tarea}
-%===========================================
 
 
 \begin{Ejer}
@@ -3558,10 +2897,7 @@ Si se sabe que todos los juguetes fabricados ser\'an vendidos, se desea saber cu
 
 
 \begin{Ejer}
-\textbf{Ejercicios del cap\'itulo 1}
-
-\begin{enumerate}
-\item Una compa\~n\'ia de muebles manufactura cuatro modelos de escritorios. Cada escritorio es construido primero en el departamento de carpinter\'ia y despu\'es en el departamento de acabado, donde es barnizado, encerado y pulido. El n\'umero de horas hombre de labor que se requiere en cada departamento est\'a dado por:
+Una compa\~n\'ia de muebles manufactura cuatro modelos de escritorios. Cada escritorio es construido primero en el departamento de carpinter\'ia y despu\'es en el departamento de acabado, donde es barnizado, encerado y pulido. El n\'umero de horas hombre de labor que se requiere en cada departamento est\'a dado por:
 
 \begin{center}
 \begin{tabular}{c|cccc}
@@ -3585,7 +2921,6 @@ Utilidad & \$12 & \$20 & \$18 & \$40 \\
 \end{center}
 
 Suponiendo que la materia prima y suministros est\'an disponibles en provisiones adecuadas y todos los escritorios producidos pueden ser vendidos. La compa\~n\'ia de muebles quiere determinar la combinaci\'on \'optima de productos, es decir, las cantidades de cada tipo de producto que maximicen la utilidad. Formularlo como un problema lineal.
-\end{enumerate}
 \end{Ejer}
 
 
@@ -3749,7 +3084,7 @@ Sup\'ongase que los requerimientos m\'inimos por comida de carbohidratos, vitami
 
 \begin{enumerate}
 \item Formule el problema de planeaci\'on de men\'u como un problema lineal.
-\item Muchos problemas pr\'acticos se han omitido en el men\'u anterior. Estos incluyen, por ejemplo, la planeaci\'on conjunta de los men\'us de desayuno, la comida y la cena, la planeaci\'on semanal de tal manera que se puedan incluir distintas variedades de comida, y men\'us especiales para pacientes en dietas particulares. Explicar con detalle c\'omo se pueden incorporar estos aspectos de una manera comprensiva en un sistema de planificaci\'on de men\'us.
+\item Muchos problemas pr\'acticos se han omitido en el men\'u anterior. Estos incluyen, por Ejerplo, la planeaci\'on conjunta de los men\'us de desayuno, la comida y la cena, la planeaci\'on semanal de tal manera que se puedan incluir distintas variedades de comida, y men\'us especiales para pacientes en dietas particulares. Explicar con detalle c\'omo se pueden incorporar estos aspectos de una manera comprensiva en un sistema de planificaci\'on de men\'us.
 \end{enumerate}
 \end{Ejer}
 
@@ -4035,4 +3370,669 @@ En los siguientes casos indicar si la regi\'on de soluciones factibles consta de
 \footnotesize{s.r.s. significa ``sin restricci\'on de signo''.}
 \end{Ejer}
 
+
+\subsection{Adicionales}
+
+
+\begin{Ejer}[Problema 5: Calentadores y Aires]
+
+Producci\'on diaria con restricciones de horas:
+
+\begin{itemize}
+\item Calentador: 2h partes + 1h ensamblaje
+\item Aire acondicionado: 1h partes + 2h ensamblaje
+\end{itemize}
+
+Disponibilidad:
+\[
+8 \text{h partes}, \quad 10 \text{h ensamblaje}
+\]
+
+Ganancias:
+\[
+30 \text{ por calentador}, \quad 50 \text{ por aire}
+\]
+\end{Ejer}
+
+\begin{Ejer}[Vino y Vinagre]
+
+Restricciones:
+
+\[
+2V \leq G + 4
+\]
+\[
+3G + 4V \leq 18
+\]
+
+Beneficio:
+\[
+8V + 2G
+\]
+\end{Ejer}
+
+
+\begin{Ejer}[Tapicer\'ia]
+
+Tipo A:
+\[
+10m \text{ tela}, \quad 12h
+\]
+
+Tipo B:
+\[
+15m \text{ tela}, \quad 16h
+\]
+
+Disponibilidad:
+\[
+300m \text{ tela}, \quad 336h
+\]
+
+Ganancias:
+\[
+1500A + 2100B
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Gadgets y Gewgaws]
+
+Modelo:
+
+\[
+\max z = 5x_1 + 4x_2
+\]
+
+Sujeto a:
+
+\[
+x_1 + 2x_2 \leq 120
+\]
+\[
+x_1 + x_2 \leq 70
+\]
+\[
+2x_1 + x_2 \leq 100
+\]
+\[
+x_1, x_2 \geq 0
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Modelo Simple]
+
+\[
+\max 3x_1 + x_2
+\]
+
+Sujeto a:
+
+\[
+x_1 + x_2 \leq 7
+\]
+\[
+x_1 \geq 0
+\]
+\[
+x_2 \geq 0
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Problema 10: Dieta de Cerdos]
+
+\begin{center}
+\begin{tabular}{c|ccc|c}
+
+ & Corn & Silage & Alfalfa & Requerimiento \\
+
+Carbs & 0.9 & 0.2 & 0.4 & 2 \\
+Protein & 3 & 8 & 6 & 18 \\
+Vitamins & 1 & 2 & 4 & 15 \\
+Cost & 7 & 6 & 5 & \\
+
+\end{tabular}
+\end{center}
+
+\end{Ejer}
+
+
+\begin{Ejer}[Modelo Dieta G1 y G2]
+
+\begin{center}
+\begin{tabular}{c|ccc|c}
+
+ & Starch & Proteins & Vitamins & Cost \\
+
+G1 & 5 & 4 & 2 & 0.6 \\
+G2 & 7 & 2 & 1 & 0.35 \\
+
+\end{tabular}
+\end{center}
+
+Requerimientos diarios:
+\[
+8 \text{ starch}, \quad 15 \text{ proteins}, \quad 3 \text{ vitamins}
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Problema 12: Giapetto]
+
+Modelo:
+
+\[
+\max Z = \text{Ingresos} - \text{Costos}
+\]
+
+Restricciones:
+\[
+2F + C \leq 100
+\]
+\[
+F + C \leq 80
+\]
+\[
+C \leq 40
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Problema 13: Industria de Dos Productos]
+
+\[
+\max \text{Profit} = 3x_1 + 4x_2
+\]
+
+Sujeto a:
+
+\[
+2x_1 + 3x_2 \leq 16
+\]
+\[
+4x_1 + 2x_2 \leq 16
+\]
+\[
+x_1, x_2 \geq 0
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Department Time Constraints]
+
+Time used in making $x_1$ and $x_2$ units of two products must not exceed the total daily time available in the two shops.
+
+\[
+2x_1 + 3x_2 \le 16 \qquad \text{(Machine shop constraint)}
+\]
+\[
+4x_1 + 2x_2 \le 16 \qquad \text{(Assembly shop constraint)}
+\]
+
+Nonnegativity constraints:
+\[
+x_1 \ge 0, \quad x_2 \ge 0.S
+\]
+
+The problem in mathematical form:
+
+\[
+\textbf{Maximize} \quad Z = 3x_1 + 4x_2
+\]
+
+subject to
+\[
+2x_1 + 3x_2 \le 16
+\]
+\[
+4x_1 + 2x_2 \le 16
+\]
+\[
+x_1, x_2 \ge 0.
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Graphical Solution]
+
+Consider
+
+\[
+\max Z = x + 2y
+\]
+
+subject to
+
+\[
+x \ge 0, \quad y \ge 0,
+\]
+\[
+x \le 6, \quad y \le 7,
+\]
+\[
+x + y \le 12.
+\]
+
+\end{Ejer}
+
+
+
+\begin{Ejer}[Trenes y Camiones]
+
+Un artesano fabrica trenes y camiones de juguete utilizando tornillos, bloques y ruedas.
+
+Disponibilidad semanal:
+\[
+8000 \text{ tornillos}, \quad 6000 \text{ bloques}, \quad 6300 \text{ ruedas}
+\]
+
+Beneficios:
+\[
+\text{Tren: } 1.6 \text{ euros/unidad} \qquad
+\text{Cami\'on: } 1.4 \text{ euros/unidad}
+\]
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & Tornillos & Bloques & Ruedas \\
+\hline
+Tren & 10 & 15 & 18 \\
+Cami\'on & 20 & 10 & 6 \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{Ejer}
+
+
+\begin{Ejer}[Heaters and Air Conditioners]
+
+An appliance company manufactures heaters and air conditioners.
+
+\begin{itemize}
+\item Heater: 2 hours (parts division), 1 hour (assembly division)
+\item Air conditioner: 1 hour (parts division), 2 hours (assembly division)
+\end{itemize}
+
+Disponibilidad:
+\[
+\text{Parts division: } 8 \text{ hours/day}
+\]
+\[
+\text{Assembly division: } 10 \text{ hours/day}
+\]
+
+Profit:
+\[
+\$30 \text{ per heater}, \quad \$50 \text{ per air conditioner}
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Industria Vin\'icola]
+
+Una industria produce vino y vinagre.
+
+Restricciones:
+\[
+2(\text{vino}) \leq (\text{vinagre}) + 4
+\]
+\[
+3(\text{vinagre}) + 4(\text{vino}) \leq 18
+\]
+
+Beneficio:
+\[
+8€ \text{ por vino}, \quad 2€ \text{ por vinagre}
+\]
+\end{Ejer}
+
+
+\begin{Ejer}[Tapicer\'ia]
+
+Tipos de sillones: A y B.
+
+Requerimientos:
+
+\begin{itemize}
+\item Tipo A: 10 m de tela, 12 horas
+\item Tipo B: 15 m de tela, 16 horas
+\end{itemize}
+
+Disponibilidad semanal:
+\[
+300 \text{ m tela}, \quad 336 \text{ horas}
+\]
+
+Utilidad:
+\[
+\$1500 \text{ (A)}, \quad \$2100 \text{ (B)}
+\]
+\end{Ejer}
+
+
+\begin{Ejer}[Gadgets and Gewgaws]
+
+Maximizar:
+\[
+\max z = 5x_1 + 4x_2
+\]
+
+sujeto a:
+
+\[
+x_1 + 2x_2 \leq 120
+\]
+\[
+x_1 + x_2 \leq 70
+\]
+\[
+2x_1 + x_2 \leq 100
+\]
+\[
+x_1, x_2 \geq 0
+\]
+\end{Ejer}
+
+
+\begin{Ejer}[Ejerplo sencillo]
+
+Maximizar:
+\[
+3x_1 + x_2
+\]
+
+Sujeto a:
+\[
+x_1 + x_2 \leq 7
+\]
+\[
+x_1 \geq 0, \quad x_2 \geq 0
+\]
+\end{Ejer}
+
+
+\begin{Ejer}[Pig Diet Problem]
+
+Tabla nutricional:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Corn & Silage & Alfalfa & Requerimiento diario \\
+\hline
+Carbs & 0.9 & 0.2 & 0.4 & 2 \\
+Protein & 3 & 8 & 6 & 18 \\
+Vitamins & 1 & 2 & 4 & 15 \\
+Cost & 7 & 6 & 5 & \\
+\hline
+\end{tabular}
+\end{center}
+\end{Ejer}
+
+
+\begin{Ejer}[Diet Model (G1 y G2)]
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Starch & Proteins & Vitamins & Cost (\$/kg) \\
+\hline
+G1 & 5 & 4 & 2 & 0.6 \\
+G2 & 7 & 2 & 1 & 0.35 \\
+\hline
+\end{tabular}
+\end{center}
+
+Requerimientos diarios:
+\[
+\text{Starch} = 8, \quad \text{Proteins} = 15, \quad \text{Vitamins} = 3
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Giapetto's Woodcarving]
+
+Variables:
+\[
+x_1 = \text{soldiers}, \quad x_2 = \text{trains}
+\]
+
+Maximizar utilidad semanal considerando:
+
+\begin{itemize}
+\item Recursos de acabado y carpinter\'ia
+\item 100 horas de acabado
+\item 80 horas de carpinter\'ia
+\item M\'aximo 40 soldados por semana
+\end{itemize}
+
+\end{Ejer}
+
+
+\begin{Ejer}[General Linear Programming Problem]
+
+Maximizar:
+\[
+\text{Max Profit} = 3x_1 + 4x_2
+\]
+
+Sujeto a:
+\[
+2x_1 + 3x_2 \leq 16
+\]
+\[
+4x_1 + 2x_2 \leq 16
+\]
+\[
+x_1, x_2 \geq 0
+\]
+\end{Ejer}
+
+
+\begin{Ejer}[Furnco manufactures desks and chairs]
+
+Let:
+\[
+x_1 = \text{number of desks produced}
+\]
+\[
+x_2 = \text{number of chairs produced}
+\]
+
+Each desk contributes \$40 profit and each chair \$25.
+Each desk uses 4 units of wood and each chair 3 units.
+At most 20 units of wood are available.
+At least twice as many chairs as desks must be produced.
+
+The LP formulation is:
+
+\[
+\max \quad z = 40x_1 + 25x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+4x_1 + 3x_2 \le 20
+\]
+\[
+x_2 \ge 2x_1
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+Optimal solution:
+\[
+x_1=2,\quad x_2=4,\quad z=180.
+\]
+\end{Ejer}
+
+
+\begin{Ejer}[Giapetto's Woodcarving]
+
+Let:
+\[
+x_1 = \text{number of soldiers produced per week}
+\]
+\[
+x_2 = \text{number of trains produced per week}
+\]
+
+\[
+\max \quad z = 3x_1 + 2x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+2x_1 + x_2 \le 100
+\]
+\[
+x_1 + x_2 \le 80
+\]
+\[
+x_1 \le 40
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+\end{Ejer}
+
+\begin{Ejer}[Farmer Jones]
+
+\textbf{Method 1: Acres as variables}
+
+\[
+x_1 = \text{acres of wheat}
+\]
+\[
+x_2 = \text{acres of corn}
+\]
+
+\[
+\max \quad z = 100x_1 + 30x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+x_1 + x_2 \le 7
+\]
+\[
+10x_2 \ge 30
+\]
+\[
+10x_1 + 4x_2 \le 40
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+\textbf{Method 2: Bushels as variables}
+
+\[
+x_1 = \text{bushels of wheat}
+\]
+\[
+x_2 = \text{bushels of corn}
+\]
+
+\[
+\max \quad z = 4x_1 + 3x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+\frac{1}{25}x_1 + \frac{1}{10}x_2 \le 7
+\]
+\[
+\frac{x_2}{10} \ge 3
+\]
+\[
+\frac{1}{25}x_1 + \frac{1}{10}x_2 \le 40
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+\end{Ejer}
+
+\begin{Ejer}[Village Butcher Shop]
+
+Let:
+\[
+x_1 = \text{pounds of ground beef}
+\]
+\[
+x_2 = \text{pounds of ground pork}
+\]
+
+\[
+\min \quad z = 80x_1 + 60x_2
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+0.20x_1 + 0.32x_2 \le 0.25
+\]
+\[
+x_1 + x_2 = 1
+\]
+\[
+x_1,x_2 \ge 0
+\]
+
+\end{Ejer}
+
+
+\begin{Ejer}[Psychologist Experiment]
+
+Let:
+\[
+x = \text{number of mice}
+\]
+\[
+y = \text{number of rats}
+\]
+
+\[
+\max \quad z = x + y
+\]
+
+\[
+\text{s.t.}
+\]
+\[
+10x + 20y \le 800
+\]
+\[
+20x + 10y \le 640
+\]
+\[
+x,y \ge 0
+\]
+
+\end{Ejer}
 
