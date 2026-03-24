@@ -12,6 +12,5 @@
 \contentsline {subsection}{\numberline {3.1}Graficar}{18}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Definiciones}{18}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}What is a Linear Programming (LP) Problem?}{22}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Ejercicios de Tarea}{39}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Ejerplos}{39}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Adicionales}{69}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.4}Ejemplos}{23}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Ejercicios por resolver}{37}{subsection.3.5}%
