@@ -1,0 +1,617 @@
+% !TEX root = NotasCursoOptimizacion.tex
+
+%===========================================
+\section{Ex\'amenes}
+%===========================================
+
+
+%<>==<><>==<><>==<><>==<><>==<><>==<><>==<>
+\subsection{Tarea-Examen}
+%<>==<><>==<><>==<><>==<><>==<><>==<><>==<>
+
+\begin{center}
+    {\Large \textbf{Primer Evaluaci\'on Parcial (Tarea-Examen)}} \\[0.3cm]
+    Nombre: \rule{10cm}{0.4pt} \\[0.3cm]
+    Matrícula: \rule{5cm}{0.4pt}
+\end{center}
+
+
+\textbf{Instrucciones:}
+
+\paragraph{
+Resolver 10 ejercicios,  la siguiente lista de ejercicios, la soluci\'on debe de ser clara e incluir todos los pasos que llevaron a encontrar la respuesta correcta. Para la realizaci\'on de los gr\'aficos puede utilizar las rutinas elaboradas en \texttt{R}.}
+\begin{center}
+\rule{15cm}{0.4pt} \\[0.2cm]
+\rule{15cm}{0.4pt} \\[0.2cm]
+\end{center}
+\textbf{Obligatorios indicados con un aster\'isco -- *, la fecha de entrega es el viernes 27, con hora m\'axima de entrega: 13:00 horas.}
+
+\begin{Quest}
+
+Hallar los autovalores y autovectores de la siguiente matriz simétrica:
+\[
+A=
+\begin{pmatrix}
+7 & -2 & 1\\
+-2 & 10 & -2\\
+1 & -2 & 7
+\end{pmatrix}
+\]
+\end{Quest}
+
+\begin{Quest}
+Dada la siguiente matriz indicar si es diagonalizable. En caso de que lo sea, calcular las matrices $D$ y $P$ que verifican:
+\[
+D = P^{-1} A P
+\]
+
+\[
+A=
+\begin{pmatrix}
+1 & 0 & 1\\
+0 & 1 & 3\\
+0 & 0 & 2
+\end{pmatrix}
+\]
+
+\end{Quest}
+
+\begin{Quest}*\label{Pregunta3}
+Dada la siguiente matriz indicar si es diagonalizable.  En caso de que lo sea, calcular las matrices $D$ y $P$ que verifican:
+\[
+D = P^{-1} A P
+\]
+
+\[
+A=
+\begin{pmatrix}
+-2 & -1 & -1\\
+4 & -8 & -6\\
+-4 & 11 & 9
+\end{pmatrix}
+\]
+\end{Quest}
+
+\begin{Quest}*\label{Pregunta4}
+Dada la siguiente matriz simétrica $A$:
+\[
+A=
+\begin{pmatrix}
+7 & -2 & 1\\
+-2 & 10 & -2\\
+1 & -2 & 7
+\end{pmatrix}
+\]
+
+Determinar la matriz diagonal $(D)$ y la matriz ortogonal $(Q)$ que verifican:
+\[
+D = Q^t A Q
+\]
+\end{Quest}
+%----------------------------------------------------------------------------------------------------------------------------------
+\begin{Note}\label{Nota3}
+De las preguntas obligatorias \ref{Pregunta3} y \ref{Pregunta4} resolver solamente una de las dos.
+\end{Note}
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\begin{Quest}*
+\begin{itemize}
+\item[a) ]Buscar la expresión polinómica de la forma cuadrática asociada a la siguiente matriz:
+
+\[
+A=
+\begin{pmatrix}
+2 & -1 & \frac{3}{2}\\
+-1 & 0 & -2\\
+\frac{3}{2} & -2 & -1
+\end{pmatrix}
+\]
+
+\item[b) ]Buscar la matriz asociada a la siguiente forma cuadrática
+
+\[
+\varphi(x_1,x_2,x_3)
+= 3x_1^2 - x_2^2 + 4x_3^2 + 5x_1x_2 - 6x_1x_3 - x_2x_3
+\]
+\end{itemize}
+\end{Quest}
+
+
+\begin{Quest}*\label{Pregunta6}
+
+Graficar las siguientes regiones factibles
+
+\begin{itemize}
+\begin{multicols}{2}
+\item $\left\{
+\begin{array}{c}
+x+2y\leq12\\
+2x+y\geq4\\
+x-2y\leq6\\
+x-y\geq0\\
+x,y\geq0\end{array}
+\right.$
+
+\item $\left\{
+\begin{array}{c}
+x+y\geq5\\
+y\geq x+3\\
+3x-y\geq1\\
+y+2x\leq16\\
+4y-x\leq22
+\end{array}
+\right.$
+
+\item $\left\{
+\begin{array}{c}
+2x+3y\geq-3\\
+2x-y-9\leq0\\
+2x-5y-5\geq0\\
+x,y\geq0\end{array}
+\right.$
+
+\item $\left\{
+\begin{array}{c}
+0.8x+0.5y\leq60\\
+0.3x+0.4y\leq50\\
+0.4x+0.8y\leq40\\
+x,y\geq0\end{array}
+\right.$
+\end{multicols}
+\end{itemize}
+\end{Quest}
+%----------------------------------------------------------------------------------------------------------------------------------
+\begin{Note}\label{Nota4}
+De la pregunta obligatoria \ref{Pregunta6} con cuatro incisos, resolver solamente dos de los cuatro.
+\end{Note}
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\begin{Quest}
+Utilice el m\'etodo gr\'afico para resolver el problema:
+
+\[
+\text{Maximizar } Z = 2x_1 + x_2
+\]
+
+sujeta a
+
+\[
+x_2 \le 10
+\]
+
+\[
+2x_1 + 5x_2 \le 60
+\]
+
+\[
+x_1 + x_2 \le 18
+\]
+
+\[
+3x_1 + x_2 \le 44
+\]
+
+\[
+x_1 \ge 0,\quad x_2 \ge 0
+\]
+
+\end{Quest}
+
+
+\begin{Quest}*\label{Pregunta8}
+Considere el siguiente problema, donde el valor de $c_1$ no se ha determinado.
+
+\[
+\text{Maximizar } Z = c_1 x_1 + 2x_2
+\]
+
+sujeta a
+
+\[
+4x_1 + x_2 \le 12
+\]
+
+\[
+x_1 - x_2 \ge 2
+\]
+
+\[
+x_1 \ge 0, \quad x_2 \ge 0
+\]
+
+Use el m\'etodo gr\'afico para determinar la(s) soluci\'on(es) de $(x_1,x_2)$ para los valores posibles de $c_1$.
+
+
+
+\end{Quest}
+
+
+\begin{Quest}*\label{Pregunta9}
+Considere el siguiente modelo:
+
+\[
+\text{Minimizar } Z = 40x_1 + 50x_2
+\]
+
+sujeta a
+
+\[
+2x_1 + 3x_2 \ge 30
+\]
+
+\[
+x_1 + x_2 \ge 12
+\]
+
+\[
+2x_1 + x_2 \ge 20
+\]
+
+\[
+x_1 \ge 0, \quad x_2 \ge 0
+\]
+
+\begin{itemize}
+\item[a)] Use el m\'etodo gr\'afico para resolver este modelo.
+\item[b)] ¿C\'omo var\'ia la soluci\'on \'optima si la funci\'on objetivo cambia a $Z = 40x_1 + 70x_2$?
+\item[c)] ¿C\'omo var\'ia la soluci\'on \'optima si la tercera restricci\'on funcional cambia a $2x_1 + x_2 \ge 15$?
+\end{itemize}
+\end{Quest}
+
+%----------------------------------------------------------------------------------------------------------------------------------
+\begin{Note}\label{Nota5}
+De las preguntas obligatorias \ref{Pregunta8} y \ref{Pregunta9} resolver solamente una de las dos.
+\end{Note}
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\begin{Quest}* \label{Pregunta10}
+Representar geom\'etricamente los siguientes sistemas de ecuaciones dados en forma matricial $(Ax \le b)$:
+\begin{itemize}
+\begin{multicols}{2}
+\item[a) ]
+\[
+A=
+\begin{pmatrix}
+1 & 0 \\
+0 & 1 \\
+-2 & -3
+\end{pmatrix},
+\quad
+b=
+\begin{pmatrix}
+3\\
+2\\
+0
+\end{pmatrix}
+\]
+
+\item[c) ]
+\[
+A=
+\begin{pmatrix}
+-3 & -2\\
+-2 & -3\\
+-1 & 0\\
+0 & -1
+\end{pmatrix},
+\quad
+b=
+\begin{pmatrix}
+-6\\
+-6\\
+0\\
+0
+\end{pmatrix}
+\]
+
+\item[d) ]
+\[
+A=
+\begin{pmatrix}
+1 & 1\\
+4 & 3\\
+1 & -1\\
+-1 & 0\\
+0 & -1
+\end{pmatrix},
+\quad
+b=
+\begin{pmatrix}
+4\\
+12\\
+-1\\
+0\\
+0
+\end{pmatrix}
+\]
+\end{multicols}
+\end{itemize}
+\end{Quest}
+%----------------------------------------------------------------------------------------------------------------------------------
+\begin{Note}\label{Nota6}
+De la pregunta obligatoria \ref{Pregunta10} con tres incisos, resolver solamente dos de los tres.
+\end{Note}
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\begin{Quest}*\label{Pregunta11}
+ Sean $U$ el plano completo, $A$ el semiplano lugar geom\'etrico de $-2x_1 + x_2 < 3$,  
+$B$ el semiplano lugar geom\'etrico de $-2x_1 + x_2 > 3$,  
+$C$ el semiplano lugar geom\'etrico de $-2x_1 + x_2 \le 3$,  
+$D$ el semiplano lugar geom\'etrico de $-2x_1 + x_2 \ge 3$  
+y $L$ la recta lugar geom\'etrico de $-2x_1 + x_2 = 3$.
+
+Encontrar los conjuntos:
+
+\begin{itemize}
+\begin{multicols}{3}
+\item[a) ] $A^c$
+\item[b)] $ B^c $
+\item[c)] $C^{c} \cap D$
+\item[e)] $B \cap C$
+\item[g)] $A \cup D$
+\item[h)] $B^{c} \cup C$
+\item[i)] $A \cup C^{c}$
+\item[k)] $(A \cap L)^{c}$
+\item[l)] $B^{c} \cap L^{c}$
+\end{multicols}
+\end{itemize}
+
+\end{Quest}
+
+%----------------------------------------------------------------------------------------------------------------------------------
+\begin{Note}\label{Nota7}
+De la pregunta obligatoria \ref{Pregunta11} con nueve incisos, resolver solamente tres de los nueve.
+\end{Note}
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\begin{Quest}\label{Pregunta12}
+Graficar y resolver el problema
+
+\[
+\begin{cases}
+\text{m\'ax y m\'in } z = 5x_1 + 3x_2 \\
+x_1 + x_2 \le 6 \\
+x_2 \ge 3 \\
+x_1 \ge 3 \\
+2x_1 + 3x_2 \ge 3 \\
+x_1,x_2 \ge 0
+\end{cases}
+\]
+
+En los siguientes casos indicar si la regi\'on de soluciones factibles consta de un punto, n\'umero infinito de puntos o es vac\'ia.
+
+\begin{itemize}
+\item[a)] Las restricciones son las mismas dadas.
+\item[b)] Cambiar la primera restricci\'on por $x_1 + x_2 \le 5$.
+\item[c)] Cambiar la primera restricci\'on por $x_1 + x_2 \ge 7$.
+\end{itemize}
+
+\end{Quest}
+
+\begin{Quest}*\label{Pregunta13}
+En los siguientes conjuntos de desigualdades cuando menos una es redundante. Hallar en cada caso las redundantes.
+
+\begin{itemize}
+\begin{multicols}{2}
+\item[a) ]
+\[
+\begin{cases}
+x_1 + x_2 \leq 3, \\
+- x_1 - x_2 \geq 0, \\
+x_1 \geq -1, \\
+- x_2 \leq 2.
+\end{cases}
+\]
+
+\item[b) ]
+\[
+\begin{cases}
+-1 \leq x_1 \leq 1, \\
+-2 \leq x_2 \leq 2, \\
+x_1 + x_2 \geq -10, \\
+2x_1 - x_2 \leq 2.
+\end{cases}
+\]
+\end{multicols}
+\end{itemize}
+\end{Quest}
+
+%----------------------------------------------------------------------------------------------------------------------------------
+% Planteamiento de problemas
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\begin{Quest}*\label{Pregunta14}
+Una compa\~n\'ia de muebles manufactura cuatro modelos de escritorios. Cada escritorio es construido primero en el departamento de carpinter\'ia y despu\'es en el departamento de acabado, donde es barnizado, encerado y pulido. El n\'umero de horas hombre de labor que se requiere en cada departamento est\'a dado por:
+
+\[
+\begin{array}{c|cccc}
+ & \text{Escritorio 1} & \text{Escritorio 2} & \text{Escritorio 3} & \text{Escritorio 4} \\
+\hline
+\text{Depto. carpinter\'ia} & 4 & 9 & 7 & 10 \\
+\text{Depto. acabado} & 1 & 1 & 3 & 40
+\end{array}
+\]
+
+Por limitaciones en la capacidad de la planta, no m\'as de 6000 horas-hombre pueden ser utilizadas en la carpinter\'ia y 4000 en el acabado en los siguientes seis meses.
+
+Las utilidades de la venta de cada escritorio son:
+
+\[
+\begin{array}{c|cccc}
+\text{Escritorio} & 1 & 2 & 3 & 4 \\
+\hline
+\text{Utilidad} & 12 & 20 & 18 & 40
+\end{array}
+\]
+
+Formularlo como problema lineal.
+
+\end{Quest}
+
+
+\begin{Quest}*\label{Pregunta15}
+Una compa\~n\'ia constructora dispone de 100 lotes en los cuales va a construir casas de cinco tipos: econ\'omico, r\'ustico, colonial, moderno y provenzal. Se tienen dos tipos de mano de obra: alba\~niles y carpinteros.
+
+\[
+\begin{array}{c|cc}
+\text{Tipo de casa} & \text{D\'ias alba\~niles} & \text{D\'ias carpinteros} \\
+\hline
+\text{Econ\'omico} & 1 & 4 \\
+\text{R\'ustico} & 2 & 7 \\
+\text{Colonial} & 2 & 6 \\
+\text{Moderno} & 1 & 5 \\
+\text{Provenzal} & 1 & 3
+\end{array}
+\]
+
+Las ganancias son:  
+2000, 3000, 2500, 1700 y 2000 respectivamente.
+
+Se requiere adem\'as construir al menos 10 casas de cada tipo. Formule el problema de programaci\'on lineal.
+
+\end{Quest}
+
+
+\begin{Quest}*\label{Pregunta16}
+La divisi\'on de televisores de Philips S.A. desea maximizar utilidades por televisores de color y blanco-negro.
+
+Utilidades:
+\[
+\text{Color} = 2000, \quad \text{Blanco y negro} = 1250
+\]
+
+Disponibilidad de horas-hombre:
+
+\[
+\begin{array}{c|c}
+\text{Producci\'on de partes} & 500 \\
+\text{Ensamble} & 2500 \\
+\text{Inspecci\'on} & 600
+\end{array}
+\]
+
+Requerimientos por televisor:
+
+Color:
+\[
+4 \text{ partes},\quad 5 \text{ ensamble},\quad 3 \text{ inspecci\'on}
+\]
+
+Blanco y negro:
+\[
+5 \text{ partes},\quad 2 \text{ ensamble},\quad 1 \text{ inspecci\'on}
+\]
+
+Capacidades m\'aximas:
+\[
+4000 \text{ blanco y negro}, \quad 1000 \text{ color}
+\]
+\textbf{Plantear como problema de programaci\'on lineal.}
+\end{Quest}
+
+
+\begin{Quest}*\label{Pregunta17}
+Un ranchero est\'a criando puercos y desea determinar la cantidad de cada tipo disponible de alimento que puede servirle para cumplir los requerimientos nutritivos a un costo m\'inimo. El n\'umero de cada tipo de ingredientes nutritivos b\'asicos contenidos dentro de una libra de cada alimento est\'a dado en la siguiente tabla, junto con el requerimiento nutritivo m\'inimo diario que requiere un puerco y el costo de cada alimento.
+\begin{table}[h]
+\centering
+\scalebox{0.75}{
+\begin{tabular}{l|ccc|c}
+Ingredientes nutritivos & 
+Libra de ma\'iz & 
+Libra de alimento procesado & 
+Libra de alfalfa & 
+Requerimiento m\'inimo diario \\
+\hline
+Carbohidratos & 9 & 2 & 4 & 20 \\
+Prote\'inas & 3 & 8 & 6 & 18 \\
+Vitaminas & 1 & 2 & 6 & 15 \\
+Costo (c) & 7 & 6 & 5 &
+\end{tabular}
+}
+\end{table}
+\textbf{Plantear como problema de programaci\'on lineal.}
+
+\end{Quest}
+
+
+\begin{Quest}*\label{Pregunta18}
+Una empresa fabrica dos productos $A$ y $B$. El producto $A$ est\'a formado por 1 componente $X$ y 2 componentes $Y$. El producto $B$ est\'a formado por 3 componentes $X$ y 1 componente $Y$. Los tiempos est\'andar de fabricaci\'on son:
+
+\[
+\begin{array}{l|ccc}
+\text{Componente} & \text{M\'aquina 1} & \text{M\'aquina 2} & \text{Ensamble} \\
+\hline
+X & 2\ \text{horas/pieza} & 3\ \text{horas/pieza} & 4\ \text{horas/pieza} \\
+Y & 2\ \text{horas/pieza} & 1\ \text{hora/pieza} & 5\ \text{horas/pieza} \\
+\hline
+\text{Tiempo disponible} & 80\ \text{horas/semana} & 90\ \text{horas/semana} & 120\ \text{horas/semana}
+\end{array}
+\]
+
+Las utilidades unitarias son: \$150 para el producto $A$ y \$180 para el producto $B$. \textbf{Determine el programa de producci\'on que maximiza las utilidades por semana de la empresa.}
+
+\end{Quest}
+
+
+\begin{Quest}*\label{Pregunta19}
+Una peque\~na ciudad de 15,000 habitantes requiere en promedio 200,000 galones de agua diariamente.
+
+\begin{itemize}
+\item[a) ] El tratamiento requiere dos compuestos qu\'imicos: suavizador y purificador.
+
+\item[b) ] Producto A contiene 3 libras de suavizador y 3 libras de purificador.  
+\item[c) ] Producto B contiene 4 y 9 libras respectivamente.
+
+\item[d) ] Se requieren al menos 150 y 100 libras de estos compuestos diariamente.
+
+\item[e) ] Costo: \$8 por unidad de A y \$10 por unidad de B.
+\end{itemize}
+\textbf{Formular el modelo lineal.}
+\end{Quest}
+
+
+\begin{Quest}*\label{Pregunta20}
+Una oficina postal requiere un cierto n\'umero m\'inimo de empleados de tiempo completo dependiendo del d\'ia de la semana. La siguiente tabla muestra los requisitos. La uni\'on de trabajadores establece que un trabajador de tiempo completo debe trabajar 5 d\'ias consecutivos y descansar los siguientes 2. Formule el problema de determinar el n\'umero de empleados de tiempo completo m\'inimo que debe tener la oficina postal.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{D\'ia} & \textbf{Empleados de tiempo completo requeridos} \\
+\hline
+D\'ia$_1$ = Lunes & 17 \\
+D\'ia$_2$ = Martes & 13 \\
+D\'ia$_3$ = Mi\'ercoles & 15 \\
+D\'ia$_4$ = Jueves & 14 \\
+D\'ia$_5$ = Viernes & 16 \\
+D\'ia$_6$ = S\'abado & 16 \\
+D\'ia$_7$ = Domingo & 11 \\
+\hline
+\end{tabular}
+\end{center}
+\end{Quest}
+
+%----------------------------------------------------------------------------------------------------------------------------------
+\begin{Note}\label{Nota8}
+De las preguntas \ref{Pregunta14} a la \ref{Pregunta20}, resolver cuatro de las siete de ellas.
+\end{Note}
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\begin{table}[h]
+\centering
+%\scalebox{0.75}{
+\begin{tabular}{|c||c|c||c||c|c|}\hline
+\textbf{Pregunta} &  \textbf{Obligatoria} & \textbf{Puntos}&\textbf{Pregunta} &  \textbf{Obligatoria} & \textbf{Puntos}\\\hline\hline
+Pregunta 1 & No &&Pregunta 11 & S\'i (\textit{Nota \ref{Nota7}})&\\\hline
+Pregunta 2 & No &&Pregunta 12 & No&\\\hline
+Pregunta 3 & S\'i (\textit{Nota \ref{Nota3}})&&Pregunta 13 & S\'i&\\\hline
+Pregunta 4 & S\'i (\textit{Nota \ref{Nota3}})&&Pregunta 14 & No (\textit{Nota \ref{Nota8}})&\\\hline
+Pregunta 5 & S\'i&&Pregunta 15 & No (\textit{Nota \ref{Nota8}})&\\\hline
+Pregunta 6 & S\'i (\textit{Nota \ref{Nota4}})&&Pregunta 16 & No (\textit{Nota \ref{Nota8}})&\\\hline
+Pregunta 7 & No&&Pregunta 17 & No (\textit{Nota \ref{Nota8}})&\\\hline
+Pregunta 8 & S\'i (\textit{Nota \ref{Nota5}})&&Pregunta 18 & No (\textit{Nota \ref{Nota8}})&\\\hline
+Pregunta 9 & S\'i (\textit{Nota \ref{Nota5}})&&Pregunta 19 & No (\textit{Nota \ref{Nota8}})&\\\hline
+Pregunta 10 &S\'i (\textit{Nota \ref{Nota6}})&&Pregunta 20 & No (\textit{Nota \ref{Nota8}})&\\\hline\hline
+\textbf{Suma Puntos} & &&\textbf{Calificaci\'on} & &\\\hline
+\end{tabular}
+%}
+\end{table}
